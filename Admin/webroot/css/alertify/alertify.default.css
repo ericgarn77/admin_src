@@ -1,0 +1,57 @@
+/**
+ * Default Look and Feel
+ */
+.alertify,
+.alertify-log {
+	font-family: sans-serif;
+}
+.alertify {
+	background: #333;
+	background-color: rgba(7, 10, 14, 0.65);
+	color: #fff;
+}
+
+	.alertify-button {
+		color: #FFF;
+		font-weight: bold;
+		padding: 6px 15px;
+		text-decoration: none;
+		margin-right: 10px;
+		-webkit-transition: all 0.3s ease;
+		-moz-transition: all 0.3s ease;
+		-ms-transition: all 0.3s ease;
+		-o-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+	}
+	.alertify-button:hover,
+	.alertify-button:focus {
+		outline: none;
+		opacity: 0.9;
+	}
+	.alertify-button:focus {
+		
+	}
+	.alertify-button:active {
+		position: relative;
+	}
+		.alertify-button-cancel,
+		.alertify-button-cancel:hover {
+			background-color: #e74c3c;
+		}
+		.alertify-button-ok,
+		.alertify-button-ok:hover {
+			background-color: #65cace;
+		}
+
+.alertify-log {
+	background: #1F1F1F;
+	padding: 15px;
+	color: #FFF;
+	font-size: 1.5em;
+}
+	.alertify-log-error {
+		background: #e74c3c;
+	}
+	.alertify-log-success {
+		background: #65cace;
+	}
