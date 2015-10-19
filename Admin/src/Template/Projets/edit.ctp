@@ -27,14 +27,15 @@
                             <div class="forms">
                                 <div class="row">
                                     <label>Région</label>
-                                    <div class="inputs">
+                                    <div class="inputs region_id">
                                         <span class="input_wrapper">
-                                            <select name="region_id" id="region_id" class="info text" >
+                                            <select name="select_region" class="info text" >
                                                 <option value="<?= h($region->id) ?>" selected="selected"><?= h($region->nom) ?></option>
                                                 <?php foreach ($regions as $region): ?>
                                                 <option value="<?= h($region->id) ?>"><?= h($region->nom) ?></option>
                                                 <?php endforeach; ?>
                                             </select>
+                                            <?= $this->Form->input('region_id', ['label' => false, 'type' => 'hidden', 'id' => 'region_id']); ?>
                                         </span>
 
                                     </div>
@@ -98,6 +99,14 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <label>Dossier des images</label>
+                                    <div class="inputs">
+                                        <span class="input_wrapper">
+                                            <?= $this->Form->input('path', ['label' => false, 'type' => 'text', 'id' => 'path', 'class' => 'text']) ?>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row">
                                     <label>Photo principal</label>
                                     <div class="inputs">
                                         <span class="input_wrapper">
@@ -116,7 +125,7 @@
                             <!--[if !IE]>end forms<![endif]-->
                         </fieldset>
                         <!--[if !IE]>end fieldset<![endif]-->
-                        <?= $this->Form->input('region_id', ['label' => false, 'type' => 'hidden', 'id' => 'region_id']); ?>
+                        
                         <?= $this->Form->end() ?>
                     </div>
                 </div>

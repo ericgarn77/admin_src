@@ -2,6 +2,16 @@ $(function(){
 
     $('.dropfile').dropfile();
 
+    // $('.filetree').fileTree({
+    //         root: '/some/folder/',
+    //         script: 'jqueryFileTree.asp',
+    //         expandSpeed: 1000,
+    //         collapseSpeed: 1000,
+    //         multiFolder: false
+    //     }, function(file) {
+    //         $('#path').val(file);
+    // });
+
     $('select').fancySelect();
 
     $(".colorbox").colorbox();
@@ -177,10 +187,27 @@ $(function(){
         
     }
 
-    $( ".options li" ).click(function( event ) {
+    $( ".region_id .options li" ).click(function( event ) {
 
         var option = $(this).data('raw-value');
         $('#region_id').val(option);
+        
+        
+    });
+
+    $( ".region .options li" ).click(function( event ) {
+
+        var option = $(this).data('raw-value');
+        $('#region_id').val(option);
+        
+        
+    });
+
+    $( ".dossier .options li" ).click(function( event ) {
+
+        var option = $(this).data('raw-value');
+        $('#path').val(option);
+        
         
     });
 

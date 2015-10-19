@@ -13,10 +13,7 @@ use Cake\Filesystem\File;
  */
 class ProjetsController extends AppController
 {
-    public function initialize()
-    {
-        $this->loadComponent('RequestHandler');
-    }
+    
     /**
      * Index method
      *
@@ -75,6 +72,21 @@ class ProjetsController extends AppController
                 $this->Flash->error(__('Le projet n\'a pu être enregistré. Réesseyez !'));
             }
         }
+
+        $folder = new Folder(ROOT.'/plugins/Admin/webroot/img/projets/');
+        $foldersTree = $folder->tree();
+        $foldersImages = $foldersTree[0];
+        $folders = [];
+        foreach($foldersImages as $folderImg)
+        {
+            $parts = explode('\\', $folderImg);
+            $folderName = end($parts);
+            if($folderName != '')
+            {
+                array_push($folders, $folderName);
+            }
+            
+        }
         
         $regions = $this->Projets->Regions->find();
         $this->set('regions', $regions);
@@ -82,7 +94,8 @@ class ProjetsController extends AppController
         $this->set('_serialize', ['projet']);
         $this->set('_serialize', ['regions']);
         $this->set('data', [
-            'title' => __("Ajouter un projet")
+            'title' => __("Ajouter un projet"),
+            'folders' => $folders
         ]);
         $this->set(compact('data'));
     }
@@ -191,7 +204,7 @@ class ProjetsController extends AppController
             }
             else
             {
-                define('UPLOAD_DIR', ROOT.'\plugins\Admin\webroot\img\\');
+                define('UPLOAD_DIR', ROOT.'/plugins/Admin/webroot/img/');
                 $file_dir = UPLOAD_DIR . $fileName;
                 file_put_contents($file_dir, $source);
                 $o = [  

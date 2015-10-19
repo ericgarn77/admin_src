@@ -27,14 +27,15 @@
                             <div class="forms">
                                 <div class="row">
                                     <label>Région</label>
-                                    <div class="inputs">
+                                    <div class="inputs region">
                                         <span class="input_wrapper">
-                                            <select name="region" id="region" class="info text" >
+                                            <select name="select_region" class="info text" >
                                                 <option value="" selected="selected">Choisir une région</option>
                                                 <?php foreach ($regions as $region): ?>
                                                 <option value="<?= h($region->id) ?>"><?= h($region->nom) ?></option>
                                                 <?php endforeach; ?>
                                             </select>
+                                            <?= $this->Form->input('region_id', ['label' => false, 'type' => 'hidden', 'id' => 'region_id']); ?>
                                         </span>
 
                                     </div>
@@ -82,7 +83,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <label>Url map</label>
+                                    <label>Url de la carte google</label>
                                     <div class="inputs">
                                         <span class="input_wrapper">
                                             <?= $this->Form->input('url_map', ['label' => false, 'type' => 'text', 'id' => 'url_map', 'class' => 'text']); ?>
@@ -90,11 +91,26 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <label>Url plan pdf</label>
+                                    <label>Url du plan pdf</label>
                                     <div class="inputs">
                                         <span class="input_wrapper">
                                             <?= $this->Form->input('url_plan', ['label' => false, 'type' => 'text', 'id' => 'url_plan', 'class' => 'text']); ?>
                                         </span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label>Dosssier d'images</label>
+                                    <div class="inputs dossier">
+                                        <span class="input_wrapper">
+                                            <select name="dossier" class="info text" >
+                                                <option value="" selected="selected">Choisir un dossier d'image pour ce projet</option>
+                                                <?php foreach ($data['folders'] as $folder): ?>
+                                                <option value="<?= $folder ?>"><?= $folder ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                            <?= $this->Form->input('path', ['label' => false, 'type' => 'hidden', 'id' => 'path']); ?>
+                                        </span>
+
                                     </div>
                                 </div>
                                 <div class="row">
@@ -118,7 +134,7 @@
                             <!--[if !IE]>end forms<![endif]-->
                         </fieldset>
                         <!--[if !IE]>end fieldset<![endif]-->
-                        <?= $this->Form->input('region_id', ['label' => false, 'type' => 'hidden', 'id' => 'region_id']); ?>
+                        
                         <?= $this->Form->end() ?>
                     </div>
                 </div>

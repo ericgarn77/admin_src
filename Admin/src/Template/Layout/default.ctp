@@ -3,14 +3,15 @@
 <?php echo $this->Html->charset(); ?>
 <meta http-equiv="imagetoolbar" content="no" />
 <title>Système administration <?php echo $data['title']; ?></title>
-<?= $this->fetch('meta') ?>
+<script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+<script> tinymce.init({selector:'textarea'}); </script>
 <?= $this->Html->css('Admin.admin'); ?>
 <?= $this->Html->css('Admin.jquery-smoothness'); ?>
 <?= $this->Html->css('Admin.colorbox'); ?>
 <?= $this->Html->css('Admin.alertify/alertify.core'); ?>
 <?= $this->Html->css('Admin.fancySelect'); ?>
-<?= $this->Html->css('Admin.uploadfilemulti'); ?>
 <?= $this->Html->css('Admin.alertify/alertify.default'); ?>
+<?= $this->Html->css('Admin.directoryTree'); ?>
 <?= $this->Html->script('Admin.jquery-1.11.3.min'); ?>
 <?= $this->Html->script('Admin.jquery-ui.min'); ?>
 <?= $this->Html->script('Admin.behaviour'); ?>
@@ -18,16 +19,10 @@
 <?= $this->Html->script('Admin.equalize.min'); ?>
 <?= $this->Html->script('Admin.ckeditorStandard/ckeditor'); ?>
 <?= $this->Html->script('Admin.fancySelect'); ?>
-<?= $this->Html->script('Admin.jquery.fileuploadmulti.min'); ?>
 <?= $this->Html->script('Admin.alertify.min'); ?>
-<?= $this->Html->script('Admin.script'); ?>
 <?= $this->Html->script('Admin.dropfile'); ?>
-<script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
-<script>
-
-tinymce.init({selector:'textarea'});
-
-</script>
+<?= $this->Html->script('Admin.directoryTree'); ?>
+<?= $this->Html->script('Admin.script'); ?>
 <?= $this->Html->meta('favicon.ico','/favicon.ico',['type' => 'icon']); ?>
 <style type="text/css">
 #formlogin label.error {
