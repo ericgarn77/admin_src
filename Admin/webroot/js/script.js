@@ -1,6 +1,7 @@
 $(function(){
 
-    $('.dropfile').dropfile();
+    $('.dropfile.photo').dropfile();
+    $('.dropfile.pdf').dropfile();
 
     // $('.filetree').fileTree({
     //         root: '/some/folder/',
@@ -206,7 +207,7 @@ $(function(){
     $( ".dossier .options li" ).click(function( event ) {
 
         var option = $(this).data('raw-value');
-        $('#path').val(option);
+        $('#dossier').val(option);
         
         
     });

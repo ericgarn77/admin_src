@@ -37,7 +37,6 @@
                                             </select>
                                             <?= $this->Form->input('region_id', ['label' => false, 'type' => 'hidden', 'id' => 'region_id']); ?>
                                         </span>
-
                                     </div>
                                 </div>
                                 <div class="row">
@@ -57,7 +56,6 @@
                                             <?= $this->Form->checkbox('checkbox-presentation', ["hiddenField" => false, "id" => "page-presentation", 'class' => 'checkbox']) ?>
                                             <?= $this->Form->input('presentation', ['label' => false, 'type' => 'hidden', 'id' => 'check-presentation', 'class' => 'text', 'value' => 'oui']) ?>
                                         </p>
-                                        
                                     </div>
                                 </div>
                                 <div class="row">
@@ -91,10 +89,13 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <label>Url du plan pdf</label>
+                                    <label>Plan PDF</label>
                                     <div class="inputs">
                                         <span class="input_wrapper">
-                                            <?= $this->Form->input('url_plan', ['label' => false, 'type' => 'text', 'id' => 'url_plan', 'class' => 'text']); ?>
+                                            <div class="dropfile pdf">
+                                               
+                                            </div>
+                                            
                                         </span>
                                     </div>
                                 </div>
@@ -108,16 +109,15 @@
                                                 <option value="<?= $folder ?>"><?= $folder ?></option>
                                                 <?php endforeach; ?>
                                             </select>
-                                            <?= $this->Form->input('path', ['label' => false, 'type' => 'hidden', 'id' => 'path']); ?>
+                                            <?= $this->Form->input('path', ['label' => false, 'type' => 'hidden', 'id' => 'dossier']); ?>
                                         </span>
-
                                     </div>
                                 </div>
                                 <div class="row">
                                     <label>Photo principal</label>
                                     <div class="inputs">
                                         <span class="input_wrapper">
-                                            <div class="dropfile">
+                                            <div class="dropfile photo">
                                                
                                             </div>
                                         </span>

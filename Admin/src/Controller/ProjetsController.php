@@ -79,7 +79,7 @@ class ProjetsController extends AppController
         $folders = [];
         foreach($foldersImages as $folderImg)
         {
-            $parts = explode('\\', $folderImg);
+            $parts = explode('/', $folderImg);
             $folderName = end($parts);
             if($folderName != '')
             {
@@ -183,7 +183,7 @@ class ProjetsController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-    public function upload()
+    public function uploadImage()
     {
         
         if ($this->request->is('post'))
@@ -191,7 +191,51 @@ class ProjetsController extends AppController
             $fileName = $this->request->header('x-file-name');
             $fileType = $this->request->header('x-file-type');
             $fileSize = $this->request->header('x-file-size');
+            $dossier = $this->request->header('x-file-dossier');
             $types = array('image/png', 'image/gif', 'image/jpeg');
+            $path = 'php://input';
+            $source = file_get_contents($path);
+           
+            
+            if(!in_array($fileType, $types))
+            {
+                $o = ['error' => 'Format non supporté'];
+                echo json_encode($o);
+                return $this->response;
+            }
+            else if(empty($dossier))
+            {
+                $o = ['error' => 'Veuillez choisir un dossier d\'images avant !'];
+                echo json_encode($o);
+                return $this->response;
+            }
+            else
+            {
+                define('UPLOAD_DIR', ROOT.'/plugins/Admin/webroot/img/projets/'.$dossier.'/');
+                $file_dir = UPLOAD_DIR . $fileName;
+                file_put_contents($file_dir, $source);
+                $o = [  
+                    'name' => $fileName, 
+                    'img' => '<img src="../img/'.$fileName.'" alt="'.$fileName.'" />', 
+                    'input' => '<input type="hidden" name="image" id="image" value="'.$fileName.'" maxlength="100">'
+                ];
+                echo json_encode($o);
+                return $this->response;
+            }
+            
+        }
+        
+    }
+
+    public function uploadPDF()
+    {
+        
+        if ($this->request->is('post'))
+        {
+            $fileName = $this->request->header('x-file-name');
+            $fileType = $this->request->header('x-file-type');
+            $fileSize = $this->request->header('x-file-size');
+            $types = array('application/pdf');
             $path = 'php://input';
             $source = file_get_contents($path);
            
@@ -204,19 +248,18 @@ class ProjetsController extends AppController
             }
             else
             {
-                define('UPLOAD_DIR', ROOT.'/plugins/Admin/webroot/img/');
+                define('UPLOAD_DIR', ROOT.'/plugins/Admin/webroot/img/pdf/');
                 $file_dir = UPLOAD_DIR . $fileName;
                 file_put_contents($file_dir, $source);
                 $o = [  
                     'name' => $fileName, 
-                    'img' => '<img src="../img/'.$fileName.'" alt="'.$fileName.'" />', 
-                    'input' => '<input type="hidden" name="image" id="image" value="'.$fileName.'" maxlength="100">'
+                    'img' => '<img src="../img/comrad/iconePdf.png" alt="'.$fileName.'" />', 
+                    'input' => '<input type="text" name="url_plan" id="url_plan" class="text" value="'.$fileName.'" maxlength="100" readonly>'
                 ];
                 echo json_encode($o);
                 return $this->response;
             }
             
-           
         }
         
     }
