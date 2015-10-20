@@ -36,13 +36,13 @@
                 img.remove();
                 input.remove();
                 area.append(json.img);
-                area.append(json.input);
+                area.parent().append(json.input);
 
             }
             else
             {
                 area.append(json.img);
-                area.append(json.input);
+                area.parent().append(json.input);
             }
             
         },false);
