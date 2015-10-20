@@ -91,10 +91,13 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <label>Url plan pdf</label>
+                                    <label>Plan PDF</label>
                                     <div class="inputs">
                                         <span class="input_wrapper">
-                                            <?= $this->Form->input('url_plan', ['label' => false, 'type' => 'text', 'id' => 'url_plan', 'class' => 'text']); ?>
+                                            <div class="dropfile pdf">
+                                               
+                                            </div>
+                                            <?= $this->Form->input('url_pdf', ['label' => false, 'type' => 'text', 'id' => 'url_map', 'class' => 'text']); ?>
                                         </span>
                                     </div>
                                 </div>
@@ -110,7 +113,9 @@
                                     <label>Photo principal</label>
                                     <div class="inputs">
                                         <span class="input_wrapper">
-                                            <?= $this->Form->input('image', ['label' => false, 'type' => 'text', 'id' => 'image', 'class' => 'text']) ?>
+                                            <div class="dropfile photo">
+                                               
+                                            </div>
                                         </span>
                                     </div>
                                 </div>

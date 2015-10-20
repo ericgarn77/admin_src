@@ -16,7 +16,7 @@
                 <ul id="menuTable">
                     <?= $this->Form->create($projet, ['name' => 'formAdd', 'id' => 'formAdd']) ?>
                     <li><?= $this->Form->button('Enregistrer', ['type' => 'submit', 'class' => 'save submit']) ?></li>
-                    <li><?= $this->Html->link(__('Annuler'), ['controller' => 'Regions', 'action' => 'index'], ['confirm' => 'Voulez-vous vraiment annuler ?', 'class' => 'annuler']) ?></li>
+                    <li><?= $this->Html->link(__('Annuler'), ['controller' => 'Projets', 'action' => 'index'], ['confirm' => 'Voulez-vous vraiment annuler ?', 'class' => 'annuler']) ?></li>
                 </ul>
                 <!--[if !IE]>start forms<![endif]-->
                 <div class="forms_wrapper">

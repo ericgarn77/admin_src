@@ -6,8 +6,8 @@
             </div>
             
             <div id="bonjour">
-                    <p>Bonjour <span><?= $user['username']; ?></span> dans le</p>
-                    <h2>Panneau de gestion</h2>
+                    <p>Bonjour <span><?= $user['username']; ?></span> dans la</p>
+                    <h2>Documentation</h2>
             </div>
     </div>
     <div style="clear:both;"></div>

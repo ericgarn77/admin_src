@@ -79,7 +79,7 @@ class ProjetsController extends AppController
         $folders = [];
         foreach($foldersImages as $folderImg)
         {
-            $parts = explode('\\', $folderImg);
+            $parts = explode('/', $folderImg);
             $folderName = end($parts);
             if($folderName != '')
             {
@@ -253,7 +253,7 @@ class ProjetsController extends AppController
                 file_put_contents($file_dir, $source);
                 $o = [  
                     'name' => $fileName, 
-                    'img' => '<img src="../img/comrad/iconePdf.png" alt="'.$fileName.'" />', 
+                    'img' => '<img src="../img/comrad/iconePdf.jpg" alt="'.$fileName.'" />', 
                     'input' => '<input type="text" name="url_plan" id="url_plan" class="text" value="'.$fileName.'" maxlength="100" readonly>'
                 ];
                 echo json_encode($o);

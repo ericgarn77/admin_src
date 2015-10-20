@@ -10,6 +10,7 @@
 	            <li><?= $this->Html->link(__('Contenu HTML'), ['controller' => 'ContenuHtml', 'action' => 'index'], ['class' => 'mainmenu']) ?></li>
 	            <!-- <li><a href="kcfinder/browse.php" class="mainmenu colorboxiframed">Gestionaire de fichiers</a></li> -->
 	            <li><?= $this->Html->link(__('Users'), ['controller' => 'Users', 'action' => 'index'], ['class' => 'mainmenu']) ?></li>
+	            <li><?= $this->Html->link(__('Gestionnaire de fichiers'), ['controller' => 'Gestions', 'action' => 'index'], ['class' => 'mainmenu']) ?></li>
 	        </ul>
         </div>
     </div>
