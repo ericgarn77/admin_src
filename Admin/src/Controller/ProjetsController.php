@@ -79,7 +79,7 @@ class ProjetsController extends AppController
         $folders = [];
         foreach($foldersImages as $folderImg)
         {
-            $parts = explode('/', $folderImg);
+            $parts = explode('\\', $folderImg);
             $folderName = end($parts);
             if($folderName != '')
             {
@@ -147,7 +147,7 @@ class ProjetsController extends AppController
         // $this->request->allowMethod(['post', 'delete']);
         $projet = $this->Projets->get($id);
         if ($this->Projets->delete($projet)) {
-            $this->Flash->success(__('Le projet a été supprimé avec succès.'));
+            $this->Flash->success(__('Le projet a été supprimé avec succès !'));
         } else {
             $this->Flash->error(__('Le projet ne peut être supprimé. Esseyez à nouveau !'));
         }
@@ -254,7 +254,7 @@ class ProjetsController extends AppController
                 $o = [  
                     'name' => $fileName, 
                     'img' => '<img src="../img/comrad/iconePdf.jpg" alt="'.$fileName.'" />', 
-                    'input' => '<input type="text" name="url_plan" id="url_plan" class="text" value="'.$fileName.'" maxlength="100" readonly>'
+                    'par' => '<p class="pdf_name">'.$fileName.'</p>'
                 ];
                 echo json_encode($o);
                 return $this->response;

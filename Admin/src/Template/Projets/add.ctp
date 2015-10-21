@@ -93,7 +93,7 @@
                                     <div class="inputs">
                                         <span class="input_wrapper">
                                             <div class="dropfile pdf">
-                                               
+                                               <?= $this->Form->input('url_plan', ['label' => false, 'type' => 'hidden', 'id' => 'url_plan']); ?>
                                             </div>
                                             
                                         </span>

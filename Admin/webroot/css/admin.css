@@ -1450,9 +1450,11 @@ button.submit{
 	
 }
 
-
-
-
+.pdf_name{
+    float: left;
+    margin: 0;
+    margin-left: 15px;
+}
 
 .button span {
 	background-repeat: no-repeat;
