@@ -78,7 +78,10 @@ class ProjetsTable extends Table
             ->allowEmpty('url_map');
 
         $validator
-            ->allowEmpty('url_plan');
+            ->allowEmpty('plan_pdf');
+
+        $validator
+            ->allowEmpty('dossier_image');
 
         $validator
             ->allowEmpty('image');
@@ -86,6 +89,10 @@ class ProjetsTable extends Table
         $validator
             ->requirePresence('presentation', 'create')
             ->notEmpty('presentation');
+
+        $validator
+            ->requirePresence('terrain', 'create')
+            ->notEmpty('terrain');
 
         return $validator;
     }

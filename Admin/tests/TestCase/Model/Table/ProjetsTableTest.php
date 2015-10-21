@@ -19,9 +19,9 @@ class ProjetsTableTest extends TestCase
     public $fixtures = [
         'plugin.admin.projets',
         'plugin.admin.regions',
+        'plugin.admin.terrains',
         'plugin.admin.caracteristiques',
-        'plugin.admin.galeries',
-        'plugin.admin.terrains'
+        'plugin.admin.galeries'
     ];
 
     /**

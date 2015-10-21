@@ -30,7 +30,7 @@
                                     <div class="inputs region_id">
                                         <span class="input_wrapper">
                                             <select name="select_region" class="info text" >
-                                                <option value="<?= h($region->id) ?>" selected="selected"><?= h($region->nom) ?></option>
+                                                <option value="" selected="selected"><?= h($region->nom) ?></option>
                                                 <?php foreach ($regions as $region): ?>
                                                 <option value="<?= h($region->id) ?>"><?= h($region->nom) ?></option>
                                                 <?php endforeach; ?>
@@ -95,17 +95,24 @@
                                     <div class="inputs">
                                         <span class="input_wrapper">
                                             <div class="dropfile pdf">
-                                               
+                                               <?= $this->Html->image('Admin.comrad/iconePdf.jpg', [ "alt" => 'image pdf']) ?>
                                             </div>
-                                            <?= $this->Form->input('url_pdf', ['label' => false, 'type' => 'text', 'id' => 'url_map', 'class' => 'text']); ?>
+                                            <p class="upload-name"><?= $projet->plan_pdf ?></p>
+                                            <?= $this->Form->input('plan_pdf', ['label' => false, 'type' => 'hidden', 'id' => 'plan_pdf', 'class' => 'text']); ?>
                                         </span>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <label>Dossier des images</label>
-                                    <div class="inputs">
+                                    <label>Dosssier d'images</label>
+                                    <div class="inputs dossier">
                                         <span class="input_wrapper">
-                                            <?= $this->Form->input('path', ['label' => false, 'type' => 'text', 'id' => 'path', 'class' => 'text']) ?>
+                                            <select name="dossier" class="info text" >
+                                                <option value="" selected="selected"><?= $projet->dossier_image ?></option>
+                                                <?php foreach ($data['folders'] as $folder): ?>
+                                                <option value="<?= $folder ?>"><?= $folder ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                            <?= $this->Form->input('dossier_image', ['label' => false, 'type' => 'hidden', 'id' => 'dossier_image', 'class' => 'text']); ?>
                                         </span>
                                     </div>
                                 </div>
@@ -114,8 +121,10 @@
                                     <div class="inputs">
                                         <span class="input_wrapper">
                                             <div class="dropfile photo">
-                                               
+                                               <?= $this->Html->image('Admin.projets/'.$projet->dossier_image.'/'.$projet->image, [ "alt" => 'photo principal']) ?>
                                             </div>
+                                            <p class="upload-name"><?= $projet->image ?></p>
+                                            <?= $this->Form->input('image', ['label' => false, 'type' => 'hidden', 'id' => 'image', 'class' => 'text']); ?>
                                         </span>
                                     </div>
                                 </div>

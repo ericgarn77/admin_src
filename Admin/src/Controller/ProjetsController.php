@@ -79,7 +79,7 @@ class ProjetsController extends AppController
         $folders = [];
         foreach($foldersImages as $folderImg)
         {
-            $parts = explode('\\', $folderImg);
+            $parts = explode('/', $folderImg);
             $folderName = end($parts);
             if($folderName != '')
             {
@@ -122,13 +122,30 @@ class ProjetsController extends AppController
                 $this->Flash->error(__('Impossible d\'enregistrer les changements. Veuillez réesseyer !'));
             }
         }
+
+        $folder = new Folder(ROOT.'/plugins/Admin/webroot/img/projets/');
+        $foldersTree = $folder->tree();
+        $foldersImages = $foldersTree[0];
+        $folders = [];
+        foreach($foldersImages as $folderImg)
+        {
+            $parts = explode('/', $folderImg);
+            $folderName = end($parts);
+            if($folderName != '')
+            {
+                array_push($folders, $folderName);
+            }
+            
+        }
+
         $regions = $this->Projets->Regions->find();
         $this->set(compact('projet', 'regions'));
         $this->set('_serialize', ['projet']);
         $this->set('region', $region);
         $this->set('_serialize', ['region']);
         $this->set('data', [
-            'title' => __("Modifier un projet")
+            'title' => __("Modifier un projet"),
+            'folders' => $folders
         ]);
         $this->set(compact('data'));
 
@@ -216,8 +233,8 @@ class ProjetsController extends AppController
                 file_put_contents($file_dir, $source);
                 $o = [  
                     'name' => $fileName, 
-                    'img' => '<img src="../img/'.$fileName.'" alt="'.$fileName.'" />', 
-                    'input' => '<input type="hidden" name="image" id="image" value="'.$fileName.'" maxlength="100">'
+                    'img' => '<img src="../img/projets/'.$dossier.'/'.$fileName.'" alt="'.$fileName.'" />', 
+                    'par' => '<p class="upload-name">'.$fileName.'</p>'
                 ];
                 echo json_encode($o);
                 return $this->response;
@@ -253,8 +270,8 @@ class ProjetsController extends AppController
                 file_put_contents($file_dir, $source);
                 $o = [  
                     'name' => $fileName, 
-                    'img' => '<img src="../img/comrad/iconePdf.jpg" alt="'.$fileName.'" />', 
-                    'par' => '<p class="pdf_name">'.$fileName.'</p>'
+                    'img' => '<img src="../img/comrad/iconePdf.jpg" alt="'.$fileName.'" />',
+                    'par' => '<p class="upload-name">'.$fileName.'</p>'
                 ];
                 echo json_encode($o);
                 return $this->response;

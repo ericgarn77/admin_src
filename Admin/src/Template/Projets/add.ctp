@@ -93,9 +93,8 @@
                                     <div class="inputs">
                                         <span class="input_wrapper">
                                             <div class="dropfile pdf">
-                                               <?= $this->Form->input('url_plan', ['label' => false, 'type' => 'hidden', 'id' => 'url_plan']); ?>
+                                            <?= $this->Form->input('plan_pdf', ['label' => false, 'type' => 'hidden', 'id' => 'plan_pdf', 'class' => 'text']); ?>
                                             </div>
-                                            
                                         </span>
                                     </div>
                                 </div>
@@ -109,7 +108,7 @@
                                                 <option value="<?= $folder ?>"><?= $folder ?></option>
                                                 <?php endforeach; ?>
                                             </select>
-                                            <?= $this->Form->input('path', ['label' => false, 'type' => 'hidden', 'id' => 'dossier']); ?>
+                                            <?= $this->Form->input('dossier_image', ['label' => false, 'type' => 'hidden', 'id' => 'dossier_image', 'class' => 'text']); ?>
                                         </span>
                                     </div>
                                 </div>
@@ -118,7 +117,7 @@
                                     <div class="inputs">
                                         <span class="input_wrapper">
                                             <div class="dropfile photo">
-                                               
+                                                <?= $this->Form->input('image', ['label' => false, 'type' => 'hidden', 'id' => 'image', 'class' => 'text']); ?>
                                             </div>
                                         </span>
                                     </div>

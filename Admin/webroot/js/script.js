@@ -207,7 +207,7 @@ $(function(){
     $( ".dossier .options li" ).click(function( event ) {
 
         var option = $(this).data('raw-value');
-        $('#dossier').val(option);
+        $('#dossier_image').val(option);
         
         
     });

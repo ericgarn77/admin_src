@@ -30,21 +30,23 @@
                 return false;
             }
             var img = area.find('img');
-            var input = area.find('input');
-            if(img.length == 1 && input.length == 1)
+            var input = area.find('#plan_pdf');
+            var par = area.parent().find('.upload-name');
+            if(img.length == 1 && par.length == 1)
             {
                 img.remove();
-                input.remove();
+                par.remove();
                 area.append(json.img);
                 area.parent().append(json.par);
-                area.parent().find('#url_plan').val(json.name);
-
+                input.val(json.name);
+            
             }
             else
             {
                 area.append(json.img);
                 area.parent().append(json.par);
-                area.parent().find('#url_plan').val(json.name);
+                input.val(json.name);
+                
             }
             
         },false);
@@ -76,7 +78,7 @@
         console.log(file.name);
         var xhr = new XMLHttpRequest();
         var progress = area.find('.progress');
-        var dossier = $('#dossier').val();
+        var dossier = $('#dossier_image').val();
         
         // Evenement
         xhr.addEventListener('load', function(e){
@@ -89,19 +91,22 @@
                 return false;
             }
             var img = area.find('img');
-            var input = area.find('input');
-            if(img.length == 1 && input.length == 1)
+            var input = area.find('#image');
+            var par = area.parent().find('.upload-name');
+            if(img.length == 1 && par.length == 1)
             {
                 img.remove();
-                input.remove();
+                par.remove();
                 area.append(json.img);
-                area.append(json.input);
+                area.parent().append(json.par);
+                input.val(json.name);
 
             }
             else
             {
                 area.append(json.img);
-                area.append(json.input);
+                area.parent().append(json.par);
+                input.val(json.name);
             }
             
         },false);
