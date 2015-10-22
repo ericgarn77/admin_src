@@ -239,6 +239,12 @@ vertical-align:middle;
 	margin: 0 5%;
 }
 
+#frame-contenu{
+	width: 90%;
+	float: right;
+	margin: 0 5%;
+}
+
 
 /***************  HEADER DASHBOARD  **********************/
 
@@ -1334,6 +1340,10 @@ button.submit{
 	background-image:url(../img/comrad/edit.png);
 }
 
+.edit-2 {
+	background-image:url(../img/comrad/edit-2.png);
+}
+
 .delete {
 	background-image:url(../img/comrad/action_delete.png);
 }
@@ -1638,7 +1648,7 @@ button.submit{
 	background: rgba(7, 10, 14, 0.50);
 	float: left;
 	padding: 4px 4px;
-	width:100%;
+	width: 98%;
 	margin: 0;
 	line-height: normal;
 	color: #fff!important;
@@ -1967,7 +1977,27 @@ h5 {
     width: 150px;
     text-align: center;
 	line-height: 98px;
+	margin: 10px;
 }
+
+.dropfile:hover{
+	border-color: #65cace;
+}
+
+.remove{
+	display: none;
+	padding: 15px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	z-index: 1000;
+	background: url(../img/comrad/remove.png) no-repeat;
+	cursor: pointer;
+}
+
+/*.dropfile img:hover + .remove{
+	display: block;
+}*/
 
 .hover{
 	background: rgba(7, 10, 14, 0.50);

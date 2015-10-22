@@ -92,8 +92,11 @@
                                     <label>Plan PDF</label>
                                     <div class="inputs">
                                         <span class="input_wrapper">
-                                            <div class="dropfile pdf">
-                                            <?= $this->Form->input('plan_pdf', ['label' => false, 'type' => 'hidden', 'id' => 'plan_pdf', 'class' => 'text']); ?>
+                                            <div class="wrap-dropfile">
+                                                <div class="dropfile pdf">
+                                                <?= $this->Form->input('plan_pdf', ['label' => false, 'type' => 'hidden', 'id' => 'plan_pdf', 'class' => 'text']); ?>
+                                                    <span class="remove"></span>
+                                                </div>
                                             </div>
                                         </span>
                                     </div>
@@ -116,8 +119,12 @@
                                     <label>Photo principal</label>
                                     <div class="inputs">
                                         <span class="input_wrapper">
-                                            <div class="dropfile photo">
-                                                <?= $this->Form->input('image', ['label' => false, 'type' => 'hidden', 'id' => 'image', 'class' => 'text']); ?>
+                                            <div class="wrap-dropfile">
+                                                <div class="dropfile photo">
+                                                    <?= $this->Form->input('image', ['label' => false, 'type' => 'hidden', 'id' => 'image', 'class' => 'text']); ?>
+                                                    <span class="remove"></span>
+                                                </div>
+                                                
                                             </div>
                                         </span>
                                     </div>

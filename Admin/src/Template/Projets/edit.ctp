@@ -94,11 +94,18 @@
                                     <label>Plan PDF</label>
                                     <div class="inputs">
                                         <span class="input_wrapper">
-                                            <div class="dropfile pdf">
-                                               <?= $this->Html->image('Admin.comrad/iconePdf.jpg', [ "alt" => 'image pdf']) ?>
+                                            <div class="wrap-dropfile">
+                                                <div class="dropfile pdf">
+                                                    <?= $this->Form->input('plan_pdf', ['label' => false, 'type' => 'hidden', 'id' => 'plan_pdf', 'class' => 'text']); ?>
+                                                    <?php if(!empty($projet->plan_pdf))
+                                                    {
+                                                        echo $this->Html->image('Admin.comrad/iconePdf.jpg', [ "alt" => 'image pdf']);
+                                                    }  
+                                                    ?>
+                                                    <span class="remove"></span>
+                                                </div>
+                                                <p class="upload-name"><?= $projet->plan_pdf ?></p>
                                             </div>
-                                            <p class="upload-name"><?= $projet->plan_pdf ?></p>
-                                            <?= $this->Form->input('plan_pdf', ['label' => false, 'type' => 'hidden', 'id' => 'plan_pdf', 'class' => 'text']); ?>
                                         </span>
                                     </div>
                                 </div>
@@ -120,11 +127,18 @@
                                     <label>Photo principal</label>
                                     <div class="inputs">
                                         <span class="input_wrapper">
-                                            <div class="dropfile photo">
-                                               <?= $this->Html->image('Admin.projets/'.$projet->dossier_image.'/'.$projet->image, [ "alt" => 'photo principal']) ?>
+                                            <div class="wrap-dropfile">
+                                                <div class="dropfile photo">
+                                                    <?= $this->Form->input('image', ['label' => false, 'type' => 'hidden', 'id' => 'image', 'class' => 'text']); ?>
+                                                    <?php if(!empty($projet->image))
+                                                    {
+                                                        echo $this->Html->image('Admin.projets/'.$projet->dossier_image.'/'.$projet->image, [ "alt" => 'photo principal']);
+                                                    }
+                                                    ?>
+                                                    <span class="remove"></span>
+                                                </div>
+                                                <p class="upload-name"><?= $projet->image ?></p>
                                             </div>
-                                            <p class="upload-name"><?= $projet->image ?></p>
-                                            <?= $this->Form->input('image', ['label' => false, 'type' => 'hidden', 'id' => 'image', 'class' => 'text']); ?>
                                         </span>
                                     </div>
                                 </div>

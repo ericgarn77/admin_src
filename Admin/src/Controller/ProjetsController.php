@@ -235,6 +235,7 @@ class ProjetsController extends AppController
                     'name' => $fileName, 
                     'img' => '<img src="/admin/img/projets/'.$dossier.'/'.$fileName.'" alt="'.$fileName.'" />', 
                     'par' => '<p class="upload-name">'.$fileName.'</p>'
+                    
                 ];
                 echo json_encode($o);
                 return $this->response;
@@ -272,6 +273,7 @@ class ProjetsController extends AppController
                     'name' => $fileName, 
                     'img' => '<img src="/admin/img/comrad/iconePdf.jpg" alt="'.$fileName.'" />',
                     'par' => '<p class="upload-name">'.$fileName.'</p>'
+                    
                 ];
                 echo json_encode($o);
                 return $this->response;

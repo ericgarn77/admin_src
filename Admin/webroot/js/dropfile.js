@@ -32,6 +32,7 @@
             var img = area.find('img');
             var input = area.find('#plan_pdf');
             var par = area.parent().find('.upload-name');
+            var remove = area.find('.remove');
             if(img.length == 1 && par.length == 1)
             {
                 img.remove();
@@ -46,6 +47,7 @@
                 area.append(json.img);
                 area.parent().append(json.par);
                 input.val(json.name);
+                remove.css('display', 'block');
                 
             }
             
@@ -93,6 +95,7 @@
             var img = area.find('img');
             var input = area.find('#image');
             var par = area.parent().find('.upload-name');
+            var remove = area.find('.remove');
             if(img.length == 1 && par.length == 1)
             {
                 img.remove();
@@ -107,6 +110,7 @@
                 area.append(json.img);
                 area.parent().append(json.par);
                 input.val(json.name);
+                remove.css('display', 'block');
             }
             
         },false);

@@ -1,49 +1,98 @@
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Html->link(__('New Galery'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Projets'), ['controller' => 'Projets', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Projet'), ['controller' => 'Projets', 'action' => 'add']) ?></li>
-    </ul>
-</div>
-<div class="galeries index large-10 medium-9 columns">
-    <table cellpadding="0" cellspacing="0">
-    <thead>
-        <tr>
-            <th><?= $this->Paginator->sort('id') ?></th>
-            <th><?= $this->Paginator->sort('projet_id') ?></th>
-            <th><?= $this->Paginator->sort('nom') ?></th>
-            <th><?= $this->Paginator->sort('created') ?></th>
-            <th><?= $this->Paginator->sort('modified') ?></th>
-            <th class="actions"><?= __('Actions') ?></th>
-        </tr>
-    </thead>
-    <tbody>
-    <?php foreach ($galeries as $galery): ?>
-        <tr>
-            <td><?= $this->Number->format($galery->id) ?></td>
-            <td>
-                <?= $galery->has('projet') ? $this->Html->link($galery->projet->id, ['controller' => 'Projets', 'action' => 'view', $galery->projet->id]) : '' ?>
-            </td>
-            <td><?= h($galery->nom) ?></td>
-            <td><?= h($galery->created) ?></td>
-            <td><?= h($galery->modified) ?></td>
-            <td class="actions">
-                <?= $this->Html->link(__('View'), ['action' => 'view', $galery->id]) ?>
-                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $galery->id]) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $galery->id], ['confirm' => __('Are you sure you want to delete # {0}?', $galery->id)]) ?>
-            </td>
-        </tr>
-
-    <?php endforeach; ?>
-    </tbody>
-    </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-        </ul>
-        <p><?= $this->Paginator->counter() ?></p>
+<div id="frame-contenu" class="sameHeight">
+    <!--[if !IE]>start section<![endif]-->
+    <div class="section">
+        <!--[if !IE]>start title wrapper<![endif]-->
+        <div class="title_wrapper">
+            <div class="title_wrapper_inner">
+                <div class="title_wrapper_content">
+                    <h2><?php echo $data['title']; ?></h2>
+                </div>
+            </div>    
+        </div>
+        <!--[if !IE]>end title wrapper<![endif]-->
+        <!--[if !IE]>start section content<![endif]-->
+        <div class="section_content">
+            <div class="section_content_inner">
+                <ul id="menuTable">
+                    <li><?= $this->Html->link(__('Modifier'), ['action' => 'edit'], ['class' => 'edit-2 colorboxiframedlarge']) ?></li>
+                    <li><?= $this->Html->link(__('Annuler'), ['controller' => 'Projets', 'action' => 'index'], ['confirm' => 'Voulez-vous vraiment annuler ?', 'class' => 'annuler']) ?></li>
+                </ul>
+                <!--[if !IE]>start forms<![endif]-->
+                <div class="forms_wrapper">
+                    <div class="search_form general_form">
+                        <!--[if !IE]>start fieldset<![endif]-->
+                        <fieldset>
+                            <!--[if !IE]>start forms<![endif]-->
+                            <div class="forms">
+                                
+                                <div class="row">
+                                    <div class="inputs">
+                                        <span class="input_wrapper">
+                                            <div class="wrap-dropfile">
+                                                <div class="dropfile photo">
+                                                    <?= $this->Form->input('image', ['label' => false, 'type' => 'hidden', 'id' => 'image', 'class' => 'text']); ?>
+                                                    <span class="remove"></span>
+                                                </div>
+                                            </div>
+                                            <div class="wrap-dropfile">
+                                                <div class="dropfile photo">
+                                                    <?= $this->Form->input('image', ['label' => false, 'type' => 'hidden', 'id' => 'image', 'class' => 'text']); ?>
+                                                    <span class="remove"></span>
+                                                </div>
+                                            </div>
+                                            <div class="wrap-dropfile">
+                                                <div class="dropfile photo">
+                                                    <?= $this->Form->input('image', ['label' => false, 'type' => 'hidden', 'id' => 'image', 'class' => 'text']); ?>
+                                                    <span class="remove"></span>
+                                                </div>
+                                            </div>
+                                            <div class="wrap-dropfile">
+                                                <div class="dropfile photo">
+                                                    <?= $this->Form->input('image', ['label' => false, 'type' => 'hidden', 'id' => 'image', 'class' => 'text']); ?>
+                                                    <span class="remove"></span>
+                                                </div>
+                                            </div>
+                                            <div class="wrap-dropfile">
+                                                <div class="dropfile photo">
+                                                    <?= $this->Form->input('image', ['label' => false, 'type' => 'hidden', 'id' => 'image', 'class' => 'text']); ?>
+                                                    <span class="remove"></span>
+                                                </div>
+                                            </div>
+                                            <div class="wrap-dropfile">
+                                                <div class="dropfile photo">
+                                                    <?= $this->Form->input('image', ['label' => false, 'type' => 'hidden', 'id' => 'image', 'class' => 'text']); ?>
+                                                    <span class="remove"></span>
+                                                </div>
+                                            </div>
+                                            <div class="wrap-dropfile">
+                                                <div class="dropfile photo">
+                                                    <?= $this->Form->input('image', ['label' => false, 'type' => 'hidden', 'id' => 'image', 'class' => 'text']); ?>
+                                                    <span class="remove"></span>
+                                                </div>
+                                            </div>
+                                            <div class="wrap-dropfile">
+                                                <div class="dropfile photo">
+                                                    <?= $this->Form->input('image', ['label' => false, 'type' => 'hidden', 'id' => 'image', 'class' => 'text']); ?>
+                                                    <span class="remove"></span>
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                            <!--[if !IE]>end forms<![endif]-->
+                        </fieldset>
+                        <!--[if !IE]>end fieldset<![endif]-->
+                    </div>
+                </div>
+                <!--[if !IE]>end forms<![endif]-->
+            </div>
+        </div>
+        <!--[if !IE]>end section content<![endif]-->
     </div>
+    <!--[if !IE]>end section<![endif]-->
 </div>
+
+

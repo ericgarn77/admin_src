@@ -3,6 +3,30 @@ $(function(){
     $('.dropfile.photo').dropfile();
     $('.dropfile.pdf').dropfile();
 
+    var imgdrop = $('.dropfile img');
+    var area = $('.dropfile');
+
+    if(imgdrop.length > 0)
+    {
+        $.each( imgdrop, function() {
+            $(this).next().css('display', 'block');
+        });
+    }
+
+    $('.remove').click(function(){
+        var area = $(this).parent().parent();
+        area.find('img').remove();
+        area.find('input').val("");
+        area.find('.upload-name').remove();
+        $(this).css('display', 'none');
+
+    });
+
+
+
+
+    
+
     // $('.filetree').fileTree({
     //         root: '/some/folder/',
     //         script: 'jqueryFileTree.asp',

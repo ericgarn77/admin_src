@@ -4,7 +4,7 @@
 <meta http-equiv="imagetoolbar" content="no" />
 <title>Système administration <?php echo $data['title']; ?></title>
 <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
-<script> tinymce.init({selector:'textarea'}); </script>
+<script> tinymce.init({selector:'textarea', theme_advanced_blockformats:'div'}); </script>
 <?= $this->Html->css('Admin.admin'); ?>
 <?= $this->Html->css('Admin.jquery-smoothness'); ?>
 <?= $this->Html->css('Admin.colorbox'); ?>

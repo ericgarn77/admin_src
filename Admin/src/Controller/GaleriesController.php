@@ -2,6 +2,9 @@
 namespace Admin\Controller;
 
 use Admin\Controller\AppController;
+use Cake\ORM\TableRegistry;
+use Cake\Filesystem\Folder;
+use Cake\Filesystem\File;
 
 /**
  * Galeries Controller
@@ -23,6 +26,11 @@ class GaleriesController extends AppController
         ];
         $this->set('galeries', $this->paginate($this->Galeries));
         $this->set('_serialize', ['galeries']);
+        $this->set('data', [
+            'title' => __("Galerie d'images")
+        ]);
+        $this->set(compact('data'));
+        $this->layout = 'frame';
     }
 
     /**
@@ -72,21 +80,28 @@ class GaleriesController extends AppController
      */
     public function edit($id = null)
     {
-        $galery = $this->Galeries->get($id, [
-            'contain' => []
-        ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $galery = $this->Galeries->patchEntity($galery, $this->request->data);
-            if ($this->Galeries->save($galery)) {
-                $this->Flash->success(__('The galery has been saved.'));
-                return $this->redirect(['action' => 'index']);
-            } else {
-                $this->Flash->error(__('The galery could not be saved. Please, try again.'));
-            }
-        }
-        $projets = $this->Galeries->Projets->find('list', ['limit' => 200]);
-        $this->set(compact('galery', 'projets'));
-        $this->set('_serialize', ['galery']);
+        
+        $query = $galeries
+        ->find()
+        ->where(['projet_id' => $id ])
+        ->order(['created' => 'DESC']);
+
+
+        // $galery = $this->Galeries->get($id, [
+        //     'contain' => []
+        // ]);
+        // if ($this->request->is(['patch', 'post', 'put'])) {
+        //     $galery = $this->Galeries->patchEntity($galery, $this->request->data);
+        //     if ($this->Galeries->save($galery)) {
+        //         $this->Flash->success(__('The galery has been saved.'));
+        //         return $this->redirect(['action' => 'index']);
+        //     } else {
+        //         $this->Flash->error(__('The galery could not be saved. Please, try again.'));
+        //     }
+        // }
+        // $projets = $this->Galeries->Projets->find('list', ['limit' => 200]);
+        // $this->set(compact('galery', 'projets'));
+        // $this->set('_serialize', ['galery']);
     }
 
     /**
