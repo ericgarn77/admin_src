@@ -2,8 +2,8 @@
 
     var o = {
         message : 'Drag and Drop',
-        scriptIMG : 'uploadImage',
-        scriptPDF : 'uploadPDF'
+        scriptIMG : 'http://localhost:8765/admin/projets/uploadImage',
+        scriptPDF : 'http://localhost:8765/admin/projets/uploadPDF'
     }
 
     //////////////////////////

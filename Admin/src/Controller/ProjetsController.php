@@ -233,7 +233,7 @@ class ProjetsController extends AppController
                 file_put_contents($file_dir, $source);
                 $o = [  
                     'name' => $fileName, 
-                    'img' => '<img src="../img/projets/'.$dossier.'/'.$fileName.'" alt="'.$fileName.'" />', 
+                    'img' => '<img src="/admin/img/projets/'.$dossier.'/'.$fileName.'" alt="'.$fileName.'" />', 
                     'par' => '<p class="upload-name">'.$fileName.'</p>'
                 ];
                 echo json_encode($o);
@@ -270,7 +270,7 @@ class ProjetsController extends AppController
                 file_put_contents($file_dir, $source);
                 $o = [  
                     'name' => $fileName, 
-                    'img' => '<img src="../img/comrad/iconePdf.jpg" alt="'.$fileName.'" />',
+                    'img' => '<img src="/admin/img/comrad/iconePdf.jpg" alt="'.$fileName.'" />',
                     'par' => '<p class="upload-name">'.$fileName.'</p>'
                 ];
                 echo json_encode($o);
