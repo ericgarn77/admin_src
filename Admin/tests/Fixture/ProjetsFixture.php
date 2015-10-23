@@ -24,7 +24,7 @@ class ProjetsFixture extends TestFixture
         'statut' => ['type' => 'string', 'length' => 10, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
         'url_map' => ['type' => 'text', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
         'plan_pdf' => ['type' => 'string', 'length' => 100, 'null' => true, 'default' => '', 'comment' => '', 'precision' => null, 'fixed' => null],
-        'dosssier_image' => ['type' => 'string', 'length' => 100, 'null' => true, 'default' => '', 'comment' => '', 'precision' => null, 'fixed' => null],
+        'dossier_image' => ['type' => 'string', 'length' => 100, 'null' => true, 'default' => '', 'comment' => '', 'precision' => null, 'fixed' => null],
         'image' => ['type' => 'string', 'length' => 100, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
         'presentation' => ['type' => 'string', 'length' => 3, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
         'terrain' => ['type' => 'string', 'length' => 3, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
@@ -58,12 +58,12 @@ class ProjetsFixture extends TestFixture
             'statut' => 'Lorem ip',
             'url_map' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
             'plan_pdf' => 'Lorem ipsum dolor sit amet',
-            'dosssier_image' => 'Lorem ipsum dolor sit amet',
+            'dossier_image' => 'Lorem ipsum dolor sit amet',
             'image' => 'Lorem ipsum dolor sit amet',
             'presentation' => 'L',
             'terrain' => 'L',
-            'created' => '2015-10-21 15:11:44',
-            'modified' => '2015-10-21 15:11:44'
+            'created' => '2015-10-23 19:15:59',
+            'modified' => '2015-10-23 19:15:59'
         ],
     ];
 }

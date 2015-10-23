@@ -160,7 +160,8 @@ class ProjetsController extends AppController
      */
     public function delete($id = null)
     {
-        // $this->request->allowMethod(['post', 'delete']);
+        
+       
         $projet = $this->Projets->get($id);
         if ($this->Projets->delete($projet)) {
             $this->Flash->success(__('Le projet a été supprimé avec succès !'));
@@ -232,9 +233,7 @@ class ProjetsController extends AppController
                 file_put_contents($file_dir, $source);
                 $o = [  
                     'name' => $fileName, 
-                    'img' => '<img src="/admin/img/projets/'.$dossier.'/'.$fileName.'" alt="'.$fileName.'" />', 
-                    'par' => '<p class="upload-name">'.$fileName.'</p>'
-                    
+                    'img' => '<img src="/admin/img/projets/'.$dossier.'/'.$fileName.'" alt="'.$fileName.'" />'
                 ];
                 echo json_encode($o);
                 return $this->response;
@@ -270,9 +269,7 @@ class ProjetsController extends AppController
                 file_put_contents($file_dir, $source);
                 $o = [  
                     'name' => $fileName, 
-                    'img' => '<img src="/admin/img/comrad/iconePdf.jpg" alt="'.$fileName.'" />',
-                    'par' => '<p class="upload-name">'.$fileName.'</p>'
-                    
+                    'img' => '<img src="/admin/img/comrad/iconePdf.jpg" alt="'.$fileName.'" />'
                 ];
                 echo json_encode($o);
                 return $this->response;

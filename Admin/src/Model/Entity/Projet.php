@@ -14,7 +14,7 @@ use Cake\ORM\Entity;
  * @property string $statut
  * @property string $url_map
  * @property string $plan_pdf
- * @property string $dosssier_image
+ * @property string $dossier_image
  * @property string $image
  * @property string $presentation
  * @property string $terrain

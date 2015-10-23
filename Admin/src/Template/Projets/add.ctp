@@ -97,6 +97,7 @@
                                                 <?= $this->Form->input('plan_pdf', ['label' => false, 'type' => 'hidden', 'id' => 'plan_pdf', 'class' => 'text']); ?>
                                                     <span class="remove"></span>
                                                 </div>
+                                                <p class="upload-name"></p>
                                             </div>
                                         </span>
                                     </div>
@@ -124,7 +125,7 @@
                                                     <?= $this->Form->input('image', ['label' => false, 'type' => 'hidden', 'id' => 'image', 'class' => 'text']); ?>
                                                     <span class="remove"></span>
                                                 </div>
-                                                
+                                                <p class="upload-name"></p>
                                             </div>
                                         </span>
                                     </div>

@@ -34,11 +34,15 @@ class RegionsTable extends Table
 
         $this->hasMany('Projets', [
             'foreignKey' => 'region_id',
-            'className' => 'Admin.Projets'
+            'className' => 'Admin.Projets',
+            'dependent' => true,
+            'cascadeCallbacks' => true
         ]);
         $this->hasMany('Terrains', [
             'foreignKey' => 'region_id',
-            'className' => 'Admin.Terrains'
+            'className' => 'Admin.Terrains',
+            'dependent' => true,
+            'cascadeCallbacks' => true
         ]);
     }
 

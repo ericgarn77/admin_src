@@ -20,8 +20,8 @@ class RegionsController extends AppController
     public function index()
     {
         
-        $items = TableRegistry::get('Regions');
-        $query = $items->find();
+        
+        $query = $this->Regions->find();
         $this->paginate = [
             'maxLimit' => 10
         ];

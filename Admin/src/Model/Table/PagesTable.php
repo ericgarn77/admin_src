@@ -33,7 +33,9 @@ class PagesTable extends Table
 
         $this->hasMany('ContenuHtml', [
             'foreignKey' => 'page_id',
-            'className' => 'Admin.ContenuHtml'
+            'className' => 'Admin.ContenuHtml',
+            'dependent' => true,
+            'cascadeCallbacks' => true
         ]);
     }
 

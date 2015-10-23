@@ -2,6 +2,7 @@ $(function(){
 
     $('.dropfile.photo').dropfile();
     $('.dropfile.pdf').dropfile();
+    $('.dropfile.galerie').dropfile();
 
     var imgdrop = $('.dropfile img');
     var area = $('.dropfile');
@@ -17,7 +18,7 @@ $(function(){
         var area = $(this).parent().parent();
         area.find('img').remove();
         area.find('input').val("");
-        area.find('.upload-name').remove();
+        area.find('.upload-name').html('');
         $(this).css('display', 'none');
 
     });

@@ -1444,8 +1444,6 @@ button.submit{
 	background-position: right 0;
 }
 
-
-
 .button {
 	display: block;
 	background-repeat: repeat-x;
@@ -1463,7 +1461,8 @@ button.submit{
 .upload-name{
     float: left;
     margin: 0;
-    margin-left: 15px;
+    margin-top: 10px;
+    
 }
 
 .button span {
@@ -1967,6 +1966,9 @@ h5 {
 	font-size: 11px;
 }
 
+
+
+
 .dropfile{
 	display: block;
 	position: relative;
@@ -1980,8 +1982,22 @@ h5 {
 	margin: 10px;
 }
 
+.dropfile .instruction{
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+}
+
 .dropfile:hover{
 	border-color: #65cace;
+}
+
+.dropfile:hover .instruction{
+	color: #65cace;
+	z-index: 200;
 }
 
 .remove{
@@ -1990,25 +2006,26 @@ h5 {
 	position: absolute;
 	top: 0px;
 	right: 0px;
-	z-index: 1000;
+	z-index: 300;
 	background: url(../img/comrad/remove.png) no-repeat;
 	cursor: pointer;
 }
 
-/*.dropfile img:hover + .remove{
-	display: block;
-}*/
-
 .hover{
+	position: relative;
 	background: rgba(7, 10, 14, 0.50);
 	color: #65cace;
 	border-color: #65cace;
+	z-index: 200;
 }
 
 .dropfile img{
 	position: absolute;
 	top: 0;
 	left: 0;
+	z-index: 10;
+	width: 150px;
+	height: 100px;
 }
 
 .dropfile .progress{
@@ -2019,6 +2036,7 @@ h5 {
 	background-color: #CDCACA;
 	height: 0;
 	width: 100%;
+	z-index: 200;
 	text-align: center;
 
 }
