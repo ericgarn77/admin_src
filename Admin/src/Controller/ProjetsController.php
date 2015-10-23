@@ -22,8 +22,7 @@ class ProjetsController extends AppController
     public function index()
     {
         
-        $table = TableRegistry::get('Projets');
-        $query = $table->find();
+        $query = $this->Projets->find();
         $this->paginate = [
             'contain' => ['Regions'],
             'maxLimit' => 10

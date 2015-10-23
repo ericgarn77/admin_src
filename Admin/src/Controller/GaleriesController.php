@@ -81,12 +81,16 @@ class GaleriesController extends AppController
     public function edit($id = null)
     {
         
-        $query = $galeries
-        ->find()
-        ->where(['projet_id' => $id ])
-        ->order(['created' => 'DESC']);
+        $query = $this->Galeries
+                ->find()
+                ->where(['projet_id' => $id ])
+                ->order(['order' => 'ASC']);
 
-
+        $this->set('data', [
+            'title' => __("Galerie d'images")
+        ]);
+        $this->set(compact('data'));
+        $this->layout = 'frame';
         // $galery = $this->Galeries->get($id, [
         //     'contain' => []
         // ]);

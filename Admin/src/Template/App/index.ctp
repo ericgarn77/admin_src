@@ -15,7 +15,7 @@
             <h2>Gestionnaire de fichiers et dossiers</h2>
             <h3 class="flash"><?= $this->Flash->render() ?></h3>
             <ul class="dashboard_menu">
-                <li><?= $this->Html->link(__('Ajouter un dossier d\'images<span>&nbsp;</span>'), ['controller' => 'Gestions', 'action' => 'addDirImg'], ['class' => 'config', 'escape' => FALSE]) ?></li>
+                <li><?= $this->Html->link(__('Ajouter un dossier d\'images<span>&nbsp;</span>'), ['controller' => 'App', 'action' => 'addDirImg'], ['class' => 'config', 'escape' => FALSE]) ?></li>
                     
                 
             </ul>

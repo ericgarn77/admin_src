@@ -41,42 +41,7 @@
                                                     <span class="remove"></span>
                                                 </div>
                                             </div>
-                                            <div class="wrap-dropfile">
-                                                <div class="dropfile photo">
-                                                    <?= $this->Form->input('image', ['label' => false, 'type' => 'hidden', 'id' => 'image', 'class' => 'text']); ?>
-                                                    <span class="remove"></span>
-                                                </div>
-                                            </div>
-                                            <div class="wrap-dropfile">
-                                                <div class="dropfile photo">
-                                                    <?= $this->Form->input('image', ['label' => false, 'type' => 'hidden', 'id' => 'image', 'class' => 'text']); ?>
-                                                    <span class="remove"></span>
-                                                </div>
-                                            </div>
-                                            <div class="wrap-dropfile">
-                                                <div class="dropfile photo">
-                                                    <?= $this->Form->input('image', ['label' => false, 'type' => 'hidden', 'id' => 'image', 'class' => 'text']); ?>
-                                                    <span class="remove"></span>
-                                                </div>
-                                            </div>
-                                            <div class="wrap-dropfile">
-                                                <div class="dropfile photo">
-                                                    <?= $this->Form->input('image', ['label' => false, 'type' => 'hidden', 'id' => 'image', 'class' => 'text']); ?>
-                                                    <span class="remove"></span>
-                                                </div>
-                                            </div>
-                                            <div class="wrap-dropfile">
-                                                <div class="dropfile photo">
-                                                    <?= $this->Form->input('image', ['label' => false, 'type' => 'hidden', 'id' => 'image', 'class' => 'text']); ?>
-                                                    <span class="remove"></span>
-                                                </div>
-                                            </div>
-                                            <div class="wrap-dropfile">
-                                                <div class="dropfile photo">
-                                                    <?= $this->Form->input('image', ['label' => false, 'type' => 'hidden', 'id' => 'image', 'class' => 'text']); ?>
-                                                    <span class="remove"></span>
-                                                </div>
-                                            </div>
+                                            
                                         </span>
                                     </div>
                                 </div>

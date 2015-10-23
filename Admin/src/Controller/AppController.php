@@ -1,6 +1,8 @@
 <?php
 
 namespace Admin\Controller;
+use Cake\Filesystem\Folder;
+use Cake\Filesystem\File;
 
 use App\Controller\AppController as BaseController;
 
@@ -43,5 +45,34 @@ class AppController extends BaseController
         $user = $this->Auth->user();
         $this->set(compact('user'));
         	
+    }
+
+    public function index()
+    {
+        
+        $this->set('data', [
+            'title' => __("Gestion")
+        ]);
+        $this->set(compact('data'));
+    }
+
+    public function addDirImg()
+    {
+
+        if ($this->request->is('post'))
+        {
+            $dossier_nom = $this->request->data['dossier_nom'];
+            $folder = new Folder(ROOT.'/plugins/Admin/webroot/img/projets/');
+            $folder->create($dossier_nom);
+            $this->Flash->success(__('Le dossier a été créé avec succès !'));
+            return $this->redirect(['action' => 'index']);
+
+        }
+        $this->set('data', [
+            'title' => __("Ajouter un dossier d'images")
+        ]);
+        $this->set(compact('data'));
+        
+
     }
 }
