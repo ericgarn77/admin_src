@@ -160,7 +160,7 @@ class GaleriesController extends AppController
                     $o = [  
                         'name' => $fileName, 
                         'img' => '<img src="/admin/img/projets/'.$dossier.'/'.$fileName.'" alt="'.$fileName.'" />'
-                       
+                        
                     ];
                     echo json_encode($o);
                     return $this->response;

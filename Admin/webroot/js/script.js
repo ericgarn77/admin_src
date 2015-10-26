@@ -14,12 +14,19 @@ $(function(){
         });
     }
 
-    $('.remove').click(function(){
+    $('.input_wrapper').on('click', '.remove', function(){
         var area = $(this).parent().parent();
+        var drop = area.find('.dropfile');
         area.find('img').remove();
         area.find('input').val("");
         area.find('.upload-name').html('');
+        area.find('.nom_image').html('');
         $(this).css('display', 'none');
+        
+        if(drop.hasClass('galerie'))
+        {
+            area.remove();
+        }
 
     });
 

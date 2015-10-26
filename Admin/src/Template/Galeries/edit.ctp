@@ -46,19 +46,21 @@
                                                         <?= $this->Form->input('galeries[]', ['label' => false, 'type' => 'hidden', 'class' => 'text', 'id' => false]); ?>
                                                         <span class="remove"></span>
                                                     </div>
+                                                    <span class="nom_image"></span>
                                                 </div>
                                             <?php 
                                             }
                                             else
                                             { 
                                             ?>
-
                                                 <div class="wrap-dropfile">
                                                     <div class="dropfile galerie">
                                                         <?= $this->Form->input('galeries[]', ['label' => false, 'type' => 'hidden', 'class' => 'text', 'id' => false]); ?>
                                                         <span class="remove"></span>
                                                     </div>
+                                                    <span class="nom_image"></span>
                                                 </div>
+
                                             <?php
                                             }
                                             ?>

@@ -100,6 +100,7 @@
             var remove = area.find('.remove');
             if(img.length == 1 && par.length == 1)
             {
+                console.log('plein');
                 img.remove();
                 par.html('');
                 area.append(json.img);
@@ -109,6 +110,7 @@
             }
             else
             {
+                console.log('vide');
                 area.append(json.img);
                 par.html(json.name);
                 input.val(json.name);
@@ -136,7 +138,7 @@
 
     //////////////////////////
     //
-    //FONCTION UPLOAD D'UNE GALERIE d'IMAGE
+    //FONCTION UPLOAD D'UNE GALERIE D'IMAGE
     //
     //////////////////////////
 
@@ -146,13 +148,14 @@
         var xhr = new XMLHttpRequest();
         var progress = area.find('.progress');
         var dossier = $('#dossier_image').val();
-        
+        console.log(dossier);
         // Evenement
         xhr.addEventListener('load', function(e){
             var json = jQuery.parseJSON(e.target.responseText);
             var img = area.find('img');
             var input = area.find('#image');
             var par = area.find('.upload-name');
+            var nom_image = area.find('.nom_image');
             var remove = area.find('.remove');
             var dropfileArea = area.find('.dropfile');
             dropfileArea.removeClass('hover');
@@ -160,6 +163,7 @@
             
             if(index < files.length-1)
             {
+               
                 uploadGalerie(files,area,index+1);
             }
             
@@ -171,16 +175,18 @@
             
             if(o.clone)
             {
-                var cloneArea = area.clone();
-                cloneArea.find('.instruction').remove();
-                cloneArea.find('.progress').remove();
-                cloneArea.insertAfter(area).find('.dropfile').dropfile(o);
+                area.clone().insertAfter(area).find('.dropfile.galerie').dropfile(o);
+                
             }
             
+            img.remove();
             dropfileArea.append(json.img);
             par.html(json.name);
             input.val(json.name);
+            nom_image.html(json.name);
             remove.css('display', 'block');
+                
+            
             
         },false);
         xhr.upload.addEventListener('progress', function(e){
@@ -211,8 +217,18 @@
     $.fn.dropfile = function(oo){
         if(oo) $.extend(o,oo);
         this.each(function(){
-            $('<span class="instruction">').append(o.message).appendTo(this);
-            $('<span>').addClass('progress').appendTo(this);
+            var ele1 = $(this).find('.instruction');
+            var ele2 = $(this).find('.progress');
+            if(ele1.length == 1 && ele2.length == 1)
+            {
+                
+            }
+            else
+            {
+                $('<span class="instruction">').append(o.message).appendTo(this);
+                $('<span>').addClass('progress').appendTo(this);
+            }
+            
             $(this).bind({
                 dragenter : function(e){
                     e.preventDefault();
