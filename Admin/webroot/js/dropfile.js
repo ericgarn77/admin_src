@@ -2,6 +2,7 @@
 
     var o = {
         message : 'Drag and Drop',
+        clone : true,
         scriptIMG : 'http://localhost:8765/admin/projets/uploadImage',
         scriptPDF : 'http://localhost:8765/admin/projets/uploadPDF',
         scriptGAL : 'http://localhost:8765/admin/galeries/uploadGalerie'
@@ -149,33 +150,37 @@
         // Evenement
         xhr.addEventListener('load', function(e){
             var json = jQuery.parseJSON(e.target.responseText);
-            area.removeClass('hover');
+            var img = area.find('img');
+            var input = area.find('#image');
+            var par = area.find('.upload-name');
+            var remove = area.find('.remove');
+            var dropfileArea = area.find('.dropfile');
+            dropfileArea.removeClass('hover');
             progress.css('height', 0).html('');
+            
+            if(index < files.length-1)
+            {
+                uploadGalerie(files,area,index+1);
+            }
+            
             if(json.error)
             {
                 alert(json.error);
                 return false;
             }
-            var img = area.find('img');
-            var input = area.find('#image');
-            var par = area.parent().find('.upload-name');
-            var remove = area.find('.remove');
-            if(img.length == 1 && par.length == 1)
+            
+            if(o.clone)
             {
-                img.remove();
-                par.html('');
-                area.append(json.img);
-                par.html(json.name);
-                input.val(json.name);
-
+                var cloneArea = area.clone();
+                cloneArea.find('.instruction').remove();
+                cloneArea.find('.progress').remove();
+                cloneArea.insertAfter(area).find('.dropfile').dropfile(o);
             }
-            else
-            {
-                area.append(json.img);
-                par.html(json.name);
-                input.val(json.name);
-                remove.css('display', 'block');
-            }
+            
+            dropfileArea.append(json.img);
+            par.html(json.name);
+            input.val(json.name);
+            remove.css('display', 'block');
             
         },false);
         xhr.upload.addEventListener('progress', function(e){
@@ -197,7 +202,7 @@
         {
             if(typeof area.data(i) !== 'object')
             {
-                
+                xhr.setRequestHeader('x-param-'+i, area.data(i));
             }
         }
         xhr.send(file);
@@ -239,7 +244,7 @@
                 else if($(this).hasClass('galerie'))
                 {
                     var files = e.dataTransfer.files;
-                    uploadGalerie(files,$(this),0);
+                    uploadGalerie(files,$(this).parent(),0);
                 }
             }, false);
         });

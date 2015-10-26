@@ -5,7 +5,7 @@
         <div class="title_wrapper">
             <div class="title_wrapper_inner">
                 <div class="title_wrapper_content">
-                    <h2><?php echo $data['title']; ?></h2>
+                    <h2>Modifier <?= $projet->nom; ?></h2>
                 </div>
             </div>    
         </div>

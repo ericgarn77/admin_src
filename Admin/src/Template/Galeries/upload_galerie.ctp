@@ -1,1 +1,1 @@
-<?= debug($galeries); ?>
+<?= debug($o['h']); ?>

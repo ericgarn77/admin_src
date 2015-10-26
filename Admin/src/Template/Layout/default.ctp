@@ -11,7 +11,6 @@
 <?= $this->Html->css('Admin.alertify/alertify.core'); ?>
 <?= $this->Html->css('Admin.fancySelect'); ?>
 <?= $this->Html->css('Admin.alertify/alertify.default'); ?>
-<?= $this->Html->css('Admin.directoryTree'); ?>
 <?= $this->Html->script('Admin.jquery-1.11.3.min'); ?>
 <?= $this->Html->script('Admin.jquery-ui.min'); ?>
 <?= $this->Html->script('Admin.behaviour'); ?>
@@ -21,7 +20,6 @@
 <?= $this->Html->script('Admin.fancySelect'); ?>
 <?= $this->Html->script('Admin.alertify.min'); ?>
 <?= $this->Html->script('Admin.dropfile'); ?>
-<?= $this->Html->script('Admin.directoryTree'); ?>
 <?= $this->Html->script('Admin.script'); ?>
 <?= $this->Html->meta('favicon.ico','/favicon.ico',['type' => 'icon']); ?>
 <style type="text/css">

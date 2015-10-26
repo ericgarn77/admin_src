@@ -34,14 +34,15 @@
                                                 foreach ($galeries as $galerie): ?>
                                                 <div class="wrap-dropfile">
                                                     <div class="dropfile galerie" data-name-value="<?= $galerie->nom ?>">
-                                                        <?= $this->Form->input('galeries[]', ['label' => false, 'type' => 'hidden', 'class' => 'text', 'id' => false]); ?>
+                                                        <?= $this->Form->input('galeries[]', ['label' => false, 'type' => 'hidden', 'class' => 'text', 'id' => false, 'value' => $galerie->projet_id.'-'.$galerie->nom.'-'.$galerie->order_image]); ?>
                                                         <?= $this->Html->image('Admin.projets/'.$projet->dossier_image.'/'.$galerie->nom, [ "alt" => $galerie->nom]); ?>
                                                         <span class="remove"></span>
                                                     </div>
+                                                    <span class="nom_image"><?= $galerie->nom ?></span>
                                                 </div>
                                                 <?php endforeach; ?>
                                                 <div class="wrap-dropfile">
-                                                    <div class="dropfile galerie" data-name-value="<?= $galerie->nom ?>">
+                                                    <div class="dropfile galerie">
                                                         <?= $this->Form->input('galeries[]', ['label' => false, 'type' => 'hidden', 'class' => 'text', 'id' => false]); ?>
                                                         <span class="remove"></span>
                                                     </div>
@@ -53,7 +54,7 @@
                                             ?>
 
                                                 <div class="wrap-dropfile">
-                                                    <div class="dropfile galerie" data-name-value="<?= $galerie->nom ?>">
+                                                    <div class="dropfile galerie">
                                                         <?= $this->Form->input('galeries[]', ['label' => false, 'type' => 'hidden', 'class' => 'text', 'id' => false]); ?>
                                                         <span class="remove"></span>
                                                     </div>

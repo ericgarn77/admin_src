@@ -41,11 +41,15 @@ class ProjetsTable extends Table
         ]);
         $this->hasMany('Caracteristiques', [
             'foreignKey' => 'projet_id',
-            'className' => 'Admin.Caracteristiques'
+            'className' => 'Admin.Caracteristiques',
+            'dependent' => true,
+            'cascadeCallbacks' => true
         ]);
         $this->hasMany('Galeries', [
             'foreignKey' => 'projet_id',
-            'className' => 'Admin.Galeries'
+            'className' => 'Admin.Galeries',
+            'dependent' => true,
+            'cascadeCallbacks' => true
         ]);
         $this->hasMany('Terrains', [
             'foreignKey' => 'projet_id',
