@@ -35,7 +35,7 @@
                                                 <option value="<?= h($region->id) ?>"><?= h($region->nom) ?></option>
                                                 <?php endforeach; ?>
                                             </select>
-                                            <?= $this->Form->input('region_id', ['label' => false, 'type' => 'hidden', 'id' => 'region_id']); ?>
+                                            <?= $this->Form->input('region_id', ['label' => false, 'type' => 'hidden', 'id' => 'region_id']) ?>
                                         </span>
                                     </div>
                                 </div>
@@ -43,7 +43,7 @@
                                     <label>Nom du projet</label>
                                     <div class="inputs">
                                         <span class="input_wrapper">
-                                            <?= $this->Form->input('nom', ['label' => false, 'type' => 'text', 'id' => 'projet_nom', 'class' => 'text']); ?>
+                                            <?= $this->Form->input('nom', ['label' => false, 'type' => 'text', 'id' => 'projet_nom', 'class' => 'text']) ?>
                                         </span>
                                     </div>
                                 </div>
@@ -84,7 +84,7 @@
                                     <label>Url de la carte google</label>
                                     <div class="inputs">
                                         <span class="input_wrapper">
-                                            <?= $this->Form->input('url_map', ['label' => false, 'type' => 'text', 'id' => 'url_map', 'class' => 'text']); ?>
+                                            <?= $this->Form->input('url_map', ['label' => false, 'type' => 'text', 'id' => 'url_map', 'class' => 'text']) ?>
                                         </span>
                                     </div>
                                 </div>
@@ -94,7 +94,7 @@
                                         <span class="input_wrapper">
                                             <div class="wrap-dropfile">
                                                 <div class="dropfile pdf">
-                                                <?= $this->Form->input('plan_pdf', ['label' => false, 'type' => 'hidden', 'id' => 'plan_pdf', 'class' => 'text']); ?>
+                                                <?= $this->Form->input('plan_pdf', ['label' => false, 'type' => 'hidden', 'id' => 'plan_pdf', 'class' => 'text']) ?>
                                                     <span class="remove"></span>
                                                 </div>
                                                 <p class="upload-name"></p>
@@ -112,7 +112,7 @@
                                                 <option value="<?= $folder ?>"><?= $folder ?></option>
                                                 <?php endforeach; ?>
                                             </select>
-                                            <?= $this->Form->input('dossier_image', ['label' => false, 'type' => 'hidden', 'id' => 'dossier_image', 'class' => 'text']); ?>
+                                            <?= $this->Form->input('dossier_image', ['label' => false, 'type' => 'hidden', 'id' => 'dossier_image', 'class' => 'text']) ?>
                                         </span>
                                     </div>
                                 </div>
@@ -122,7 +122,7 @@
                                         <span class="input_wrapper">
                                             <div class="wrap-dropfile">
                                                 <div class="dropfile photo">
-                                                    <?= $this->Form->input('image', ['label' => false, 'type' => 'hidden', 'id' => 'image', 'class' => 'text']); ?>
+                                                    <?= $this->Form->input('image', ['label' => false, 'type' => 'hidden', 'id' => 'image', 'class' => 'text']) ?>
                                                     <span class="remove"></span>
                                                 </div>
                                                 <p class="upload-name"></p>

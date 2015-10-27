@@ -148,6 +148,7 @@
         var xhr = new XMLHttpRequest();
         var progress = area.find('.progress');
         var dossier = $('#dossier_image').val();
+        var it = 0;
         console.log(dossier);
         // Evenement
         xhr.addEventListener('load', function(e){
@@ -183,6 +184,7 @@
             dropfileArea.append(json.img);
             par.html(json.name);
             input.val(json.name);
+            input.attr('id', 'gal-' + json.name);
             nom_image.html(json.name);
             remove.css('display', 'block');
                 

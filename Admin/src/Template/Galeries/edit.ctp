@@ -14,7 +14,8 @@
         <div class="section_content">
             <div class="section_content_inner">
                 <ul id="menuTable">
-                    <?= $this->Form->create(null, ['action' => 'addGaleries', 'name' => 'formAdd', 'id' => 'formAdd']) ?>
+                <?= $this->Form->create(null, ['action' => 'addGaleries', 'name' => 'formAdd', 'id' => 'formAdd']) ?>
+                    <?= $this->Form->input('dossier_image', ['label' => false, 'type' => 'hidden', 'class' => 'text', 'id' => 'dossier_image', 'value' => $projet->dossier_image]) ?>
                     <li><?= $this->Form->button('Enregistrer', ['type' => 'submit', 'class' => 'save submit']) ?></li>
                     <li><?= $this->Html->link(__('Annuler'), ['controller' => 'Projets', 'action' => 'index'], ['confirm' => 'Voulez-vous vraiment annuler ?', 'class' => 'annuler']) ?></li>
                 </ul>
@@ -34,8 +35,8 @@
                                                 foreach ($galeries as $galerie): ?>
                                                 <div class="wrap-dropfile">
                                                     <div class="dropfile galerie" data-name-value="<?= $galerie->nom ?>">
-                                                        <?= $this->Form->input('galeries[]', ['label' => false, 'type' => 'hidden', 'class' => 'text', 'id' => false, 'value' => $galerie->projet_id.'-'.$galerie->nom.'-'.$galerie->order_image]); ?>
-                                                        <?= $this->Html->image('Admin.projets/'.$projet->dossier_image.'/'.$galerie->nom, [ "alt" => $galerie->nom]); ?>
+                                                        <?= $this->Form->input('galeries[]', ['label' => false, 'type' => 'hidden', 'class' => 'text', 'id' => "gal-".$galerie->nom, 'value' => $galerie->projet_id.'-'.$galerie->nom.'-'.$galerie->order_image]) ?>
+                                                        <?= $this->Html->image('Admin.projets/'.$projet->dossier_image.'/'.$galerie->nom, [ "alt" => $galerie->nom]) ?>
                                                         <span class="remove"></span>
                                                     </div>
                                                     <span class="nom_image"><?= $galerie->nom ?></span>
@@ -43,7 +44,7 @@
                                                 <?php endforeach; ?>
                                                 <div class="wrap-dropfile">
                                                     <div class="dropfile galerie">
-                                                        <?= $this->Form->input('galeries[]', ['label' => false, 'type' => 'hidden', 'class' => 'text', 'id' => false]); ?>
+                                                        <?= $this->Form->input('galeries[]', ['label' => false, 'type' => 'hidden', 'class' => 'text', 'id' => false]) ?>
                                                         <span class="remove"></span>
                                                     </div>
                                                     <span class="nom_image"></span>
@@ -55,7 +56,7 @@
                                             ?>
                                                 <div class="wrap-dropfile">
                                                     <div class="dropfile galerie">
-                                                        <?= $this->Form->input("galeries[]", ["label" => false, "type" => "hidden", "class" => "text test", "id" => false]); ?>
+                                                        <?= $this->Form->input("galeries[]", ["label" => false, "type" => "hidden", "class" => "text", "id" => false]) ?>
                                                         <span class="remove"></span>
                                                     </div>
                                                     <span class="nom_image"></span>
@@ -73,9 +74,9 @@
                                 
                             </div>
                             <!--[if !IE]>end forms<![endif]-->
-                        </fieldset>
+                            </fieldset>
                         <!--[if !IE]>end fieldset<![endif]-->
-                        <?= $this->Form->input('dossier_image', ['label' => false, 'type' => 'hidden', 'class' => 'text', 'id' => 'dossier_image', 'value' => $projet->dossier_image]); ?>
+                            
                         <?= $this->Form->end() ?>
                     </div>
                 </div>
