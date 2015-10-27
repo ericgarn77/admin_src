@@ -153,7 +153,7 @@
         xhr.addEventListener('load', function(e){
             var json = jQuery.parseJSON(e.target.responseText);
             var img = area.find('img');
-            var input = area.find('#image');
+            var input = area.find('input');
             var par = area.find('.upload-name');
             var nom_image = area.find('.nom_image');
             var remove = area.find('.remove');

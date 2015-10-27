@@ -82,19 +82,6 @@ class GaleriesController extends AppController
     public function edit($id = null)
     {
         
-        $projet = $this->Galeries->Projets->get($id);
-        $galeries = $this->Galeries
-        ->find()
-        ->where(['projet_id' => $id ])
-        ->order(['order_image' => 'ASC']);
-
-        $this->set('data', [
-            'title' => __("Galerie d'images")
-        ]);
-        $this->set('projet', $projet);
-        $this->set('galeries', $galeries);
-        $this->set(compact('data'));
-        $this->layout = 'frame';
         // $galery = $this->Galeries->get($id, [
         //     'contain' => []
         // ]);
@@ -110,6 +97,22 @@ class GaleriesController extends AppController
         // $projets = $this->Galeries->Projets->find('list', ['limit' => 200]);
         // $this->set(compact('galery', 'projets'));
         // $this->set('_serialize', ['galery']);
+        
+
+        $projet = $this->Galeries->Projets->get($id);
+        $galeries = $this->Galeries
+        ->find()
+        ->where(['projet_id' => $id ])
+        ->order(['order_image' => 'ASC']);
+
+        $this->set('data', [
+            'title' => __("Galerie d'images")
+        ]);
+        $this->set('projet', $projet);
+        $this->set('galeries', $galeries);
+        $this->set(compact('data'));
+        $this->layout = 'frame';
+        
     }
 
     /**
@@ -129,6 +132,35 @@ class GaleriesController extends AppController
             $this->Flash->error(__('The galery could not be deleted. Please, try again.'));
         }
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function addGaleries()
+    {
+        if ($this->request->is('post')) 
+        {
+            $gals = $this->request->data['galeries'];
+            $this->set('gals', $gals);
+            
+            // if (count($checkbox) > 1)
+            // {
+            //     foreach($checkbox as $id)
+            //     {
+            //         $projet = $this->Projets->get($id);
+            //         $this->Projets->delete($projet);
+            //     }
+            //     $this->Flash->success(__('Les projets ont bien été supprimé !'));
+            // }
+            // else if (count($checkbox) == 1)
+            // {
+            //     $region = $this->Projets->get($checkbox[0]);
+            //     $this->Projets->delete($projet);
+            //     $this->Flash->success(__('Le projet a bien été supprimé !'));
+            // }
+            // else
+            // {
+            //     $this->Flash->error(__('Aucune selection n\'a été fait !'));
+            // }
+        }
     }
 
     public function uploadGalerie()

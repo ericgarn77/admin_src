@@ -14,7 +14,7 @@
         <div class="section_content">
             <div class="section_content_inner">
                 <ul id="menuTable">
-                    <?= $this->Form->create('', ['action' => 'edit', 'name' => 'formAdd', 'id' => 'formAdd']) ?>
+                    <?= $this->Form->create(null, ['action' => 'addGaleries', 'name' => 'formAdd', 'id' => 'formAdd']) ?>
                     <li><?= $this->Form->button('Enregistrer', ['type' => 'submit', 'class' => 'save submit']) ?></li>
                     <li><?= $this->Html->link(__('Annuler'), ['controller' => 'Projets', 'action' => 'index'], ['confirm' => 'Voulez-vous vraiment annuler ?', 'class' => 'annuler']) ?></li>
                 </ul>
@@ -55,7 +55,7 @@
                                             ?>
                                                 <div class="wrap-dropfile">
                                                     <div class="dropfile galerie">
-                                                        <?= $this->Form->input('galeries[]', ['label' => false, 'type' => 'hidden', 'class' => 'text', 'id' => false]); ?>
+                                                        <?= $this->Form->input("galeries[]", ["label" => false, "type" => "hidden", "class" => "text test", "id" => false]); ?>
                                                         <span class="remove"></span>
                                                     </div>
                                                     <span class="nom_image"></span>
