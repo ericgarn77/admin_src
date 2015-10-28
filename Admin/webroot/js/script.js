@@ -32,9 +32,32 @@ $(function(){
 
     $('#addGaleries').submit(function(e){
         e.preventDefault();
-        $('input').each(function(){
-              console.log($(this).val());  
+        var projet_id = $('#projet_id').val();
+        var url = "http://localhost:8765/admin/galeries/addGaleries"
+        var galArray = [];
+        var xhr = new XMLHttpRequest();
+        $('.gal').each(function(){
+                var value = $(this).val();
+                galArray.push({'projet_id' : projet_id, 'nom' : value});
+                
         });
+        
+        $.ajax({
+            type: "post",       
+            url: url,
+            data: { galArray }, 
+            dataType: "json",  
+             success: function(){
+                var json = jQuery.parseJSON(e.target.responseText);              
+                $('.flash').text(json.msg); 
+            },
+            error : function() {
+                var json = jQuery.parseJSON(e.target.responseText);              
+                $('.flash').text(json.msg);
+            }
+
+        });
+       
     });
 
 

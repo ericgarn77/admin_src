@@ -1,5 +1,5 @@
 (function($){
-
+    
     var o = {
         message : 'Drag and Drop',
         clone : true,
@@ -127,7 +127,7 @@
             }
         },false);
 
-
+        
         xhr.open('post', o.scriptIMG, true);
         xhr.setRequestHeader('x-file-type', file.type);
         xhr.setRequestHeader('x-file-size', file.size);
@@ -185,6 +185,7 @@
             par.html(json.name);
             input.val(json.name);
             input.attr('id', 'gal-' + json.name);
+            input.addClass('gal');
             nom_image.html(json.name);
             remove.css('display', 'block');
                 
@@ -200,7 +201,7 @@
             }
         },false);
 
-
+        
         xhr.open('post', o.scriptGAL, true);
         xhr.setRequestHeader('x-file-type', file.type);
         xhr.setRequestHeader('x-file-size', file.size);

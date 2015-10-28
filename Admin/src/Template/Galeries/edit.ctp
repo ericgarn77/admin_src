@@ -13,9 +13,11 @@
         <!--[if !IE]>start section content<![endif]-->
         <div class="section_content">
             <div class="section_content_inner">
+                <h3 class="flash"></h3>
                 <ul id="menuTable">
                 <?= $this->Form->create(null, ['action' => 'addGaleries', 'name' => 'formAdd', 'id' => 'addGaleries']) ?>
                     <?= $this->Form->input('dossier_image', ['label' => false, 'type' => 'hidden', 'class' => 'text', 'id' => 'dossier_image', 'value' => $projet->dossier_image]) ?>
+                    <?= $this->Form->input('projet_id', ['label' => false, 'type' => 'hidden', 'class' => 'text', 'id' => 'projet_id', 'value' => $projet->id]) ?>
                     <li><?= $this->Form->button('Enregistrer', ['type' => 'submit', 'class' => 'save submit']) ?></li>
                     <li><?= $this->Html->link(__('Annuler'), ['controller' => 'Projets', 'action' => 'index'], ['confirm' => 'Voulez-vous vraiment annuler ?', 'class' => 'annuler']) ?></li>
                 </ul>

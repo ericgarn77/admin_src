@@ -138,9 +138,59 @@ class GaleriesController extends AppController
     {
         if ($this->request->is('post')) 
         {
-            // $gals = $this->request->data['galeries'];
-            $this->set('requestData', $this->request->data);
             
+            $gals = $this->request->data;
+
+
+            foreach ($gals as $gal) {
+                foreach ($gal as $v) {
+                    $galerie = $this->Galeries->newEntity();
+                    $galerie->projet_id = $v['projet_id'];
+                    $galerie->nom = $v['nom'];
+
+                    if ($this->Galeries->save($galerie)) {
+                        $success = true;
+                        
+                    }
+                    else
+                    {
+                        $success = false;
+                        
+                    }
+
+                }
+                if($success)
+                {
+                    $o = [
+                        'msg' => 'La galerie d\'images à été sauvegardé avec succès !'
+
+                    ];
+                    echo json_encode($o);
+                }
+                else
+                {
+                    $o = [
+
+                        'error' => 'Impossible de sauvegarder la galerie d\'images !'
+                    ];
+                    echo json_encode($o);
+                }
+                
+            }
+            // if ($this->Galeries->save($galery)) {
+            //     $this->Flash->success(__('The galery has been saved.'));
+            //     return $this->redirect(['action' => 'index']);
+            // } else {
+            //     $this->Flash->error(__('The galery could not be saved. Please, try again.'));
+            // }
+
+            // $query = $this->Galeries->query();
+            //     $query->insert(['projet_id', 'nom'])
+            //         ->values([
+            //             'projet_id' => 1,
+            //             'nom' => $gal
+            //     ])
+            //     ->execute();
             // if (count($checkbox) > 1)
             // {
             //     foreach($checkbox as $id)
@@ -160,6 +210,7 @@ class GaleriesController extends AppController
             // {
             //     $this->Flash->error(__('Aucune selection n\'a été fait !'));
             // }
+            return $this->response;
         }
     }
 
