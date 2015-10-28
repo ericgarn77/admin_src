@@ -1,1 +1,1 @@
-<?= debug($gals); ?>
+<?= debug($requestData); ?>

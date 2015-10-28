@@ -1,5 +1,5 @@
 {
-    "name": "your-name-here/Admin",
+    "name": "eric-giguere/Admin",
     "description": "Admin plugin for CakePHP",
     "type": "cakephp-plugin",
     "require": {

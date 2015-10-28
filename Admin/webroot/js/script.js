@@ -30,7 +30,12 @@ $(function(){
 
     });
 
-
+    $('#addGaleries').submit(function(e){
+        e.preventDefault();
+        $('input').each(function(){
+              console.log($(this).val());  
+        });
+    });
 
 
     

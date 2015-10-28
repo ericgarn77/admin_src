@@ -138,8 +138,8 @@ class GaleriesController extends AppController
     {
         if ($this->request->is('post')) 
         {
-            $gals = $this->request->data['galeries'];
-            $this->set('gals', $gals);
+            // $gals = $this->request->data['galeries'];
+            $this->set('requestData', $this->request->data);
             
             // if (count($checkbox) > 1)
             // {
