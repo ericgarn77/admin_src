@@ -1,5 +1,7 @@
 $(function(){
 
+    $( ".input_wrapper" ).sortable();
+    $( ".input_wrapper" ).disableSelection();
     $('.dropfile.photo').dropfile();
     $('.dropfile.pdf').dropfile();
     $('.dropfile.galerie').dropfile();
@@ -47,15 +49,15 @@ $(function(){
             url: url,
             data: { 'projet_id' : projet_id, 'galerie' : galArray }, 
             dataType: "json",  
-            success: function(dataJson){
-                var json = $.parseJSON(dataJson);
-                console.log(json);              
-                $('.flash').html(json.msg); 
+            success: function(data){
+                
+                console.log(data);              
+                $('.flash').html(data.msg); 
             },
-            error : function(dataJson) {
-                var json = $.parseJSON(dataJson);
-                console.log(json);               
-                $('.flash').html(json.msg);
+            error : function(data) {
+                
+                console.log(data);               
+                $('.flash').html(data.msg);
             }
 
         });

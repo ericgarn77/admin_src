@@ -16,7 +16,6 @@
 
     function uploadPDF(files,area,index){
         var file = files[index];
-        console.log(file.name);
         var xhr = new XMLHttpRequest();
         var progress = area.find('.progress');
         
@@ -59,7 +58,7 @@
             {
                 var perc = (Math.round(e.loaded/e.total) * 100)+ '%';
                 progress.css('height', perc).html(perc);
-                console.log(perc);
+                
             }
         },false);
 
@@ -79,7 +78,6 @@
 
     function uploadImage(files,area,index){
         var file = files[index];
-        console.log(file.name);
         var xhr = new XMLHttpRequest();
         var progress = area.find('.progress');
         var dossier = $('#dossier_image').val();
@@ -100,7 +98,7 @@
             var remove = area.find('.remove');
             if(img.length == 1 && par.length == 1)
             {
-                console.log('plein');
+                
                 img.remove();
                 par.html('');
                 area.append(json.img);
@@ -110,7 +108,7 @@
             }
             else
             {
-                console.log('vide');
+                
                 area.append(json.img);
                 par.html(json.name);
                 input.val(json.name);
@@ -123,7 +121,7 @@
             {
                 var perc = (Math.round(e.loaded/e.total) * 100)+ '%';
                 progress.css('height', perc).html(perc);
-                console.log(perc);
+                
             }
         },false);
 
@@ -144,12 +142,11 @@
 
     function uploadGalerie(files,area,index){
         var file = files[index];
-        console.log(file.name);
         var xhr = new XMLHttpRequest();
         var progress = area.find('.progress');
         var dossier = $('#dossier_image').val();
         var it = 0;
-        console.log(dossier);
+        
         // Evenement
         xhr.addEventListener('load', function(e){
             var json = jQuery.parseJSON(e.target.responseText);
@@ -186,6 +183,7 @@
             input.val(json.name);
             input.attr('id', 'gal-' + json.name);
             input.addClass('gal');
+           
             nom_image.html(json.name);
             remove.css('display', 'block');
                 
@@ -197,7 +195,7 @@
             {
                 var perc = (Math.round(e.loaded/e.total) * 100)+ '%';
                 progress.css('height', perc).html(perc);
-                console.log(perc);
+                
             }
         },false);
 

@@ -141,23 +141,39 @@ class GaleriesController extends AppController
 
             $projet_id = $this->request->data['projet_id'];
             $gals = $this->request->data['galerie'];
-
-            foreach ($gals as $v) {
-               
-                $galerie = $this->Galeries->newEntity();
-                $galerie->projet_id = $v['projet_id'];
-                $galerie->nom = $v['nom'];
-
-                if ($this->Galeries->save($galerie)) {
-                    $success = true;
-                    
-                }
-                else
+            $galeries = $this->Galeries
+            ->find()
+            ->where(['projet_id' => $projet_id ]);
+            if($galeries)
+            {
+                foreach($galeries as $galerie)
                 {
-                    $success = false;
-                    
+                    $this->Galeries->delete($galerie);
                 }
 
+            }
+
+            if (count($gals) > 0)
+            {
+                foreach ($gals as $v) 
+                {
+                   
+                    $galerie = $this->Galeries->newEntity();
+                    $galerie->projet_id = $v['projet_id'];
+                    $galerie->nom = $v['nom'];
+
+                    if ($this->Galeries->save($galerie)) 
+                    {
+                        $success = true;
+                        
+                    }
+                    else
+                    {
+                        $success = false;
+                        
+                    }
+
+                }
             }
             if($success)
             {
@@ -165,6 +181,7 @@ class GaleriesController extends AppController
                     'msg' => 'La galerie d\'images à été sauvegardé avec succès !'
 
                 ];
+                $this->set('_serialize', 'o');
                 echo json_encode($o);
             }
             else
@@ -173,6 +190,7 @@ class GaleriesController extends AppController
 
                     'msg' => 'Impossible de sauvegarder la galerie d\'images !'
                 ];
+                $this->set('_serialize', 'o');
                 echo json_encode($o);
             }
                 
@@ -210,8 +228,9 @@ class GaleriesController extends AppController
             // {
             //     $this->Flash->error(__('Aucune selection n\'a été fait !'));
             // }
-            return $this->response;
+            
         }
+        return $this->response;
     }
 
     public function uploadGalerie()

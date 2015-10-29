@@ -36,8 +36,8 @@
                                             {
                                                 foreach ($galeries as $galerie): ?>
                                                 <div class="wrap-dropfile">
-                                                    <div class="dropfile galerie" data-name-value="<?= $galerie->nom ?>">
-                                                        <?= $this->Form->input('galeries[]', ['label' => false, 'type' => 'hidden', 'class' => 'text', 'id' => "gal-".$galerie->nom, 'value' => $galerie->projet_id.'-'.$galerie->nom.'-'.$galerie->order_image]) ?>
+                                                    <div class="dropfile galerie" data-order-value="<?= $galerie->order_image ?>">
+                                                        <?= $this->Form->input('galeries[]', ['label' => false, 'type' => 'hidden', 'class' => 'text gal', 'id' => "gal-".$galerie->nom, 'value' => $galerie->nom]) ?>
                                                         <?= $this->Html->image('Admin.projets/'.$projet->dossier_image.'/'.$galerie->nom, [ "alt" => $galerie->nom]) ?>
                                                         <span class="remove"></span>
                                                     </div>
