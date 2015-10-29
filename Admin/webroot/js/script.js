@@ -45,15 +45,17 @@ $(function(){
         $.ajax({
             type: "post",       
             url: url,
-            data: { galArray }, 
+            data: { 'projet_id' : projet_id, 'galerie' : galArray }, 
             dataType: "json",  
-             success: function(){
-                var json = jQuery.parseJSON(e.target.responseText);              
-                $('.flash').text(json.msg); 
+            success: function(dataJson){
+                var json = $.parseJSON(dataJson);
+                console.log(json);              
+                $('.flash').html(json.msg); 
             },
-            error : function() {
-                var json = jQuery.parseJSON(e.target.responseText);              
-                $('.flash').text(json.msg);
+            error : function(dataJson) {
+                var json = $.parseJSON(dataJson);
+                console.log(json);               
+                $('.flash').html(json.msg);
             }
 
         });

@@ -138,45 +138,45 @@ class GaleriesController extends AppController
     {
         if ($this->request->is('post')) 
         {
-            
-            $gals = $this->request->data;
 
+            $projet_id = $this->request->data['projet_id'];
+            $gals = $this->request->data['galerie'];
 
-            foreach ($gals as $gal) {
-                foreach ($gal as $v) {
-                    $galerie = $this->Galeries->newEntity();
-                    $galerie->projet_id = $v['projet_id'];
-                    $galerie->nom = $v['nom'];
+            foreach ($gals as $v) {
+               
+                $galerie = $this->Galeries->newEntity();
+                $galerie->projet_id = $v['projet_id'];
+                $galerie->nom = $v['nom'];
 
-                    if ($this->Galeries->save($galerie)) {
-                        $success = true;
-                        
-                    }
-                    else
-                    {
-                        $success = false;
-                        
-                    }
-
-                }
-                if($success)
-                {
-                    $o = [
-                        'msg' => 'La galerie d\'images à été sauvegardé avec succès !'
-
-                    ];
-                    echo json_encode($o);
+                if ($this->Galeries->save($galerie)) {
+                    $success = true;
+                    
                 }
                 else
                 {
-                    $o = [
-
-                        'error' => 'Impossible de sauvegarder la galerie d\'images !'
-                    ];
-                    echo json_encode($o);
+                    $success = false;
+                    
                 }
-                
+
             }
+            if($success)
+            {
+                $o = [
+                    'msg' => 'La galerie d\'images à été sauvegardé avec succès !'
+
+                ];
+                echo json_encode($o);
+            }
+            else
+            {
+                $o = [
+
+                    'msg' => 'Impossible de sauvegarder la galerie d\'images !'
+                ];
+                echo json_encode($o);
+            }
+                
+            
             // if ($this->Galeries->save($galery)) {
             //     $this->Flash->success(__('The galery has been saved.'));
             //     return $this->redirect(['action' => 'index']);
