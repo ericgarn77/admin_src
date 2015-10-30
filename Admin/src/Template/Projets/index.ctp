@@ -40,7 +40,7 @@
                                         <ul>
                                             <li><?= $this->Html->link('', ['action' => 'edit', $projet->id], ['class' => 'edit']) ?></li>
                                             <li><?= $this->Html->link('', ['controller' => 'Galeries', 'action' => 'edit', $projet->id], ['class' => 'images colorboxiframedlarge']) ?></li>
-                                            <li><?= $this->Html->link('', ['controller' => 'Caracteristiques', 'index' => 'index', $projet->id], ['class' => 'pieces colorboxiframedlarge']) ?></li>
+                                            <li><?= $this->Html->link('', ['controller' => 'Caracteristiques', 'action' => 'index', $projet->id], ['class' => 'pieces colorboxiframedlarge']) ?></li>
                                             <li><?= $this->Html->link('', ['action' => 'delete', $projet->id], ['confirm' => 'Voulez-vous vraiment supprimer ce projet ?','class' => 'delete']) ?></li>
                                         </ul>
                                     </div>

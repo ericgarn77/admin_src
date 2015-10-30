@@ -642,6 +642,10 @@ body#editrecord #main_menu .sousmenu + a{
   	padding-left: 2%;
 }
 
+#nomcaracteristique.tableEntete{
+	width: 63%;
+}
+
 #identifiant.tableEntete{
 	width: 7%;
 	padding-left: 0;
@@ -786,6 +790,12 @@ button.submit{
 }
 
 .regionNom{
+	display: inline-block;
+	width: 30%;
+	padding-left: 25px;
+}
+
+.caractNom{
 	display: inline-block;
 	width: 30%;
 	padding-left: 25px;

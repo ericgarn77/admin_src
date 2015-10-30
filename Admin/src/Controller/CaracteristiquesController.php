@@ -2,6 +2,8 @@
 namespace Admin\Controller;
 
 use Admin\Controller\AppController;
+use Cake\ORM\TableRegistry;
+use Cake\ORM\Query;
 
 /**
  * Caracteristiques Controller
@@ -18,11 +20,28 @@ class CaracteristiquesController extends AppController
      */
     public function index()
     {
+
+        
+        $projet = $this->Caracteristiques->Projets->get($id);
+        $query = $this->Caracteristiques
+        ->find()
+        ->where(['projet_id' => $id ])
+        ->order(['id' => 'ASC']);
+
         $this->paginate = [
-            'contain' => ['Projets']
+            'contain' => ['Projets'],
+            'maxLimit' => 10
         ];
+
+        $this->set('projet', $projet);
         $this->set('caracteristiques', $this->paginate($this->Caracteristiques));
         $this->set('_serialize', ['caracteristiques']);
+        $this->set('rowcount', $query->count());
+        $this->set('data', [
+            'title' => __("Caracteristiques")
+        ]);
+        $this->set(compact('data'));
+        $this->layout = 'frame';
     }
 
     /**
