@@ -31,7 +31,7 @@
                                 
                                 <div class="row">
                                     <div class="inputs">
-                                        <span class="input_wrapper">
+                                        <span class="input_wrapper wrap-galerie">
                                             <?php if($galeries)
                                             {
                                                 foreach ($galeries as $galerie): ?>

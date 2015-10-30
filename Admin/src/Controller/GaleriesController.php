@@ -161,6 +161,7 @@ class GaleriesController extends AppController
                     $galerie = $this->Galeries->newEntity();
                     $galerie->projet_id = $v['projet_id'];
                     $galerie->nom = $v['nom'];
+                    $galerie->order_image = $v['order_image'];
 
                     if ($this->Galeries->save($galerie)) 
                     {

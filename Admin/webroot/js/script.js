@@ -1,7 +1,7 @@
 $(function(){
 
-    $( ".input_wrapper" ).sortable();
-    $( ".input_wrapper" ).disableSelection();
+    $( ".wrap-galerie" ).sortable();
+    $( ".wrap-galerie" ).disableSelection();
     $('.dropfile.photo').dropfile();
     $('.dropfile.pdf').dropfile();
     $('.dropfile.galerie').dropfile();
@@ -38,10 +38,11 @@ $(function(){
         var url = "http://localhost:8765/admin/galeries/addGaleries"
         var galArray = [];
         var xhr = new XMLHttpRequest();
+        var i = 1;
         $('.gal').each(function(){
                 var value = $(this).val();
-                galArray.push({'projet_id' : projet_id, 'nom' : value});
-                
+                galArray.push({'projet_id' : projet_id, 'nom' : value, 'order_image' : i});
+                i++
         });
         
         $.ajax({
@@ -52,12 +53,18 @@ $(function(){
             success: function(data){
                 
                 console.log(data);              
-                $('.flash').html(data.msg); 
+                $('.flash').html(data.msg).show();
+                setTimeout(function() {
+                    $('.flash').hide()
+                }, 4000); 
             },
             error : function(data) {
                 
                 console.log(data);               
-                $('.flash').html(data.msg);
+                $('.flash').html(data.msg).show();
+                setTimeout(function() {
+                    $('.flash').hide()
+                }, 4000);
             }
 
         });
