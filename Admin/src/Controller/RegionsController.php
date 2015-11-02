@@ -130,7 +130,6 @@ class RegionsController extends AppController
         
         if ($this->request->is('post')) 
         {
-            
             $checkbox = $this->request->data['checkbox'];
             
             if (count($checkbox) > 1)

@@ -188,7 +188,7 @@ class ProjetsController extends AppController
             }
             else if (count($checkbox) == 1)
             {
-                $region = $this->Projets->get($checkbox[0]);
+                $projet = $this->Projets->get($checkbox[0]);
                 $this->Projets->delete($projet);
                 $this->Flash->success(__('Le projet a bien été supprimé !'));
             }

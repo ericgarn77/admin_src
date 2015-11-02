@@ -18,15 +18,15 @@ class CaracteristiquesController extends AppController
      *
      * @return void
      */
-    public function index()
+    public function index($id = null)
     {
 
         
         $projet = $this->Caracteristiques->Projets->get($id);
-        $query = $this->Caracteristiques
+        $caracteristiques = $this->Caracteristiques
         ->find()
         ->where(['projet_id' => $id ])
-        ->order(['id' => 'ASC']);
+        ->order(['caracteristiques.id' => 'ASC']);
 
         $this->paginate = [
             'contain' => ['Projets'],
@@ -34,9 +34,9 @@ class CaracteristiquesController extends AppController
         ];
 
         $this->set('projet', $projet);
-        $this->set('caracteristiques', $this->paginate($this->Caracteristiques));
+        $this->set('caracteristiques', $this->paginate($caracteristiques));
         $this->set('_serialize', ['caracteristiques']);
-        $this->set('rowcount', $query->count());
+        $this->set('rowcount', $caracteristiques->count());
         $this->set('data', [
             'title' => __("Caracteristiques")
         ]);
@@ -91,21 +91,28 @@ class CaracteristiquesController extends AppController
      */
     public function edit($id = null)
     {
+        $projet = $this->Caracteristiques->Projets->get($id);
         $caracteristique = $this->Caracteristiques->get($id, [
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $caracteristique = $this->Caracteristiques->patchEntity($caracteristique, $this->request->data);
             if ($this->Caracteristiques->save($caracteristique)) {
-                $this->Flash->success(__('The caracteristique has been saved.'));
-                return $this->redirect(['action' => 'index']);
+                $this->Flash->success(__('La modification a été enregistré avec succès !'));
+                return $this->redirect(['action' => 'index', $projet->id]);
             } else {
-                $this->Flash->error(__('The caracteristique could not be saved. Please, try again.'));
+                $this->Flash->error(__('La modification ne peut être enregistrer, réesseyer !'));
             }
         }
-        $projets = $this->Caracteristiques->Projets->find('list', ['limit' => 200]);
+        $projets = $this->Caracteristiques->Projets->find();
+        $this->set('data', [
+            'title' => __("Modifier la caractéristique")
+        ]);
+        $this->set(compact('data'));
+        $this->set('projet', $projet);
         $this->set(compact('caracteristique', 'projets'));
         $this->set('_serialize', ['caracteristique']);
+        $this->layout = 'frame';
     }
 
     /**
@@ -125,5 +132,35 @@ class CaracteristiquesController extends AppController
             $this->Flash->error(__('The caracteristique could not be deleted. Please, try again.'));
         }
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function deleteSelected()
+    {
+        
+        if ($this->request->is('post')) 
+        {
+            $projet_id = $this->request->data['projet_id'];
+            $checkbox = $this->request->data['checkbox'];
+            if (count($checkbox) > 1)
+            {
+                foreach($checkbox as $id)
+                {
+                    $caracteristique = $this->Caracteristiques->get($id);
+                    $this->Caracteristiques->delete($caracteristique);
+                }
+                $this->Flash->success(__('Les caractéristiques ont bien été supprimé !'));
+            }
+            else if (count($checkbox) == 1)
+            {
+                $caracteristique = $this->Caracteristiques->get($checkbox[0]);
+                $this->Caracteristiques->delete($caracteristique);
+                $this->Flash->success(__('La caractéristique a bien été supprimée !'));
+            }
+            else
+            {
+                $this->Flash->error(__('Aucune selection n\'a été fait !'));
+            }
+        }
+        return $this->redirect(['action' => 'index', $projet_id]);
     }
 }
