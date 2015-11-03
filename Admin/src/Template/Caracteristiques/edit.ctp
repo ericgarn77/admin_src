@@ -1,4 +1,5 @@
 <div id="frame-contenu" class="sameHeight">
+    <?= $this->Form->create($caracteristique, ['name' => 'formAdd', 'id' => 'formAdd']) ?>
     <!--[if !IE]>start section<![endif]-->
     <div class="section">
         <!--[if !IE]>start title wrapper<![endif]-->
@@ -15,7 +16,6 @@
             <div class="section_content_inner">
                 <h3 class="flash"></h3>
                 <ul id="menuTable">
-                    <?= $this->Form->create($caracteristique, ['name' => 'formAdd', 'id' => 'formAdd']) ?>
                     <?= $this->Form->input('projet_id', ['label' => false, 'type' => 'hidden', 'class' => 'text', 'id' => 'projet_id', 'value' => $projet->id]) ?>
                     <li><?= $this->Form->button('Enregistrer', ['type' => 'submit', 'class' => 'save submit']) ?></li>
                     <li><?= $this->Html->link(__('Annuler'), ['action' => 'index', $projet->id], ['confirm' => 'Voulez-vous vraiment annuler ?', 'class' => 'annuler']) ?></li>
@@ -40,7 +40,6 @@
                             <!--[if !IE]>end forms<![endif]-->
                         </fieldset>
                         <!--[if !IE]>end fieldset<![endif]-->
-                        <?= $this->Form->end() ?>
                     </div>
                 </div>
                 <!--[if !IE]>end forms<![endif]-->
@@ -49,5 +48,6 @@
         <!--[if !IE]>end section content<![endif]-->
     </div>
     <!--[if !IE]>end section<![endif]-->
+    <?= $this->Form->end() ?>
 </div>
 

@@ -1,4 +1,5 @@
 <div id="contenu"  class="sameHeight">
+    <?= $this->Form->create(null, ['controller' => 'Projets', 'action' => 'deleteSelected', 'name' => 'formDel', 'id' => 'formDel']) ?>
     <div class="section">
         <div class="title_wrapper">
             <div class="title_wrapper_inner">
@@ -11,7 +12,6 @@
             <div class="section_content_inner">
                 <h3 class="flash"><?= $this->Flash->render() ?></h3>
                 <ul id="menuTable">
-                    <?= $this->Form->create(null, ['controller' => 'Projets', 'action' => 'deleteSelected', 'name' => 'formDel', 'id' => 'formDel']) ?>
                     <li><?= $this->Html->link(__('Ajouter'), ['controller' => 'Projets', 'action' => 'add'], ['class' => 'ajouter']) ?></li>
                     <li><?= $this->Form->button('Supprimer', ['type' => 'submit', 'class' => 'deleteselected submit']) ?></li>
                 </ul>
@@ -41,6 +41,7 @@
                                             <li><?= $this->Html->link('', ['action' => 'edit', $projet->id], ['class' => 'edit']) ?></li>
                                             <li><?= $this->Html->link('', ['controller' => 'Galeries', 'action' => 'edit', $projet->id], ['class' => 'images colorboxiframedlarge']) ?></li>
                                             <li><?= $this->Html->link('', ['controller' => 'Caracteristiques', 'action' => 'index', $projet->id], ['class' => 'pieces colorboxiframedlarge']) ?></li>
+                                            <li><?= $this->Html->link('', ['controller' => 'Terrains', 'action' => 'index', $projet->id], ['class' => 'terrains colorboxiframedlarge']) ?></li>
                                             <li><?= $this->Html->link('', ['action' => 'delete', $projet->id], ['confirm' => 'Voulez-vous vraiment supprimer ce projet ?','class' => 'delete']) ?></li>
                                         </ul>
                                     </div>
@@ -48,8 +49,7 @@
                                 </li>
                                 <?php endforeach; ?>
                             </ul>
-                        <?= $this->Form->end() ?>
-                    </div>
+                        </div>
                     <?php if($rowcount > 10) {?>
                         <div class="wrap-paginator">
                             <div class="paginator">
@@ -69,6 +69,7 @@
             </div>
         </div>
     </div>
+    <?= $this->Form->end() ?>
 </div>
 
 

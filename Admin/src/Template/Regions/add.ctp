@@ -1,12 +1,5 @@
-<select name="region_id" id="region_id" class="info text" >
-    <option value="" selected="selected">Choisir une région</option>
-    <?php foreach ($regions as $region): ?>
-    <option value="<?= h($region->id) ?>"><?= h($region->nom) ?></option>
-    <?php endforeach; ?>
-</select>
-
-
 <div id="contenu" class="sameHeight">
+    <?= $this->Form->create($region, ['name' => 'formAdd', 'id' => 'formAdd']) ?>
     <!--[if !IE]>start section<![endif]-->
     <div class="section">
         <!--[if !IE]>start title wrapper<![endif]-->
@@ -22,7 +15,6 @@
         <div class="section_content">
             <div class="section_content_inner">
                 <ul id="menuTable">
-                    <?= $this->Form->create($region, ['name' => 'formAdd', 'id' => 'formAdd']) ?>
                     <li><?= $this->Form->button('Enregistrer', ['type' => 'submit', 'class' => 'save submit']) ?></li>
                     <li><?= $this->Html->link(__('Annuler'), ['controller' => 'Regions', 'action' => 'index'], ['confirm' => 'Voulez-vous vraiment annuler ?', 'class' => 'annuler']) ?></li>
                 </ul>
@@ -57,7 +49,6 @@
                             <!--[if !IE]>end forms<![endif]-->
                         </fieldset>
                         <!--[if !IE]>end fieldset<![endif]-->
-                        <?= $this->Form->end() ?>
                     </div>
                 </div>
                 <!--[if !IE]>end forms<![endif]-->
@@ -65,6 +56,7 @@
         </div>
         <!--[if !IE]>end section content<![endif]-->
     </div>
+    <?= $this->Form->end() ?>
     <!--[if !IE]>end section<![endif]-->
 </div>
 

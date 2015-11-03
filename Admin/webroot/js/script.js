@@ -37,8 +37,8 @@ $(function(){
         var projet_id = $('#projet_id').val();
         var url = "http://localhost:8765/admin/galeries/addGaleries"
         var galArray = [];
-        var xhr = new XMLHttpRequest();
         var i = 1;
+        
         $('.gal').each(function(){
                 var value = $(this).val();
                 galArray.push({'projet_id' : projet_id, 'nom' : value, 'order_image' : i});
@@ -70,6 +70,40 @@ $(function(){
         });
        
     });
+
+    $('.ajouter_champ').click(function(){
+
+        var row = $('.wrap-row').find('.row.caract');
+        if(row.length > 0)
+        {
+            var index = $('.row.caract').last().index() + 2;
+        }
+        else
+        {
+            var index = 1;
+        }
+
+       $('.wrap-row').append('<div class="row caract">' +
+                                    '<label>Caractéristique - ' + index + '</label>' +
+                                    '<div class="inputs">' +
+                                        '<span class="input_wrapper">' +
+                                            '<input name="nom[]" type="text" class="text input-caract" />' +
+                                        '</span>' +
+                                    '</div>' +
+                                '</div>');
+    });
+
+    $('.delete_caract').click(function(){
+
+        $('.row.caract').last().remove();
+
+        
+
+    });
+
+    
+
+
 
 
     
@@ -245,14 +279,14 @@ $(function(){
         
     }
 
-    if($('#check-vendu').val() == 'vendu')
+    if($('#check-vendu').val() == 'Vendu')
     {
         $('.cb-enable.vendu').addClass('selected');
         $('.cb-disable.vendu').removeClass('selected');
         
     }
 
-    if($('#check-vendu').val() == 'à vendre')
+    if($('#check-vendu').val() == 'À vendre')
     {
         $('.cb-disable.vendu').addClass('selected');
         $('.cb-enable.vendu').removeClass('selected');

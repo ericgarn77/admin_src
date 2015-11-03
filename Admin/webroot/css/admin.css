@@ -244,7 +244,45 @@ vertical-align:middle;
 	margin: 0 5% 60px 5%;
 }
 
+.ajouter_champ{
+	background-color: rgba(7, 10, 14, 0.50);
+    display: inline-block;
+    padding: 16px 80px 18px 28px;
+    font-weight: normal;
+    color: #fff;
+    cursor: pointer;
+    background-image: url(../img/comrad/ajouter.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    float: right;
+    margin-right: 10px;
+}
 
+.delete_caract{
+	background-color: rgba(7, 10, 14, 0.50);
+    display: inline-block;
+    padding: 16px 80px 18px 28px;
+    font-weight: normal;
+    color: #fff;
+    cursor: pointer;
+    background-image: url(../img/comrad/supprimer.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    float: right;
+
+}
+
+.row.caract:hover .delete_caract{
+	display: block;
+}
 /***************  HEADER DASHBOARD  **********************/
 
 #header {
@@ -642,6 +680,18 @@ body#editrecord #main_menu .sousmenu + a{
   	padding-left: 2%;
 }
 
+#statut.tableEntete{
+	width: 35%;
+}
+
+#superficie.tableEntete{
+	width: 16%;
+}
+
+#lot.tableEntete{
+	width: 12%;
+}
+
 #nomcaracteristique.tableEntete{
 	width: 63%;
 }
@@ -796,6 +846,24 @@ button.submit{
 }
 
 .caractNom{
+	display: inline-block;
+	width: 30%;
+	padding-left: 25px;
+}
+
+.terrainLot{
+	display: inline-block;
+	width: 15%;
+	padding-left: 25px;
+}
+
+.terrainSuperficie{
+	display: inline-block;
+	width: 22%;
+	padding-left: 25px;
+}
+
+.terrainStatut{
 	display: inline-block;
 	width: 30%;
 	padding-left: 25px;
@@ -1363,6 +1431,9 @@ button.submit{
 .pieces {
 	background-image:url(../img/comrad/action_pieces.png);
 }
+.terrains {
+	background-image:url(../img/comrad/list-icon.png);
+}
 
 
 
@@ -1661,6 +1732,7 @@ button.submit{
 	line-height: normal;
 	color: #fff!important;
 }
+
 
 .input_wrapper select {
 	width: 100%;

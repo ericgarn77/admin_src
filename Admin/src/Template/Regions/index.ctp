@@ -1,4 +1,5 @@
 <div id="contenu"  class="sameHeight">
+    <?= $this->Form->create(null, ['controller' => 'Regions', 'action' => 'deleteSelected', 'name' => 'formDel', 'id' => 'formDel']) ?>
     <div class="section">
         <div class="title_wrapper">
             <div class="title_wrapper_inner">
@@ -11,7 +12,6 @@
             <div class="section_content_inner">
                 <h3 class="flash"><?= $this->Flash->render() ?></h3>
                 <ul id="menuTable">
-                    <?= $this->Form->create(null, ['controller' => 'Regions', 'action' => 'deleteSelected', 'name' => 'formDel', 'id' => 'formDel']) ?>
                     <li><?= $this->Html->link(__('Ajouter'), ['controller' => 'Regions', 'action' => 'add'], ['class' => 'ajouter']) ?></li>
                     <li><?= $this->Form->button('Supprimer', ['type' => 'submit', 'class' => 'deleteselected submit']) ?></li>
                     
@@ -49,9 +49,7 @@
                                 </li>
                                 <?php endforeach; ?>
                             </ul>
-                            
-                        <?= $this->Form->end() ?>
-                    </div>
+                        </div>
                     <?php if($rowcount > 10) {?>
                         <div class="wrap-paginator">
                             <div class="paginator">
@@ -71,6 +69,7 @@
             </div>
         </div>
     </div>
+    <?= $this->Form->end() ?>
 </div>
 
 

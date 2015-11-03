@@ -65,21 +65,79 @@ class CaracteristiquesController extends AppController
      *
      * @return void Redirects on successful add, renders view otherwise.
      */
-    public function add()
+    public function add($id = null)
     {
-        $caracteristique = $this->Caracteristiques->newEntity();
-        if ($this->request->is('post')) {
-            $caracteristique = $this->Caracteristiques->patchEntity($caracteristique, $this->request->data);
-            if ($this->Caracteristiques->save($caracteristique)) {
-                $this->Flash->success(__('The caracteristique has been saved.'));
-                return $this->redirect(['action' => 'index']);
-            } else {
-                $this->Flash->error(__('The caracteristique could not be saved. Please, try again.'));
+
+        $projet = $this->Caracteristiques->Projets->get($id);
+        $this->set('data', [
+            'title' => __("Ajouter des caractéristiques")
+        ]);
+        $this->set(compact('data'));
+        $this->set('projet', $projet);
+        $this->layout = 'frame';
+
+    }
+
+
+
+    public function addCaract()
+    {
+        
+        if($this->request->is('post'))
+        {
+            $projet_id = $this->request->data['projet_id'];
+            $projet = $this->Caracteristiques->Projets->get($projet_id);
+            $caracteristiques = $this->request->data['nom'];
+
+            if (count($caracteristiques) > 1)
+            {
+            
+                foreach($caracteristiques as $v)
+                {
+                    $caracteristique = $this->Caracteristiques->newEntity();
+                    $caracteristique->projet_id = $projet_id;
+                    $caracteristique->nom = $v;
+                    if ($this->Caracteristiques->save($caracteristique)) 
+                    {
+                        $success = true;
+                        
+                    }
+                    else
+                    {
+                        $success = false;
+                        
+                    }
+                }
+                if ($success)
+                {
+                    $this->Flash->success(__('Les caractéristiques ont été enregistrés avec succès !'));
+                    return $this->redirect(['action' => 'index', $projet->id]);
+                } 
+                else 
+                {
+                    $this->Flash->error(__('Les caractéristiques n\'ont pas été enregistrés, réesseyer !'));
+                }
+
+
             }
+            else if (count($caracteristiques) == 1)
+            {
+                $caracteristique = $this->Caracteristiques->newEntity();
+                $caracteristique->projet_id = $projet_id;
+                $caracteristique->nom = $v;
+                if ($this->Caracteristiques->save($caracteristique)) 
+                {
+                    $this->Flash->success(__('La caractéristique a été enregistré avec succès !'));
+                    return $this->redirect(['action' => 'index', $projet->id]);
+                } 
+                else 
+                {
+                    $this->Flash->error(__('La caractéristique n\'a pas été enregistré, réesseyer !'));
+                }
+            }
+
+            $this->layout = 'frame';
         }
-        $projets = $this->Caracteristiques->Projets->find('list', ['limit' => 200]);
-        $this->set(compact('caracteristique', 'projets'));
-        $this->set('_serialize', ['caracteristique']);
     }
 
     /**
@@ -91,10 +149,11 @@ class CaracteristiquesController extends AppController
      */
     public function edit($id = null)
     {
-        $projet = $this->Caracteristiques->Projets->get($id);
+        
         $caracteristique = $this->Caracteristiques->get($id, [
             'contain' => []
         ]);
+        $projet = $this->Caracteristiques->Projets->get($caracteristique->projet_id);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $caracteristique = $this->Caracteristiques->patchEntity($caracteristique, $this->request->data);
             if ($this->Caracteristiques->save($caracteristique)) {
@@ -124,15 +183,18 @@ class CaracteristiquesController extends AppController
      */
     public function delete($id = null)
     {
-        $this->request->allowMethod(['post', 'delete']);
+        
         $caracteristique = $this->Caracteristiques->get($id);
+        $projet_id = $caracteristique->projet_id;
         if ($this->Caracteristiques->delete($caracteristique)) {
-            $this->Flash->success(__('The caracteristique has been deleted.'));
+            $this->Flash->success(__('La caractéristique à bien été supprimé !'));
         } else {
-            $this->Flash->error(__('The caracteristique could not be deleted. Please, try again.'));
+            $this->Flash->error(__('La caractéristique n\'a pas été supprimé. Réesseyer !'));
         }
-        return $this->redirect(['action' => 'index']);
+        return $this->redirect(['action' => 'index', $projet_id]);
     }
+
+
 
     public function deleteSelected()
     {

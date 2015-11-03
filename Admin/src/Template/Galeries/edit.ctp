@@ -1,4 +1,5 @@
 <div id="frame-contenu" class="sameHeight">
+    <?= $this->Form->create(null, ['action' => 'addGaleries', 'name' => 'formAdd', 'id' => 'addGaleries']) ?>
     <!--[if !IE]>start section<![endif]-->
     <div class="section">
         <!--[if !IE]>start title wrapper<![endif]-->
@@ -15,7 +16,6 @@
             <div class="section_content_inner">
                 <h3 class="flash"></h3>
                 <ul id="menuTable">
-                <?= $this->Form->create(null, ['action' => 'addGaleries', 'name' => 'formAdd', 'id' => 'addGaleries']) ?>
                     <?= $this->Form->input('dossier_image', ['label' => false, 'type' => 'hidden', 'class' => 'text', 'id' => 'dossier_image', 'value' => $projet->dossier_image]) ?>
                     <?= $this->Form->input('projet_id', ['label' => false, 'type' => 'hidden', 'class' => 'text', 'id' => 'projet_id', 'value' => $projet->id]) ?>
                     <li><?= $this->Form->button('Enregistrer', ['type' => 'submit', 'class' => 'save submit']) ?></li>
@@ -67,19 +67,13 @@
                                             <?php
                                             }
                                             ?>
-                                            
-                                            
                                         </span>
                                     </div>
                                 </div>
-                                
-                                
                             </div>
                             <!--[if !IE]>end forms<![endif]-->
-                            </fieldset>
+                        </fieldset>
                         <!--[if !IE]>end fieldset<![endif]-->
-                            
-                        <?= $this->Form->end() ?>
                     </div>
                 </div>
                 <!--[if !IE]>end forms<![endif]-->
@@ -88,6 +82,7 @@
         <!--[if !IE]>end section content<![endif]-->
     </div>
     <!--[if !IE]>end section<![endif]-->
+    <?= $this->Form->end() ?>
 </div>
 
 
