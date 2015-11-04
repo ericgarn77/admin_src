@@ -1,4 +1,4 @@
-<!doctype html>
+<?= $this->Html->docType(); ?>
 <html lang="fr">
 <?php echo $this->Html->charset(); ?>
 <meta http-equiv="imagetoolbar" content="no" />

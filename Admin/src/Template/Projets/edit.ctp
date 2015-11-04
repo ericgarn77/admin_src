@@ -83,6 +83,17 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <label>Projet vedette</label>
+                                    <div class="inputs">
+                                        <p class="field switch">
+                                            <label class="cb-enable vedette selected"><span class="oui vedette">OUI</span></label>
+                                            <label class="cb-disable vedette"><span class="non vedette">NON</span></label>
+                                            <?= $this->Form->checkbox('checkbox-vedette', ["hiddenField" => false, "id" => "vedette", 'class' => 'checkbox']) ?>
+                                            <?= $this->Form->input('vedette', ['label' => false, 'type' => 'hidden', 'id' => 'check-vedette', 'class' => 'text']) ?>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
                                     <label>Url map</label>
                                     <div class="inputs">
                                         <span class="input_wrapper">

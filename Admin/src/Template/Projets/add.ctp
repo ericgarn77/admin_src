@@ -64,7 +64,7 @@
                                         <p class="field switch">
                                             <label class="cb-enable terrain selected"><span class="oui terrain">OUI</span></label>
                                             <label class="cb-disable terrain"><span class="non terrain">NON</span></label>
-                                            <?= $this->Form->checkbox('checkbox-terrain', ["hiddenField" => false, "id" => "terrain", 'class' => 'checkbox']) ?>
+                                            <?= $this->Form->checkbox('checkbox-terrain', ["hiddenField" => false, "id" => "page-terrain", 'class' => 'checkbox']) ?>
                                             <?= $this->Form->input('terrain', ['label' => false, 'type' => 'hidden', 'id' => 'check-terrain', 'class' => 'text', 'value' => 'oui']) ?>
                                         </p>
                                     </div>
@@ -75,8 +75,19 @@
                                         <p class="field switch">
                                             <label class="cb-enable vendu selected"><span class="oui vendu">OUI</span></label>
                                             <label class="cb-disable vendu"><span class="non vendu">NON</span></label>
-                                            <?= $this->Form->checkbox('checkbox-vendu', ["hiddenField" => false, "id" => "terrain", 'class' => 'checkbox']) ?>
+                                            <?= $this->Form->checkbox('checkbox-vendu', ["hiddenField" => false, "id" => "vendu", 'class' => 'checkbox']) ?>
                                             <?= $this->Form->input('statut', ['label' => false, 'type' => 'hidden', 'id' => 'check-vendu', 'class' => 'text', 'value' => 'à vendre']) ?>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label>Projet vedette</label>
+                                    <div class="inputs">
+                                        <p class="field switch">
+                                            <label class="cb-enable vedette selected"><span class="oui vedette">OUI</span></label>
+                                            <label class="cb-disable vedette"><span class="non vedette">NON</span></label>
+                                            <?= $this->Form->checkbox('checkbox-vedette', ["hiddenField" => false, "id" => "vedette", 'class' => 'checkbox']) ?>
+                                            <?= $this->Form->input('vedette', ['label' => false, 'type' => 'hidden', 'id' => 'check-vedette', 'class' => 'text', 'value' => 'non']) ?>
                                         </p>
                                     </div>
                                 </div>

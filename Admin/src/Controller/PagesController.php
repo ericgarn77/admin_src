@@ -20,14 +20,14 @@ class PagesController extends AppController
      */
     public function index()
     {
-        $items = TableRegistry::get('Pages');
-        $query = $items->find();
+        
+        $pages = $this->Pages->find();
         $this->paginate = [
             'maxLimit' => 10
         ];
         $this->set('pages', $this->paginate($this->Pages));
         $this->set('_serialize', ['pages']);
-        $this->set('rowcount', $query->count());
+        $this->set('rowcount', $pages->count());
         $this->set('data', [
             'title' => __("Pages du site")
         ]);
@@ -89,6 +89,9 @@ class PagesController extends AppController
         $page = $this->Pages->get($id, [
             'contain' => []
         ]);
+        $contents = $this->Pages->ContenuHtml->find()->where(['page_id' => $id ]);
+        
+
         if ($this->request->is(['patch', 'post', 'put'])) {
             $page = $this->Pages->patchEntity($page, $this->request->data);
             if ($this->Pages->save($page)) {
@@ -98,6 +101,8 @@ class PagesController extends AppController
                 $this->Flash->error(__('Impossible d\'enregistrer les changements. Veuillez réesseyer !'));
             }
         }
+
+        $this->set('contents', $contents);
         $this->set('data', [
             'title' => __("Modifier la page")
         ]);

@@ -26,10 +26,10 @@
                         <!--[if !IE]>start fieldset<![endif]-->
                         <fieldset>
                             <!--[if !IE]>start forms<![endif]-->
-                            <div class="forms">
-                                <div class="delete_caract">Supprimer</div>
+                            <div class="forms caract-content">
+                                <div class="delete_champ">Supprimer</div>
                                 <div class="ajouter_champ">Ajouter</div>
-                                <div class="wrap-row">
+                                <div class="wrap-row-caract">
                                     <div class="row caract">
                                         <label>Caractéristique - 1</label>
                                         <div class="inputs">

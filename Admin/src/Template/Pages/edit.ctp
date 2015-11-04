@@ -35,6 +35,7 @@
                                 </div>  
                                 
                             </div>
+                            <h3>Contenue Html</h3>
                             <!--[if !IE]>end forms<![endif]-->
                         </fieldset>
                         <!--[if !IE]>end fieldset<![endif]-->

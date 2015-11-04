@@ -71,9 +71,9 @@ $(function(){
        
     });
 
-    $('.ajouter_champ').click(function(){
+    $('.caract-content .ajouter_champ').click(function(){
 
-        var row = $('.wrap-row').find('.row.caract');
+        var row = $('.wrap-row-caract').find('.row.caract');
         if(row.length > 0)
         {
             var index = $('.row.caract').last().index() + 2;
@@ -83,7 +83,7 @@ $(function(){
             var index = 1;
         }
 
-       $('.wrap-row').append('<div class="row caract">' +
+       $('.wrap-row-caract').append('<div class="row caract">' +
                                     '<label>Caractéristique - ' + index + '</label>' +
                                     '<div class="inputs">' +
                                         '<span class="input_wrapper">' +
@@ -93,15 +93,44 @@ $(function(){
                                 '</div>');
     });
 
-    $('.delete_caract').click(function(){
+    $('.html-content .delete_champ').click(function(){
+
+        $('.row.contenu').last().remove();
+
+        
+
+    });
+
+    $('.html-content .ajouter_champ').click(function(){
+
+        var row = $('.wrap-row-contenu').find('.row.contenu');
+        if(row.length > 0)
+        {
+            var index = $('.row.contenu').last().index() + 2;
+        }
+        else
+        {
+            var index = 1;
+        }
+
+       $('.wrap-row-contenu').append('<div class="row contenu">' +
+                                    '<label>Contenu Html - ' + index + '</label>' +
+                                    '<div class="inputs">' +
+                                        '<div class="textarea_wrapper">' +
+                                            '<textarea name="contenu[]" row="10" cols="80" id="contenu-html"></textarea>' +
+                                        '</div>' +
+                                    '</div>' +
+                                '</div>');
+
+    });
+
+    $('.caract-content .delete_champ').click(function(){
 
         $('.row.caract').last().remove();
 
         
 
     });
-
-    
 
 
 
