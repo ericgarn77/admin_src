@@ -1,4 +1,5 @@
 <div id="contenu" class="sameHeight">
+    <?= $this->Form->create($page, ['name' => 'formAdd', 'id' => 'formAdd']) ?>
     <!--[if !IE]>start section<![endif]-->
     <div class="section">
         <!--[if !IE]>start title wrapper<![endif]-->
@@ -14,7 +15,6 @@
         <div class="section_content">
             <div class="section_content_inner">
                 <ul id="menuTable">
-                    <?= $this->Form->create($page, ['name' => 'formAdd', 'id' => 'formAdd']) ?>
                     <li><?= $this->Form->button('Enregistrer', ['type' => 'submit', 'class' => 'save submit']) ?></li>
                     <li><?= $this->Html->link(__('Annuler'), ['action' => 'index'], ['confirm' => 'Voulez-vous vraiment annuler ?', 'class' => 'annuler']) ?></li>
                 </ul>
@@ -37,6 +37,21 @@
                             </div>
                             <h3>Contenue Html</h3>
                             <!--[if !IE]>end forms<![endif]-->
+                            <div class="forms html-content">
+                                <div class="delete_champ">Supprimer</div>
+                                <div class="ajouter_champ">Ajouter</div>
+                                <div class="wrap-row-contenu">
+                                    <div class="row contenu">
+                                        <label>Contenu Html - 1</label>
+                                        <div class="inputs">
+                                            <div class="textarea_wrapper">
+                                                <?= $this->Form->input('contenu_nom', ['label' => false, 'type' => 'hidden', 'id' => 'contenu_nom', 'class' => 'text']); ?>
+                                                <?= $this->Form->textarea('contenu[]', ['label' => false, 'escape' => false, 'rows' => '10', 'cols' => '80', 'id' => 'contenu-html']) ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </fieldset>
                         <!--[if !IE]>end fieldset<![endif]-->
                         <?= $this->Form->end() ?>

@@ -46,6 +46,7 @@
                                         <label>Contenu Html - 1</label>
                                         <div class="inputs">
                                             <div class="textarea_wrapper">
+                                                <?= $this->Form->input('contenu_nom', ['label' => false, 'type' => 'hidden', 'id' => 'contenu_nom', 'class' => 'text', 'value' => 'Contenu Html - 1']); ?>
                                                 <?= $this->Form->textarea('contenu[]', ['label' => false, 'escape' => false, 'rows' => '10', 'cols' => '80', 'id' => 'contenu-html']) ?>
                                             </div>
                                         </div>
