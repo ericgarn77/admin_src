@@ -61,7 +61,7 @@ class PagesController extends AppController
         $page = $this->Pages->newEntity();
         if ($this->request->is('post')) {
             $page = $this->Pages->patchEntity($page, $this->request->data);
-            if ($this->Pages->save($region)) {
+            if ($this->Pages->save($page)) {
                 $this->Flash->success(__('La page a été enregistrée !'));
                 return $this->redirect(['action' => 'index']);
             } else {
@@ -86,20 +86,67 @@ class PagesController extends AppController
      */
     public function edit($id = null)
     {
+        $i = 0;
         $page = $this->Pages->get($id, [
             'contain' => []
         ]);
+        
         $contents = $this->Pages->ContenuHtml->find()->where(['page_id' => $id ]);
         
+        if ($this->request->is(['patch', 'post', 'put'])) 
+        {
+            $page_id = $this->request->data['page_id'];
+            $PageData = [
 
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $page = $this->Pages->patchEntity($page, $this->request->data);
-            if ($this->Pages->save($page)) {
-                $this->Flash->success(__('Les changements ont bien été enregistré !'));
-                return $this->redirect(['action' => 'index']);
-            } else {
-                $this->Flash->error(__('Impossible d\'enregistrer les changements. Veuillez réesseyer !'));
+                'nom' => $this->request->data['nom']
+            ];
+
+            $page = $this->Pages->patchEntity($page, $PageData);
+
+            if(!empty($this->request->data['contenu_nom']))
+            {
+
+                foreach($contents as $content)
+                {
+                    $this->Pages->ContenuHtml->delete($content);
+                
+                }
+
+                $contenu_nom = $this->request->data['contenu_nom'];
+                $contenu = $this->request->data['contenu'];
+                
+                foreach($contenu as $v)
+                {
+                    
+                    $contenuHtml = $this->Pages->ContenuHtml->newEntity();
+                    $contenuHtml->page_id = $page_id;
+                    $contenuHtml->contenu_nom = $contenu_nom[$i];
+                    $contenuHtml->contenu = $v;
+
+                    if ($this->Pages->ContenuHtml->save($contenuHtml)) 
+                    {
+                        $success = true;
+                        
+                    }
+                    else
+                    {
+                        $success = false;
+                        
+                    }
+                    $i++;
+
+                }
+                if ($success)
+                {
+                    $this->Flash->success(__('Les modifications ont été enregistrés avec succès !'));
+                    return $this->redirect(['action' => 'index']);
+                } 
+                else 
+                {
+                    $this->Flash->error(__('Les modifications n\'ont pas été enregistrés, réesseyer !'));
+                }
             }
+
         }
 
         $this->set('contents', $contents);

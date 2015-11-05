@@ -35,25 +35,31 @@
                                 </div>  
                                 
                             </div>
-                            <h3>Contenue Html</h3>
+                            <h3>Contenu   Html</h3>
                             <!--[if !IE]>end forms<![endif]-->
-                            <div class="forms html-content">
-                                <div class="delete_champ">Supprimer</div>
-                                <div class="ajouter_champ">Ajouter</div>
-                                <div class="wrap-row-contenu">
-                                    <div class="row contenu">
-                                        <label>Contenu Html - 1</label>
-                                        <div class="inputs">
-                                            <div class="textarea_wrapper">
-                                                <?= $this->Form->input('contenu_nom', ['label' => false, 'type' => 'hidden', 'id' => 'contenu_nom', 'class' => 'text']); ?>
-                                                <?= $this->Form->textarea('contenu[]', ['label' => false, 'escape' => false, 'rows' => '10', 'cols' => '80', 'id' => 'contenu-html']) ?>
+                            <?php if($contents) { ?>
+                                <div class="forms html-content">
+                                    <div class="delete_champ">Supprimer</div>
+                                    <div class="ajouter_champ">Ajouter</div>
+                                    <div class="wrap-row-contenu">
+                                        <?php foreach ($contents as $content): ?>
+                                        <div class="row contenu">
+                                            <label><?= $content->contenu_nom ?></label>
+                                            <div class="inputs">
+                                                <div class="textarea_wrapper">
+                                                    <?= $this->Form->input('contenu_nom[]', ['label' => false, 'type' => 'hidden', 'id' => 'contenu_nom', 'class' => 'text', 'value' => $content->contenu_nom]) ?>
+                                                    <?= $this->Form->textarea('contenu[]', ['label' => false, 'escape' => false, 'rows' => '10', 'cols' => '80', 'id' => 'contenu-html', 'value' => $content->contenu]) ?>
+                                                </div>
                                             </div>
                                         </div>
+                                        <?php endforeach; ?>
                                     </div>
                                 </div>
-                            </div>
+                      <?php } ?>
+
                         </fieldset>
                         <!--[if !IE]>end fieldset<![endif]-->
+                        <?= $this->Form->input('page_id', ['label' => false, 'type' => 'hidden', 'id' => 'contenu_nom', 'class' => 'text', 'value' => $page->id]) ?>
                         <?= $this->Form->end() ?>
                     </div>
                 </div>
@@ -66,29 +72,3 @@
 </div>
 
 
-
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $page->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $page->id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Pages'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Contenu Html'), ['controller' => 'ContenuHtml', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Contenu Html'), ['controller' => 'ContenuHtml', 'action' => 'add']) ?></li>
-    </ul>
-</div>
-<div class="pages form large-10 medium-9 columns">
-    <?= $this->Form->create($page) ?>
-    <fieldset>
-        <legend><?= __('Edit Page') ?></legend>
-        <?php
-            echo $this->Form->input('nom');
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
-</div>

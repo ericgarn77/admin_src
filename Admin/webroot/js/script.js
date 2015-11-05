@@ -117,6 +117,7 @@ $(function(){
                                     '<label>Contenu Html - ' + index + '</label>' +
                                     '<div class="inputs">' +
                                         '<div class="textarea_wrapper">' +
+                                            '<input name="contenu_nom[]" type="hidden" class="text" />' +
                                             '<textarea name="contenu[]" row="10" cols="80" id="contenu-html"></textarea>' +
                                         '</div>' +
                                     '</div>' +

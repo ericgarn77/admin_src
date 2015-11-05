@@ -1,5 +1,5 @@
 <div id="contenu" class="sameHeight">
-    <?= $this->Form->create('', ['name' => 'formAdd', 'id' => 'formAdd']) ?>
+    <?= $this->Form->create($page, ['name' => 'formAdd', 'id' => 'formAdd']) ?>
     <!--[if !IE]>start section<![endif]-->
     <div class="section">
         <!--[if !IE]>start title wrapper<![endif]-->
@@ -36,23 +36,7 @@
                                 </div>  
                                 
                             </div>
-                            <h3>Contenue Html</h3>
-                            <!--[if !IE]>end forms<![endif]-->
-                            <div class="forms html-content">
-                                <div class="delete_champ">Supprimer</div>
-                                <div class="ajouter_champ">Ajouter</div>
-                                <div class="wrap-row-contenu">
-                                    <div class="row contenu">
-                                        <label>Contenu Html - 1</label>
-                                        <div class="inputs">
-                                            <div class="textarea_wrapper">
-                                                <?= $this->Form->input('contenu_nom', ['label' => false, 'type' => 'hidden', 'id' => 'contenu_nom', 'class' => 'text', 'value' => 'Contenu Html - 1']); ?>
-                                                <?= $this->Form->textarea('contenu[]', ['label' => false, 'escape' => false, 'rows' => '10', 'cols' => '80', 'id' => 'contenu-html']) ?>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </fieldset>
                         <!--[if !IE]>end fieldset<![endif]-->
                         
@@ -64,6 +48,7 @@
         <!--[if !IE]>end section content<![endif]-->
     </div>
     <!--[if !IE]>end section<![endif]-->
+
     <?= $this->Form->end() ?>
 </div>
 
