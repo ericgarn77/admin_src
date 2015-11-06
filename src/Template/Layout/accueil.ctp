@@ -37,20 +37,21 @@
             </div>
             <div class="col-33">
                 <div class="logo-matte">
-                    <img src="images/img/logo-matte.png" alt="logo audrey matte">
+                    <?= $this->Html->image('images/logo-matte.png', ['alt' => 'logo audrey matte']) ?>
                 </div>
             </div>
             <div class="col-33">
                 <div class="logo-savard wrapper">
-                    <img src="images/img/logo-savard.jpg" alt="logo savard desgagnés">
+                    <?= $this->Html->image('images/logo-savard.jpg', ['alt' => 'logo savard desgagnés']) ?>
+                    
                 </div>
                 <div class="remax">
-                    <img src="images/img/logo-remax.png" alt="logo remax">
+                    <?= $this->Html->image('images/logo-remax.png', ['alt' => 'logo remax']) ?>
                 </div>
             </div>
             <div class="col-33">
                 <div class="audrey">
-                    <img src="images/img/audrey.png" alt="photo audrey matte">
+                    <?= $this->Html->image('images/audrey.png', ['alt' => 'photo audrey matte']) ?>
                 </div>
             </div>
         </div>

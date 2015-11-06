@@ -1,0 +1,2145 @@
+/*
+Audrey Matte - Courtier immobilier - Website
+*/
+
+/* Utilities */
+* {
+	padding: 0;
+	margin: 0;
+
+}
+
+strong { font-weight: bold; }
+
+:focus {
+  -moz-outline-style: none;
+}
+html {
+	margin-bottom:1px;
+	font-size: 100%;
+	/*overflow-x: hidden;*/
+}
+body {
+	font-family: 'ProximaNovaRegular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	background-color: #f8f8f8;
+	font-size: .8em;
+	overflow-x: hidden;
+}
+img {
+	/*max-width: 90%;*/
+	height: auto;
+	border: none;
+}
+a {
+	text-decoration:none;
+	outline: none;
+}
+a:hover {
+	text-decoration:none;
+}
+h1 {
+	font-family: 'Questrial', sans-serif;
+	text-transform: none;
+}
+h2, h3, h4 {
+	font-family: 'ProximaNovaSemibold';
+	text-transform: none;
+	font-weight: normal;
+}
+
+/* Mise en place de la structure */
+#full_page {
+	width: 100%;
+}
+.wrapper {
+	display: block;
+	float: left;
+	width: 100%;
+}
+.wrapper-section{
+	display: block;
+	width: 100%;
+}
+.wrapper-section #header .menu{
+	margin: 10px 0 0 0;
+}
+.bg_home {
+	background: url(../images/img/bg-home.jpg) no-repeat center top;
+	background-size: cover;
+	/*background-position: -100% 40px;*/
+}
+.bg_section {
+	background: #f8f8f8 url(../images/img/bg-section.jpg) no-repeat center top;
+}
+
+/* Partie top en-tête avec menu secondaire logo et menu principal */
+#header {
+	width: 1000px;
+	margin: 0 auto;
+
+}
+
+
+.top_menu {
+	/*width: 100%;*/
+	padding: 0 30px 0 30px;
+	height: 42px;
+	text-align: right;
+	color: #2d2f31;
+	font-size: 1em;
+}
+.top_menu ul {
+	list-style: none;
+	padding: 20px 0 0 0;
+}
+.top_menu li {
+	display: inline;
+	padding-left: 7px;
+}
+.top_menu li img {
+	position: absolute;
+}
+.top_menu li img.facebook {
+	margin-left: -20px;
+	margin-top: -2px;
+}
+.top_menu li a {
+	color: #2d2f31;
+	font-size: 1em;
+	border-right: 1px solid #777;
+	padding: 0 8px 0 4px;
+}
+.top_menu li:last-child a {
+	border-right: none;
+}
+.top_menu li a:hover {
+	color: #5f5f5f;
+	text-decoration: underline;
+}
+.bg_home .top_menu {
+	float: right;
+	width: 45%;
+}
+.bg_home .top_signature-1 {
+	float: left;
+	width: 45%;
+}
+.bg_home .top_signature-2 {
+	float: right;
+	width: 28%;
+}
+
+/* Partie présentation section */
+#top_presentation {
+	width: 100%;
+	height: 173px;
+}
+#top_presentation #presentation_section {
+	width: 500px;
+	float: left;
+	padding: 0 0 0px 30px;
+	margin-left: 3px;
+}
+#presentation_section h1 {
+	font-size: 4.2em;
+	font-weight: 700;
+	color: #36393b;
+	margin-bottom: 1px;
+}
+#presentation_section h2 {
+	font-size: 2.5em;
+	font-weight: 500;
+	color: #5f5f5f;
+	letter-spacing: 1px;
+	margin-bottom: 10px;
+}
+
+#header .menu {
+	display: block;
+	float: left;
+	width: 1000px;
+	background: #909090;
+	font: 1.2em 'ProximaNovaRegular', Arial, Helvetica, Geneva, sans-serif;
+	color: #000;
+	margin: 20px 0 0 0;
+	-webkit-box-shadow: 2px 4px 17px 0px rgba(0,0,0,0.18);
+	-moz-box-shadow: 2px 4px 17px 0px rgba(0,0,0,0.18);
+	box-shadow: 2px 4px 17px 0px rgba(0,0,0,0.18);
+}
+.menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0 0 0 15px;
+}
+.menu li {
+	display: inline;
+	float: left;
+	padding: 17px 0 17px 0;
+}
+.menu li a {
+	display: block;
+	color: #000;
+	text-transform: uppercase;
+	padding: 3px 15px 3px 15px;
+	border-right: 1px solid #505150;
+}
+.menu li:last-child a {
+	border-right: none;
+}
+.menu li a:hover, .menu li#selected a {
+	color: #FFF;
+}
+
+a.facebook-icon{
+	display: block;
+	position: relative;
+	float: right;
+	background: url(../images/img/facebook.jpg) no-repeat center center;
+	width: 23px;
+	height: 23px;
+	margin: 16px 20px 0 0;
+	cursor: pointer;
+}
+.col-33{
+	display: block;
+	width: 33.3%;
+	float: left;
+}
+.logo-matte{
+	display: block;
+	position: relative;
+	margin: 100px 0 0 0;
+	text-align: left;
+}
+.logo-savard{
+	display: block;
+	position: relative;
+	margin: 90px 0 0 0;
+	text-align: center;
+}
+.remax{
+	display: block;
+	position: relative;
+	top: 50px;
+	text-align: center;
+}
+.audrey{
+	display: block;
+	position: relative;
+	margin: 60px 0 0 0;
+	text-align: right;
+}
+.logo-matte-section{
+	display: block;
+	position: relative;
+	margin: 45px 0 0 0;
+	text-align: left;
+}
+.logo-savard-section{
+	display: block;
+	position: relative;
+	margin: 45px 0 0 0;
+	text-align: center;
+}
+.remax-section{
+	display: block;
+	position: relative;
+	top: 15px;
+	text-align: center;
+}
+.audrey-section{
+	display: block;
+	position: relative;
+	margin: 10px 0 0 0;
+	text-align: right;
+}
+
+/* Partie principal avec contenu texte et photos */
+#integration {
+	width: 1000px;
+	margin: 0 auto;
+	font-size: 1em;
+	color: #505150;
+	padding: 20px 0 0px 0;
+}
+#map_canvas{
+	display: block;
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 300px;
+}
+#map_canvas iframe{
+	width: 100%;
+}
+/*#integration {
+	width: 960px;
+	margin: 0 auto;
+	font-size: 12px;
+	color: #565656;
+	padding: 20px 0 0 0;
+}*/
+/* Partie présentation accueil */
+#content_presentation {
+	width: 100%;
+	height: 433px;
+	display: block;
+	position: relative;
+	/*background: url(../images/design/bg_home_audrey.png) no-repeat center top;
+	background-size: cover;*/
+}
+#content_presentation #presentation {
+	width: 500px;
+	float: left;
+	padding: 10px 0 10px 30px;
+}
+#presentation h1 {
+	font-size: 4.2em;
+	font-weight: 700;
+	color: #36393b;
+	margin-bottom: 20px;
+	position: absolute;
+	left:13px;
+}
+#presentation h1 img {
+	width: 90%;
+}
+#vedette{
+	position: relative;
+ 	z-index: 1;
+	width: 33%;
+	float: right;
+	margin-top: -19px;
+	margin-right: 5%;
+}
+
+#vedette div:first-child{
+	background: #000 url(../images/img/vedette_bg.jpg) no-repeat center top;
+	background-size: 100%; 
+	width: 100%;
+	padding: 20px;
+}
+
+#vedette p{
+	width: 100%;
+	text-align: center;
+	font-family: 'ProximaNovaSemibold';
+	margin-bottom: 3px;
+	padding-left: 4%;
+	color: #000;
+}
+
+ #vedette div .imgPromo{
+	position: relative;
+	width:100%;
+	margin-bottom: 15px;
+}
+
+.csl{
+	position: absolute;
+	right: 0px;
+	bottom: 12px;
+	width: 35%;
+
+}
+
+ #vedette div h2 {
+	font-family: 'ProximaNovaBold';
+	color:#ffffff;
+	margin-bottom: 5px;
+}
+
+#txt_presentation{
+	margin: 0 auto;
+	padding-top: 30px;
+	width: 70%;
+}
+
+#txt_presentation h2 {
+	font-size: 2.5em;
+	font-weight: 500;
+	color: #5f5f5f;
+	letter-spacing: 1px;
+	margin-bottom: 20px;
+}
+
+#txt_presentation p {
+	color: #505150;
+	font-size: 1.2em;
+	margin-bottom: 15px;
+	text-align: center;
+}
+#txt_presentation .number {
+	font-family: 'ProximaNovaBold';
+	font-size: 1.7em;
+	color: #505150;
+	margin: 20px 0;
+	letter-spacing: 1.5px;
+}
+
+hr{
+    height: 2px;
+    background-color: white;
+    border: 0;
+    box-shadow: inset 0 2px 2px -2px #999;
+   -webkit- box-shadow: inset 0 2px 2px -2px #999;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+     -moz-border-radius: 30px;
+     max-width: 100%;
+}
+
+#presentation .btn1, #presentation .btn2{
+	position: absolute;
+}
+
+#presentation .btn1{
+	position: absolute;
+	bottom:50px;
+}
+
+#presentation .btn2{
+	position: absolute;
+
+	bottom:0px;
+}
+
+#presentation .btn_standard a, .content_right .btn_standard a {
+	width: 220px;
+	height: 25px;
+	margin-bottom: 15px;
+}
+#presentation .btn_standard a, .content_right .btn_standard a {
+	display: block;
+	font-size: 1.1em;
+	color: #ffffff;
+	background: url(../images/img/btn_bleu_sprite.png) 0 0;
+	text-transform: uppercase;
+	padding: 8px 0 0 15px;
+	text-decoration: none;
+}
+.content .content_right .btn_standard a {
+	font-size: 0.9em;
+	padding: 10px 0 0 15px;
+}
+#presentation .btn_standard a:hover, .content_right .btn_standard a:hover {
+	background: url(../images/img/btn_bleu_sprite.png) 0 -45px;
+}
+
+
+.btn_pdf a{
+	height: 25px;
+	margin-bottom: 15px;
+}
+.btn_pdf a{
+	display: block;
+	font-size: 1.1em;
+	color: #ffffff;
+	background: url(../images/img/btn_pdf.png) 0 0 no-repeat;
+	text-transform: uppercase;
+	padding: 8px 0 0 15px;
+	text-decoration: none;
+}
+..btn_pdf a {
+	font-size: 0.9em;
+	padding: 10px 0 0 15px;
+}
+.btn_pdf a:hover{
+	background: url(../images/img/btn_pdf.png) 0 -45px no-repeat;
+}
+
+/*Content pub*/
+.pub {
+	width: 1000px;
+	margin-top: 15px;
+}
+.pub .title {
+	display: block;
+	font-size: 1.3em;
+	text-align: center;
+	width: 100%;
+}
+
+.title img{
+	max-width: 100%;
+}
+
+#content_logos_entrepreneurs{
+	width: 100%;
+	text-align: center;
+}
+
+.content_navigation .title{
+	width: 100%;
+}
+
+
+/* Partie bloc pubs bouton accueil */
+#content_blocs_btn_pubs {
+	width: 980px;
+	margin-top: 10px;
+	padding: 0 20px 0 20px;
+}
+#content_blocs_btn_pubs .blocs_btn_pubs {
+	margin-right: 15px;
+	float: left;
+	width: 310px;
+}
+
+/* Partie logos entrepreneurs accueil */
+#content_contact_remax {
+	padding: 0 30px 0 30px;	
+	text-align: center;
+}
+#content_contact_remax .title {
+	display: block;
+	margin: 25px 0 20px 0;
+	font-size: 1.3em;
+}
+#content_contact_remax p {
+	font-size: 1.2em;
+	margin-bottom: 15px;
+}
+#content_contact_remax .col_left {
+	float: left;
+	width: 48%;
+}
+#content_contact_remax .col_right {
+	float: right;
+	width: 48%;
+}
+
+/* Partie logos entrepreneurs accueil */
+#content_logos_entrepreneurs {
+	padding: 0;	
+	text-align: center;
+}
+#content_logos_entrepreneurs .title {
+	display: block;
+	margin: 25px 0 0 0;
+	font-size: 1.3em;
+	color:#6d7478;
+}
+#content_logos_entrepreneurs .logos_entrepreneurs {
+	
+}
+.logos_entrepreneurs ul {
+	list-style: none;
+	/*width: 1000px;*/
+	width: 100%;
+	text-align: center;
+}
+.logos_entrepreneurs li {
+	display: inline-block;
+	text-align: center;
+	width: 230px;
+	height: 115px;
+	margin: 0 auto;
+}
+.logos_entrepreneurs li a {
+	display: block;
+	width: 230px;
+	height: 115px;
+}
+
+.logos_entrepreneurs li.logo_concepts_archi a {
+	background: url(../images/logos/logo_concepts_architecturaux.png) 0 0;
+}
+.logos_entrepreneurs li.logo_concepts_archi a:hover {
+	background: url(../images/logos/logo_concepts_architecturaux.png) 0 -115px;
+}
+.logos_entrepreneurs li.logo_ouellet a {
+	background: url(../images/logos/logo_constr_ouellet.png) 0 -115px;
+}
+.logos_entrepreneurs li.logo_ouellet a:hover {
+	background: url(../images/logos/logo_constr_ouellet.png) 0 0;
+}
+.logos_entrepreneurs li.logo_audet a {
+	background: url(../images/logos/logo_audet.png) 0 -114px;
+}
+.logos_entrepreneurs li.logo_audet a:hover {
+	background: url(../images/logos/logo_audet.png) 0 0;
+}
+.logos_entrepreneurs li.logo_cmartin a {
+	background: url(../images/logos/logo_cmartin.png) 0 -114px;
+}
+.logos_entrepreneurs li.logo_cmartin a:hover {
+	background: url(../images/logos/logo_cmartin.png) 0 0;
+}
+.logos_entrepreneurs li.logo_champsblais a {
+	background: url(../images/logos/logo_constructions_champsblais.png) 0 0;
+}
+.logos_entrepreneurs li.logo_champsblais a:hover {
+	background: url(../images/logos/logo_constructions_champsblais.png) 0 -115px;
+}
+.logos_entrepreneurs li.logo_constr_cofort a {
+	background: url(../images/logos/logo_construction_cofort.png) 0 0;
+}
+.logos_entrepreneurs li.logo_constr_cofort a:hover {
+	background: url(../images/logos/logo_construction_cofort.png) 0 -115px;
+}
+.logos_entrepreneurs li.logo_jacques_demers a {
+	background: url(../images/logos/logo_construction_jacques_demers.png) 0 0;
+}
+.logos_entrepreneurs li.logo_jacques_demers a:hover {
+	background: url(../images/logos/logo_construction_jacques_demers.png) 0 -115px;
+}
+.logos_entrepreneurs li.logo_constr_mp a {
+	background: url(../images/logos/logo_construction_renovation_mp.png) 0 0;
+}
+.logos_entrepreneurs li.logo_constr_mp a:hover {
+	background: url(../images/logos/logo_construction_renovation_mp.png) 0 -115px;
+}
+.logos_entrepreneurs li.logo_crd a {
+	background: url(../images/logos/logo_crd.png) 0 0;
+}
+.logos_entrepreneurs li.logo_crd a:hover {
+	background: url(../images/logos/logo_crd.png) 0 -115px;
+}
+.logos_entrepreneurs li.logo_deltec a {
+	background: url(../images/logos/logo_deltec.png) 0 0;
+}
+.logos_entrepreneurs li.logo_deltec a:hover {
+	background: url(../images/logos/logo_deltec.png) 0 -115px;
+}
+.logos_entrepreneurs li.logo_dgc a {
+	background: url(../images/logos/logo_dgc.png) 0 0;
+}
+.logos_entrepreneurs li.logo_dgc a:hover {
+	background: url(../images/logos/logo_dgc.png) 0 -115px;
+}
+.logos_entrepreneurs li.logo_gcb a {
+	background: url(../images/logos/logo_gcb.png) 0 0;
+}
+.logos_entrepreneurs li.logo_gcb a:hover {
+	background: url(../images/logos/logo_gcb.png) 0 -115px;
+}
+.logos_entrepreneurs li.logo_habitations_es a {
+	background: url(../images/logos/logo_habitations_es.png) 0 0;
+}
+.logos_entrepreneurs li.logo_habitations_es a:hover {
+	background: url(../images/logos/logo_habitations_es.png) 0 -115px;
+}
+.logos_entrepreneurs li.logo_maisons_sl a {
+	background: url(../images/logos/logo_maison_st-laurent.png) 0 0;
+}
+.logos_entrepreneurs li.logo_maisons_sl a:hover {
+	background: url(../images/logos/logo_maison_st-laurent.png) 0 -115px;
+}
+.logos_entrepreneurs li.logo_concept_sl a {
+	background: url(../images/logos/logo_concept_st-laurent.png) 0 0;
+}
+.logos_entrepreneurs li.logo_concept_sl a:hover {
+	background: url(../images/logos/logo_concept_st-laurent.png) 0 -115px;
+}
+.logos_entrepreneurs li.logo_sous-bois a {
+	background: url(../images/logos/logo_sous-bois.png) 0 0;
+}
+.logos_entrepreneurs li.logo_sous-bois a:hover {
+	background: url(../images/logos/logo_sous-bois.png) 0 -115px;
+}
+ 
+/* Partie principal avec contenu texte et photos */
+.content {
+	width: 940px;
+	margin-top: 10px;
+	padding: 0 30px 20px 30px;
+}
+.projet .content {
+	padding: 0 30px 0px 30px;
+}
+.pl_maison .content {
+	padding: 0 30px 0px 30px;
+}
+.content h3 {
+	color: #231f20;
+	font-size: 2.1em;
+	margin-bottom: 20px;
+	letter-spacing: 1px;
+}
+.content h4 {
+	color: #231f20;
+	font-size: 1.3em;
+	margin-bottom: 20px;
+	letter-spacing: 1px;
+}
+.content_left {
+	float: left;
+	width: 640px;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+.content_left ul {
+	list-style-image: url(../images/img/arrow_listing.png);
+	margin: 10px 0 15px 20px;
+}
+.content_left ul li {
+	margin-bottom: 15px;
+}
+.content_right {
+	float: right;
+	width: 280px;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+.content_right p.taller {
+	font-size: 1.1em;
+}
+.content a {
+	color: #5F5F5F;
+	text-decoration: underline;
+}
+.content a:hover {
+	text-decoration: none;
+}
+.content p {
+	margin-bottom: 15px;
+}
+.photos {
+	text-align: right;
+}
+
+/* Partie projets navigation */
+.content_navigation {
+	width: 94%;
+	margin-top: 10px;
+	padding: 0 30px 20px 30px;
+}
+.pl_maison .content_navigation {
+	margin-top: 0px;
+}
+.projet .content_navigation {
+	margin-top: 0px;
+	padding: 0 30px 10px 30px;
+}
+.content_navigation .title {
+	display: block;
+	margin: 0;
+	font-size: 1.3em;
+	text-align: center;
+}
+.content_navigation .nav_gauche {
+	float: left;
+	width: 460px;
+}
+.content_navigation .nav_droite {
+	float: right;
+	width: 460px;
+}
+.content_navigation .nav_choice {
+	padding: 10px;
+	font-size: 1.3em;
+	color: #231f20;
+	background-color: #c2c3c4;
+	display: block;
+	font-family: 'ProximaNovaSemibold';
+}
+.content_navigation .nav_recherche {
+	padding: 10px;
+	font-size: 1.1em;
+	color: #231f20;
+	background-color: #e1e1e1;
+	display: block;
+}
+.nav_recherche select {
+	display: block;
+	margin-bottom: 20px;
+	width: 300px;
+	padding: 2px;
+}
+.nav_recherche .btn_recherche {
+	background-color: #f6f6f6;
+	padding: 3px 12px 3px 12px;
+	color: #5f5f5f;
+}
+
+/* Partie terrains */
+.content_terrains {
+	width: 940px;
+	margin-top: 10px;
+	padding: 0 30px 20px 30px;
+}
+.content_terrains .title_region {
+	display: block;
+	padding: 10px 0 10px 20px;
+	font-size: 1.4em;
+	color: #231f20;
+	font-family: 'ProximaNovaSemibold';
+	text-transform: uppercase;
+	background-color: #e1e1e1;
+}
+.content_terrains .title_projet {
+	display: block;
+	padding: 10px 0 10px 20px;
+	background: url(../images/img/title_projet_bg.png) no-repeat left center;
+	font-size: 1.6em;
+	color: #5f5f5f;
+	font-family: 'ProximaNovaSemibold';
+}
+.content_terrains .table_descr {
+	display: block;
+	border-radius: 10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	behavior:url(border-radius.htc);
+	padding: 10px 0 10px 0;
+	background: #6b6c6d;
+	font-size: 1.1em;
+	color: #36393b;
+	margin-bottom: 5px;
+	font-family: 'ProximaNovaRegular';
+}
+.content_terrains .table_descr td {
+	padding: 0 4px 0 4px;
+	text-align: center;
+	border-right: 1px solid #fff;
+	color:#fff;
+}
+
+.content_terrains .table_descr td:last-child {
+	border-right: none;
+}
+.content_terrains .table_infos {
+	display: block;
+	font-size: 1em;
+	color: #36393b;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	margin-bottom: 30px;
+	position: relative;
+}
+.content_terrains .table_infos td {
+	padding: 6px 10px 6px 10px;
+	text-align: center;
+}
+.rouge{
+	color: rgb(213, 4, 9);
+}
+.bold{
+	font-weight: bold;
+}
+
+.content_terrains .table_infos .avendre {
+	color: #222!important;
+	font-weight: bold!important;
+}
+.content_terrains .table_infos tr.white {
+	background-color: #ffffff;
+}
+.content_terrains .table_infos tr.sold {
+	background-color: #b5b5b7;
+}
+.content_terrains .table_infos .vendu {
+	position: absolute;
+	z-index: 1;
+	top: 45px;
+	left: 315px;
+}
+.content_terrains .table_infos td.galerie {
+	background-color: #222;
+	color:#fff;
+	border-radius: 3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	behavior:url(border-radius.htc);
+}
+.content_terrains .table_infos td.galerie a {
+	font-size: 1.2em;
+	color: #FFF;
+	text-decoration: underline;
+}
+
+/*Partie nos projets*/
+.content_vedette{
+	width: 960px;
+	margin: 10px 0 20px 0;
+	background-color: #FFF;
+	padding: 20px 20px;
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.45);
+	-moz-box-shadow:    0px 0px 5px 0px rgba(50, 50, 50, 0.45);
+	box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.45);
+}
+.content_vedette .img-vedette{
+	width: 57%;
+	display: block;
+	float: left;
+}
+.img-vedette img{
+	max-width: 540px;
+	width: 100%;
+}
+.content_projets {
+	width: 960px;
+	margin-top: 10px;
+	padding: 0 20px 20px 20px;
+	
+}
+.content_vedette .vedette-droit{
+	display: block;
+	width: 40%;
+	float: right;
+	text-align: left;
+}
+.vedette-droit h1{
+	font-size: 2em;
+	color: #5c595a;
+	border-bottom: 4px solid rgba(230, 230, 230, 4);
+	padding-bottom: 10px;
+}
+.vedette-droit p{
+	font-size: 1.2em;
+
+
+}
+.vedette-carte{
+    height: 219px;
+    margin-top: 5px;
+}
+.vedette-droit .adresse-vedette{
+	margin: 20px 0 0 0;
+}
+.vedette-droit .description-vedette{
+	margin: 20px 0 0 0;
+}
+.content_projets .bloc_projet {
+	float: left;
+	width: 310px;
+}
+.content_projets .bloc_projet .resume {
+	padding: 10px;
+}
+.content_projets .bloc_projet .resume p {
+	margin-bottom: 5px;
+	font-size: 1.2em;
+}
+.content_projets .bloc_projet .resume h5 {
+	font-size: 1.3em;
+	font-weight: bold;
+	display: block;
+	margin-bottom: 5px;
+	line-height: 16px;
+}
+.content_projets .bloc_projet .resume a {
+	color: #5f5f5f;
+	text-decoration: underline;
+	font-weight: 400;
+}
+
+.content_projets .projet_right {
+	float: right;
+	width: 583px;
+}
+
+.ongletsContent img,.ongletsContent iframe{
+	width: 100%;
+}
+
+.content_projets .projet_right .ongletsContent .gallerie,.content_projets .projet_right .gallerie {
+	display: block;
+	margin: 0 0 20px 0;
+}
+.content_projets .projet_right .ongletsContent .gallerie #thumbs,.content_projets .projet_right .gallerie #thumbs{
+	width: 100%;
+	display: block;
+	margin: 10px 0 0 0;
+}
+.content_projets .projet_right .ongletsContent .gallerie #thumbs ul,.content_projets .projet_right .gallerie #thumbs ul {
+	list-style: none;
+	line-height: 25px;
+}
+.content_projets .projet_right .ongletsContent .gallerie #thumbs li,.content_projets .projet_right .gallerie #thumbs li {
+	display: block-inline;
+	text-align: center;
+	float: left;
+	width: 90px;
+	margin: 0 10px 0 0;
+}
+
+.content_projets .projet_right .gallerie #thumbs li {
+	display: block-inline;
+	text-align: center;
+	float: left;
+	width: 90px;
+	margin: 0 20px 0 0;
+}
+
+
+
+
+.content_projets .projet_left {
+	float: left;
+	width: 360px;
+}
+.content_projets .projet_left h2 {
+	font-size: 2.1em;
+	font-weight: 500;
+	color: #5f5f5f;
+	letter-spacing: 1px;
+	margin-bottom: 2px;
+}
+
+.content_projets .projet_left h3 {
+	font-size: 1.1em;
+	color: #5f5f5f;
+	margin: 8px 0;
+}
+
+.content_projets .projet_left p {
+	margin: 8px 0;
+}
+
+.content_projets .projet_left .title {
+	display: block;
+	font-size: 1.3em;
+	margin-bottom: 10px;
+}
+.content_projets .projet_left .description {
+	display: block;
+	margin: 0 0 20px 0;
+}
+.content_projets .projet_left .description ul {
+	margin: 0 0 0 15px;
+}
+.content_projets .projet_left .table_telecharge {
+	display: block;
+	border-radius: 10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	behavior:url(border-radius.htc);
+	padding: 10px 0 10px 0;
+	background: #6b6c6d;
+	font-size: 1.1em;
+	color: #36393b;
+	margin-bottom: 5px;
+	font-family: 'ProximaNovaRegular';
+}
+.content_projets .projet_left .table_telecharge td {
+	padding: 0 4px 0 4px;
+	text-align: center;
+	border-right: 1px solid #c8bcab;
+}
+.content_projets .projet_left .table_telecharge td:last-child {
+	border-right: none;
+}
+.content_projets .projet_left .table_telecharge a {
+	color: #fff;
+}
+.content_projets .table_lien_terrain {
+	display: block;
+	border-radius: 10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	behavior:url(border-radius.htc);
+	font-size: 1em;
+	color: #36393b;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	margin-bottom: 30px;
+	background-color: #ffffff;
+}
+.content_projets .table_lien_terrain td {
+	padding: 6px 10px 6px 10px;
+	text-align: center;
+}
+.content_projets .table_lien_terrain a {
+	color: #5f5f5f;
+	font-weight: 400;
+	padding: 3px 0 0 0;
+	font-size: 1.1em;
+}
+
+
+/* Formulaire de contact */
+.content_left .inputArea {
+	float: left;
+	font-weight: bold;
+	padding: 0 10px 25px 10px;
+	width: 500px;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+.content_left .inputArea input.info_contact {
+	width: 350px;
+	font-size: 1.1em;
+	color: #005030;
+	background-color: #f8f8f8;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border: 1px solid #d3d3d3;
+	padding: 3px;
+	margin-top: 5px;
+}
+.content_left .inputArea textarea.info_contact {
+	width: 500px;
+	height: 120px;
+	font-size: 1.1em;
+	color: #005030;
+	background-color: #f8f8f8;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border: 1px solid #d3d3d3;
+	padding: 3px;
+	margin-top: 5px;
+}
+.content_left .inputArea .send {
+	width: 100px;
+	height: 30px;
+	border: 1px dotted #b8b8b8;
+	cursor: pointer;
+}
+
+
+/* Footer signature et copyright */
+#wrapper_footer {
+	width: 100%;
+	margin: 40px 0 0 0;
+	/*background: #161616 url(../images/design/footer_content_bg.jpg) repeat-x 0 top;*/
+}
+#footer_content {
+	width: 100%;
+	background: #28292b;
+}
+#footer_content #footer {
+	width: 940px;
+	margin: 0 auto;
+	padding: 35px 30px 30px 30px;
+}
+#footer .menu_footer {
+	float: left;
+	width: 700px;
+	font: 1.2em 'ProximaNovaSemibold', Arial, Helvetica, Geneva, sans-serif;
+	color: #ffffff;
+}
+.menu_footer ul {
+	list-style: none;
+	padding: 0px 0 0 0;
+}
+.menu_footer li {
+	display: inline;
+	float: left;
+}
+.menu_footer li a {
+	color: #ffffff;
+	text-transform: uppercase;
+	padding: 3px 15px 3px 15px;
+	border-right: 1px solid #505150;
+}
+.menu_footer  li:last-child a {
+	border-right: none;
+}
+.menu_footer li a:hover, .menu_footer li#selected a {
+	color: #909090;
+}
+#footer .sociaux {
+	float: right;
+	text-align: right;
+	width: 240px;
+	color: #e8e8e8;
+}
+#footer .division {
+	display: block;
+	margin: 25px 0 25px 0;
+}
+#footer .copyright {
+	float: left;
+	width: 300px;
+	font-size: 1.2em;
+	color: #e8e8e8;
+	line-height: 18px;
+}
+#footer .copyright p {
+	margin-bottom: 25px;
+}
+#footer .copyright .small {
+	font-size: 0.6em;
+}
+#footer .difusion {
+	color: #e8e8e8;
+}
+#footer a.difusion {
+	color: #e8e8e8;
+}
+#footer a:hover.difusion {
+	color: #cf4327;
+}
+#footer .signature {
+	width: 280px;
+	text-align: center;
+	float: left;
+	font-size: 1em;
+	color: #ffffff;
+	line-height: 18px;
+}
+#footer .signature strong {
+	font-size: 1.1em;
+}
+#footer .signature a {
+	color: #ffffff;
+}
+#footer .signature a:hover {
+	text-decoration: underline;
+}
+#footer .beau-lieu {
+	width: 320px;
+	float: right;
+	text-align: right;
+	font-size: 1em;
+	color: #ffffff;
+	line-height: 16px;
+}
+
+#tips {
+	display: none;
+	position: fixed;
+	bottom: 45;
+	background: #5f5f5f;
+    border: 1px solid #257bb7;
+    bottom: 33px;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    height: 22px;
+    padding: 10px 0 0 10px;
+    right: 13px;
+    text-shadow: 1px 1px 0 #000000;
+    text-transform: uppercase;
+    width: 106px;
+    z-index: 1800;
+    -moz-border-radius: 4px 4px 4px 4px;
+}
+#tips a {
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+}
+.hidden {
+	display: none;
+}
+.clear {
+    clear: both;
+}
+
+
+
+#form_contact label.error {
+	width: auto;
+	color:#FF0000;
+	display:block;
+}
+
+
+
+
+
+div.onglets {
+	
+}
+ul.ongletsNavigation {
+	text-align:left;
+}
+ul.ongletsNavigation li {
+	list-style:none;
+	display:inline;
+	margin-left: -3px;
+}
+ul.ongletsNavigation li a {
+	padding:10px 12px;
+	border-right: 1px solid #777;
+	background:#a3a3a3;
+	font-size: 1em;
+	color:#fff;
+	font-weight: lighter;
+	letter-spacing: 1px;
+	text-decoration:none;
+	font-family: 'ProximaNovaSemibold';
+}
+ul.ongletsNavigation li a:hover {
+	background-color:#F6F6F6;
+	color:#222;
+}
+ul.ongletsNavigation li a.current {
+	background:#f9f9f9;
+	color:#222;
+	border-bottom:1px solid #f9f9f9;
+}
+div.ongletsContent {
+	padding:25px 15px 15px;
+	margin-top:10px;
+	display:none;
+	background-color: #f9f9f9;
+	-moz-box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+	-webkit-box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+	box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+	filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.10);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.10)";
+	zoom: 1;
+}
+
+div.ongletsContent p{
+	margin-bottom: 15px;
+}
+
+div.ongletsContent h3{
+	margin-bottom: 10px;
+}
+
+div.ongletsContent ul{
+	margin-left: 17px;
+}
+
+div.ongletsContent li{
+	margin-bottom: 5px;
+}
+
+div.ongletsContent.currentTab { display:block; }
+
+
+
+
+
+
+
+
+
+#lightbox{position: relative; z-index: 99999!important;}
+
+#map{
+	width: 92%;
+	height:400px;
+}
+
+#trigger-overlay{
+		display: none;
+	}
+
+
+/**************************************************/
+
+
+/* Overlay style */
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0);
+	background: rgba(0,0,0,0.8);
+	z-index: 9999999!important.
+}
+
+.menu{position: relative;z-index: 2!important;}
+
+/* Overlay closing cross */
+.overlay .overlay-close {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	overflow: hidden;
+	border: none;
+	background: url(../images/img/cross.png) no-repeat center center;
+	text-indent: 200%;
+	color: transparent;
+	outline: none;
+	z-index: 100;
+}
+
+/* Menu style */
+.overlay nav {
+	text-align: left;
+	position: relative;
+	top: 50%;
+	height: 60%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.overlay ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	display: list-item;
+	height: 100%;
+	position: relative;
+}
+
+.overlay ul li {
+	display: block;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 17px;
+}
+
+.overlay ul li a {
+	font-size: 2em;
+	font-weight: 300;
+	display: block;
+	color: #fff;
+	-webkit-transition: color 0.2s;
+	transition: color 0.2s;
+}
+
+.overlay ul li a:hover,
+.overlay ul li a:focus {
+	color: #ccc;
+}
+
+/* Effects */
+.overlay-slidedown {
+	visibility: hidden;
+	-webkit-transform: translateY(-100%);
+	transform: translateY(-100%);
+	-webkit-transition: -webkit-transform 0.4s ease-in-out, visibility 0s 0.4s;
+	transition: transform 0.4s ease-in-out, visibility 0s 0.4s;
+}
+
+.overlay-slidedown.open {
+	visibility: visible;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+	-webkit-transition: -webkit-transform 0.4s ease-in-out;
+	transition: transform 0.4s ease-in-out;
+}
+
+
+
+.sticky {  
+    position: fixed;  
+    width: 100%;  
+     
+    top: -7px;  
+    z-index: 100;  
+    border-top: 0;  
+} 
+
+
+#trigger-overlay {
+	display: inline-block;
+	color: #fff;
+	font-weight: bolder;
+	font-size: 1em;
+	text-transform: uppercase;
+	border-radius: 2px;
+	letter-spacing: 1px;
+	border: none;
+	padding: 27px 0px;
+	outline: none;
+	background: transparent;
+	width: 50%;
+	margin: 0 auto;
+	display: none;
+	text-align: left;
+
+	background-image:url(../images/design/menu.png);
+	 background-repeat: no-repeat;
+	 background-position: center right;
+}
+
+#trigger-overlay:hover{
+	cursor: pointer;
+}
+
+.overlay-close:hover{
+	cursor: pointer;
+}
+
+
+/**************************************************/
+
+
+@media (max-width: 380px) {
+	
+	#trigger-overlay {
+		width: 80%;
+	}
+
+	ul.ongletsNavigation li a {
+		font-size: 0.5em!important;
+		padding: 4px 6px;
+	}
+}
+
+@media (max-width: 390px) {
+	.bg_section {
+		background: #f8f8f8 url(../images//bg_sections2.jpg) no-repeat right -650px top;
+	}
+
+	#presentation_section h1 a img {
+		max-width: 45%!important;
+		position: relative!important;
+		float: right!important;
+		margin-right: 30px;
+		margin-top: -10px;
+	}	
+
+}
+
+@media (max-width: 475px) {
+
+	ul.ongletsNavigation li a {
+		font-size: 0.8em;
+		padding: 4px 6px;
+	}
+
+}
+
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 550px){
+
+	.logo-matte-section img{
+		width: 80%;
+		margin: 40px 0 0 10px;
+	}
+	.logo-savard-section img{
+		width: 80%;
+		margin: 40px 0 0 0;
+	}
+	
+	.audrey-section img{
+		width: 80%;
+		margin: 40px 10px 0 0;
+	}
+	.remax-section img{
+		width: 80%;
+	}
+
+	.wrap-description{
+		width: 100%;
+		margin: 10px 0 0 0;
+	}
+
+	.wrap-coordonne{
+		width: 100%;
+	}
+	.content_vedette .vedette-droit{
+		width: 100%;
+	}
+	.img-vedette img {
+	    max-width: none;
+	}
+	.content_vedette .img-vedette{
+		width: 100%;
+	}
+	.logos_entrepreneurs li {
+	   	width: 100px;
+	    height: 70px;
+	    margin-top: 30px;
+	}
+	.logos_entrepreneurs li a {
+	    display: block;
+	    width: 100%;
+	    height: 50px;
+	}
+	.logos_entrepreneurs li.logo_ouellet a {
+		background: url(../images/logos/logo_constr_ouellet.png) no-repeat 0 -50px;
+		background-size: cover;
+	}
+	.logos_entrepreneurs li.logo_ouellet a:hover {
+		background: url(../images/logos/logo_constr_ouellet.png) no-repeat 0 0;
+		background-size: cover;
+	}
+	.logos_entrepreneurs li.logo_audet a {
+		background: url(../images/logos/logo_audet.png) no-repeat 0 -50px;
+		background-size: cover;
+	}
+	.logos_entrepreneurs li.logo_audet a:hover {
+		background: url(../images/logos/logo_audet.png) no-repeat 0 0;
+		background-size: cover;
+	}
+	.logos_entrepreneurs li.logo_cmartin a {
+		background: url(../images/logos/logo_cmartin.png) no-repeat 0 -50px;
+		background-size: cover;
+	}
+	.logos_entrepreneurs li.logo_cmartin a:hover {
+		background: url(../images/logos/logo_cmartin.png) no-repeat 0 0;
+		background-size: cover;
+	}
+	
+}
+
+@media (max-width: 550px) {
+
+	.logo-matte{
+		margin: 160px 0 0 0;
+		
+	}
+	.logo-savard{
+		margin: 150px 0 0 0;
+		
+	}
+	
+	.audrey{
+		margin: 120px 0 0 0;
+		
+	}
+
+
+
+	#presentation_section h1 a img{
+		max-width: 50%;
+		position: absolute;
+		left: 10px;
+		top:20px;
+	}
+
+	#txt_presentation{
+		margin: 0 auto;
+		padding-top: 0px!important;
+		width: 70%;
+	}
+	.bg_section{
+		background: url(../images/img/bg-home.jpg) no-repeat center 75px;
+	}
+	.content_left .inputArea, #Commentaire {
+		width: 90%!important;
+	}
+
+	.content_left .inputArea input.info_contact {
+		width: 90%;
+	}
+
+	.content_projets .bloc_projet{
+		width: 92%!important;
+		margin:0%!important;
+	}
+	body #content_presentation {
+		background: url(../images/design/presentation_audrey_matte.png) no-repeat -90px top !important;
+		background-size: 600px!important;
+	}
+	#content_presentation #presentation h1 a img{
+		max-width: 50%;
+		width: 40%!important;
+		margin: 0;
+	}
+	#hoverNav {
+		position: absolute;
+		top: -50px!important;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		z-index: 10;
+	}
+	#integration #vedette {
+		width: 100%;
+		display: block;
+		float: none;
+		/*position: absolute;
+		top: 65px;
+		left: 0;
+		max-width: 100%;*/
+		margin: 0!important;
+		margin-bottom: 0;
+	}
+	#vedette div{
+		width: 100%;
+		max-width: 90%;
+		margin: 0 0 20px 0!important;
+	}
+	#vedette p:first-child {
+	padding: 5px 0 0 0;
+	/*display: none;*/
+	}
+	#vedette div img:first-child{
+		width: 48%!important;
+		float: left;
+	}
+
+	.csl{
+		width: 16%;
+		bottom: 20px;
+		right:20px!important;
+	}
+	#vedette div span{
+		width: 44%!important;
+		float: right;
+	}
+
+	#presentation h1{
+
+	}
+
+	.bg_home {
+		/*margin-top: 130px;*/
+	}
+	.bg_home .menu{
+		position: fixed!important;
+		top:-5px!important;
+	}
+	#content_presentation {
+	min-height: 350px;
+	display: block;
+	width: 100%;
+	margin-top: -20px;
+}
+	#presentation h1{
+		width: 90%;
+		text-align: right;
+	}
+
+	#content_presentation #presentation h1 a img {
+		position: relative!important;
+		max-width: 45%!important;
+		margin-right: 5%!important;
+		top:0!important;
+	}
+	.bg_home .menu{
+		position: absolute;
+		top:-4px;
+	}
+
+	.btn2, .btn1{
+		right: 0;
+	}
+
+	.btn1{
+		bottom: 100px!important;
+	}
+
+	.btn2{
+		bottom: 40px!important;
+	}
+
+	body #wrapper .profil .content_right {
+	width: 100%;
+	float: right;
+	text-align: center;
+	}
+	body #wrapper .profil .content_left{
+		width:100%;
+	}
+
+	
+
+}
+
+@media (max-width: 650px) {
+	.remax{
+		top: 10px;
+	}
+	.top_menu{
+		visibility: hidden;
+	}
+	.bg_section{
+		background-size: 1300px;
+	}
+	#content_presentation {
+		background: url(../images/design/presentation_audrey_matte.png) no-repeat 20px top !important;
+		background-size: 110% !important;
+	}
+}
+
+@media only screen 
+and (min-width : 551px) 
+and (max-width : 767px){
+
+	.logo-matte-section img{
+		width: 60%;
+	}
+	.logo-savard-section img{
+		width: 60%;
+	}
+	.remax-section img{
+		width: 60%;
+	}
+	.audrey-section img{
+		width: 60%;
+	}
+	.content_vedette .vedette-droit{
+		width: 100%;
+		margin-top: 20px;
+	}
+	.wrap-description{
+		width: 45%;
+		float: left;
+	}
+
+	.wrap-coordonne{
+		width: 45%;
+		float: right;
+	}
+
+	.content_vedette .img-vedette{
+		width: 100%;
+	}
+
+	.img-vedette img{
+		max-width: none;
+	}
+}
+
+@media (max-width: 767px) {
+	
+
+	a.facebook-icon{
+		display: none;
+		
+	} 
+	.logo-matte img{
+		width: 60%;
+	}
+	.logo-savard img{
+		width: 60%;
+	}
+	.remax img{
+		width: 60%;
+	}
+	.audrey img{
+		width: 60%;
+	}
+
+	#vedette {
+		max-width: 100%;
+	}
+	
+	.table_infos img{
+		left: 10%!important;
+	}
+
+	#prevLink, #prevLink:visited { background: url(../images/lightbox/prev2.png)center left no-repeat!important; }
+	#nextLink, #nextLink:visited { background: url(../images/lightbox/next2.png)center right no-repeat!important; }
+	.top_menu {
+	display: none;
+	}
+
+	#footer .menu_footer {
+		display: none;
+	}
+	#menuUl{
+		display: none;
+	}
+
+	#trigger-overlay{
+		display: block;
+	}
+
+	#header h1 a img{
+		max-width: 50%;
+	}
+	#presentation_section h1 a img{
+		max-width: 50%;
+		position: absolute;
+		left: 10px;
+		top:20px;
+	}
+	#header {
+		/*padding: 20px 0 0 0;*/
+	}
+	#header .menu {
+		padding-top: 0;
+	}
+
+	#vedette div h2{
+		font-size: 1em !important;
+	}
+
+	#vedette{
+		margin-right: 50px;
+		margin-bottom: 30px!important;
+	}
+	#txt_presentation{
+		width: 92%;
+	}
+	#wrapper .profil .content_right {
+	width: 50%;
+	float: right;
+	}
+	#wrapper .profil .content_left{
+		width: 45%;
+	}
+
+
+
+}
+@media (max-width: 1000px and min-width: 551px){
+
+	.logo-matte-section img{
+		width: 75%;
+		margin: 40px 0 0 0;
+	}
+	.logo-savard-section img{
+		width: 75%;
+		margin: 40px 0 0 0;
+	}
+	
+	.audrey-section img{
+		width: 75%;
+		margin: 40px 0 0 0;
+	}
+
+}
+
+@media (max-width: 1000px and min-width: 768px){
+	
+	.content_vedette .img-vedette{
+		width: 50%;
+	}
+	
+
+}
+
+@media (max-width: 1000px) {
+
+	a.facebook-icon{
+		margin: 12px 20px 0 0;
+		
+	}
+
+	.logo-matte img{
+		width: 75%;
+		margin: 0 0 0 10px;
+	}
+	.logo-savard img{
+		width: 75%;
+		
+	}
+	.remax img{
+		width: 75%;
+	}
+	.audrey img{
+		width: 75%;
+		margin: 0 10px 0 0;
+	}
+
+	/*.logo-matte-section img{
+		width: 50%;
+		text-align: center;
+	}
+	.logo-savard-section img{
+		width: 50%;
+	}
+	.remax-section img{
+		width: 50%;
+	}
+	.audrey-section img{
+		width: 50%;
+		text-align: center;
+	}*/
+
+	.bg_home {
+	background: url(../images/img/bg-home.jpg) no-repeat center top;
+
+	}
+	#integration{
+		width: 100%;
+		padding: 0;
+	}
+	.content{
+		width:97%;
+		margin: 0;
+		padding:5px!important;
+	}
+	.content_right {
+		float: left;
+		width: 100%;
+		padding: 3px;
+	}
+	.profil .content_right {
+	width: 30%;
+	float: right;
+	}
+	#photoProfil{
+		margin: 0 auto!important;
+	}
+	.content_left{
+		width: 100%;
+	}
+	.profil .content_left{
+		width: 65%;
+	}
+
+	#header {
+		width: 100%;
+	}
+	#header .menu {
+		width: 100%;
+		background: #909090;
+		font-size: 1em;
+		color: #ffffff;
+		letter-spacing: 1px;
+	}
+	#header .menu li a{
+		padding: 0 8px;
+	}
+	#header h1 {
+	padding: 0 0 0 20px;
+	}
+	#menuUl{
+		font-size: 1em!important;
+	}
+	#vedette{
+	margin-top: 0;
+	margin-bottom: 5%;
+	}
+	#vedette div h2{
+		font-size: 1.25em;
+	}
+
+	#top_presentation #presentation_section {
+		width: 100%;
+		float: left;
+		padding: 0 0 0px 0;
+	}
+
+	.content_navigation {
+		width: 94%;
+		margin-top: 10px;
+		padding: 0 30px 20px 4%;
+	}
+
+	.content_projets{
+		width: 93%;
+		padding-left: 1%!important;
+	}
+	.content_vedette{
+		width: 93%;
+		padding-left: 1%!important;
+	}
+	
+	.content_projets .bloc_projet{
+		width: 46%;
+		margin:0 2%!important;
+	}
+
+	.content_projets .bloc_projet a img{
+		width: 100%;
+	}
+	
+	#content_presentation #presentation {
+		width: 20%;
+		float: left;
+		padding: 10px 0 10px 30px;
+	}
+	
+	#content_presentation {
+		background: url(../images/design/presentation_audrey_matte.png) no-repeat 60px top;
+		background-size: 90%;
+		height: auto;
+	}
+	#content_presentation #presentation h1 a img{
+		width: 30%;
+		/*max-width: 100px;
+		margin: 0;
+		position: absolute;
+		top: -149px;*/
+	}
+	#presentation h1 {
+		position: absolute;
+		
+		right: 0;
+		padding: 10px;
+	}
+
+	.projet_left{
+		width: 100%!important;
+	}
+
+	.projet_left iframe{
+		width: 100%;
+	}
+
+	.projet_right{
+		width: 100%!important;
+	}
+
+	.projet_right img{
+		max-width: 100%!important;
+	}
+	.onglets{
+		margin-top: 40px;
+	}
+
+	.nav_gauche, .nav_droite{
+		width: 100%!important;
+		margin-top: 20px;
+	}
+
+	.content_terrains{
+		width: 97%!important;
+		margin-top: 20px;
+		padding: 3px;
+	}
+
+	.content_navigation{
+		padding: 7px;
+	}
+
+	.bg_home #footer_content{
+		background-size: cover;
+	}
+	#footer_content #footer {
+		width: 90%;
+		margin: 0 auto;
+		padding: 0px 30px 10px 0px;
+		margin-bottom: -1px;
+	}
+
+	#footer .menu_footer {
+		float: right;
+		width: 90%;
+		font: 1em 'ProximaNovaSemibold', Arial, Helvetica, Geneva, sans-serif;
+		color: #ffffff;
+		margin-top: 20px;
+	}
+	#footer .sociaux {
+		width: 65%;
+		color: #e8e8e8;
+		margin: 0 auto;
+		display: none;
+	}
+	#footer .copyright {
+		float: left;
+		width: 100%;
+		font-size: 1.2em;
+		color: #e8e8e8;
+		line-height: 18px;
+		text-align: center;
+	}
+	#footer .signature {
+		width: 100%;
+		text-align: center;
+		float: left;
+		font-size: 1em;
+		color: #ffffff;
+		line-height: 18px;
+		margin: 20px 0;
+	}
+	#footer .beau-lieu {
+		width: 100%;
+		float: left;
+		text-align: center;
+		font-size: 1em;
+		color: #ffffff;
+		line-height: 16px;
+		padding-left: 10px;
+
+	}
+
+	.division{
+		display: none!important;
+	}
+
+	.copyright{margin-top: 20px;}
+
+	#footer_content {
+		width: 100%;
+		background: #28292b;
+	}
+
+	.content_navigation{
+		max-width: 100%;
+		padding: 0!important;
+	}
+
+	.content_navigation img{
+		max-width: 100%;
+	}
+
+
+
+}
+
+body #lightbox img {
+	width: 90%;
+	}
+	#lightbox #loading img {
+	width: auto;
+	}
+
