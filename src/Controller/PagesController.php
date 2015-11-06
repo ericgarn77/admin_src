@@ -70,11 +70,16 @@ class PagesController extends AppController
     {
 
         $pages = TableRegistry::get('Admin.Pages');
-        $currentPage = $pages->find()->where(['nom' => 'Accueil' ])
-        $this->set('data', [
-            'title' => __("Accueil")
-        ]);
-        $this->set(compact('data'));
+        $contenuHtml = TableRegistry::get('Admin.ContenuHtml');
+        $currentPage = $pages->find()->where(['nom' => 'Accueil' ]);
+
+        // $contents = $contenuHtml->find()->where(['page_id' => $currentPage->id]);
+        // $this->set('data', [
+        //     'title' => __("Accueil")
+        // ]);
+        // $this->set(compact('data'));
+        // $this->set('contents', $contents);
+        $this->set('currentPage', $currentPage);
         $this->layout = 'accueil';
 
     }

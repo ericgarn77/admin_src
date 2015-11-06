@@ -32,9 +32,7 @@
     <div class="wrapper bg_home">
         <div id="header">
             <div class="menu">
-                <?php
-                    include_once('inc/menu.php');
-                ?>
+                
                 <a class="facebook-icon"></a>
             </div>
             <div class="col-33">
@@ -66,9 +64,7 @@
                 <div id="footer">
                     <div id="bloc_top">
                         <div class=" menu_footer">
-                        <?php
-                            include_once('inc/menu_footer.php');
-						            ?>
+                        
                             <div class="clear"></div>
                         </div>
                         <div class="sociaux">
