@@ -20,8 +20,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 <!-- Stylesheet / Javascript -->
-<?= $this->Html->css('style'); ?>
 <?= $this->Html->css('proxima'); ?>
+<?= $this->Html->css('style'); ?>
 <?= $this->Html->script('jquery-1.11.3.min'); ?>			
 <?= $this->Html->script('jquery.jcarousel.min'); ?>
 <?= $this->Html->script('script'); ?>
@@ -32,7 +32,7 @@
     <div class="wrapper bg_home">
         <div id="header">
             <div class="menu">
-                
+                <?= $this->element('menu_header'); ?>
                 <a class="facebook-icon"></a>
             </div>
             <div class="col-33">
@@ -65,7 +65,7 @@
                 <div id="footer">
                     <div id="bloc_top">
                         <div class=" menu_footer">
-                        
+                            <?= $this->element('menu_footer'); ?>
                             <div class="clear"></div>
                         </div>
                         <div class="sociaux">
@@ -75,7 +75,8 @@
                     <div class="clear"></div>
                     </div>
                     <div class="division">
-                        <img src="images/design/strip_lign.png" width="957" height="3" alt="Division" />
+                        <?= $this->Html->image('design/strip_lign.png', ['width' => '957', 'height' => '3', 'alt' => 'Division']) ?>
+                        
                     </div>
                     <div id="bloc_bottom">
                         <div class="copyright">
@@ -89,7 +90,7 @@
                             F.:<strong>418.666-7848</strong><br />
                             <a href="mailto:info@audreymatte.com">info@audreymatte.com</a></p>
                         </div>
-                        <div class="beau-lieu"> <a href="http://www.remax.ca/" target="_blank" title="Affilié avec Re/Max - Agence immobilière"><img    src="images/img/agence_immobiliere_remax.png" width="305" height="52" alt="Remax agence immobilière" /></a>
+                        <div class="beau-lieu"> <a href="http://www.remax.ca/" target="_blank" title="Affilié avec Re/Max - Agence immobilière"><img    src="img/images/agence_immobiliere_remax.png" width="305" height="52" alt="Remax agence immobilière" /></a>
                             <p><strong>             agence immobilière</strong></p>
                             <p>Promenade Beauport, entrée no.2<br />3333 du Carrefour, local 250, Québec (Qc) G1C4R9<br /></p>
            	            </div>

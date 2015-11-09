@@ -64,12 +64,12 @@ h2, h3, h4 {
 	margin: 10px 0 0 0;
 }
 .bg_home {
-	background: url(../images/img/bg-home.jpg) no-repeat center top;
+	background: url(../img/images/bg-home.jpg) no-repeat center top;
 	background-size: cover;
 	/*background-position: -100% 40px;*/
 }
 .bg_section {
-	background: #f8f8f8 url(../images/img/bg-section.jpg) no-repeat center top;
+	background: #f8f8f8 url(../img/images/bg-section.jpg) no-repeat center top;
 }
 
 /* Partie top en-tête avec menu secondaire logo et menu principal */
@@ -194,7 +194,7 @@ a.facebook-icon{
 	display: block;
 	position: relative;
 	float: right;
-	background: url(../images/img/facebook.jpg) no-repeat center center;
+	background: url(../img/images/facebook.jpg) no-repeat center center;
 	width: 23px;
 	height: 23px;
 	margin: 16px 20px 0 0;
@@ -314,7 +314,7 @@ a.facebook-icon{
 }
 
 #vedette div:first-child{
-	background: #000 url(../images/img/vedette_bg.jpg) no-repeat center top;
+	background: #000 url(../img/images/vedette_bg.jpg) no-repeat center top;
 	background-size: 100%; 
 	width: 100%;
 	padding: 20px;
@@ -413,7 +413,7 @@ hr{
 	display: block;
 	font-size: 1.1em;
 	color: #ffffff;
-	background: url(../images/img/btn_bleu_sprite.png) 0 0;
+	background: url(../img/images/btn_bleu_sprite.png) 0 0;
 	text-transform: uppercase;
 	padding: 8px 0 0 15px;
 	text-decoration: none;
@@ -423,7 +423,7 @@ hr{
 	padding: 10px 0 0 15px;
 }
 #presentation .btn_standard a:hover, .content_right .btn_standard a:hover {
-	background: url(../images/img/btn_bleu_sprite.png) 0 -45px;
+	background: url(../img/images/btn_bleu_sprite.png) 0 -45px;
 }
 
 
@@ -435,7 +435,7 @@ hr{
 	display: block;
 	font-size: 1.1em;
 	color: #ffffff;
-	background: url(../images/img/btn_pdf.png) 0 0 no-repeat;
+	background: url(../img/images/btn_pdf.png) 0 0 no-repeat;
 	text-transform: uppercase;
 	padding: 8px 0 0 15px;
 	text-decoration: none;
@@ -445,7 +445,7 @@ hr{
 	padding: 10px 0 0 15px;
 }
 .btn_pdf a:hover{
-	background: url(../images/img/btn_pdf.png) 0 -45px no-repeat;
+	background: url(../img/images/btn_pdf.png) 0 -45px no-repeat;
 }
 
 /*Content pub*/
@@ -543,100 +543,100 @@ hr{
 }
 
 .logos_entrepreneurs li.logo_concepts_archi a {
-	background: url(../images/logos/logo_concepts_architecturaux.png) 0 0;
+	background: url(../img/logos/logo_concepts_architecturaux.png) 0 0;
 }
 .logos_entrepreneurs li.logo_concepts_archi a:hover {
-	background: url(../images/logos/logo_concepts_architecturaux.png) 0 -115px;
+	background: url(../img/logos/logo_concepts_architecturaux.png) 0 -115px;
 }
 .logos_entrepreneurs li.logo_ouellet a {
-	background: url(../images/logos/logo_constr_ouellet.png) 0 -115px;
+	background: url(../img/logos/logo_constr_ouellet.png) 0 -115px;
 }
 .logos_entrepreneurs li.logo_ouellet a:hover {
-	background: url(../images/logos/logo_constr_ouellet.png) 0 0;
+	background: url(../img/logos/logo_constr_ouellet.png) 0 0;
 }
 .logos_entrepreneurs li.logo_audet a {
-	background: url(../images/logos/logo_audet.png) 0 -114px;
+	background: url(../img/logos/logo_audet.png) 0 -114px;
 }
 .logos_entrepreneurs li.logo_audet a:hover {
-	background: url(../images/logos/logo_audet.png) 0 0;
+	background: url(../img/logos/logo_audet.png) 0 0;
 }
 .logos_entrepreneurs li.logo_cmartin a {
-	background: url(../images/logos/logo_cmartin.png) 0 -114px;
+	background: url(../img/logos/logo_cmartin.png) 0 -114px;
 }
 .logos_entrepreneurs li.logo_cmartin a:hover {
-	background: url(../images/logos/logo_cmartin.png) 0 0;
+	background: url(../img/logos/logo_cmartin.png) 0 0;
 }
 .logos_entrepreneurs li.logo_champsblais a {
-	background: url(../images/logos/logo_constructions_champsblais.png) 0 0;
+	background: url(../img/logos/logo_constructions_champsblais.png) 0 0;
 }
 .logos_entrepreneurs li.logo_champsblais a:hover {
-	background: url(../images/logos/logo_constructions_champsblais.png) 0 -115px;
+	background: url(../img/logos/logo_constructions_champsblais.png) 0 -115px;
 }
 .logos_entrepreneurs li.logo_constr_cofort a {
-	background: url(../images/logos/logo_construction_cofort.png) 0 0;
+	background: url(../img/logos/logo_construction_cofort.png) 0 0;
 }
 .logos_entrepreneurs li.logo_constr_cofort a:hover {
-	background: url(../images/logos/logo_construction_cofort.png) 0 -115px;
+	background: url(../img/logos/logo_construction_cofort.png) 0 -115px;
 }
 .logos_entrepreneurs li.logo_jacques_demers a {
-	background: url(../images/logos/logo_construction_jacques_demers.png) 0 0;
+	background: url(../img/logos/logo_construction_jacques_demers.png) 0 0;
 }
 .logos_entrepreneurs li.logo_jacques_demers a:hover {
-	background: url(../images/logos/logo_construction_jacques_demers.png) 0 -115px;
+	background: url(../img/logos/logo_construction_jacques_demers.png) 0 -115px;
 }
 .logos_entrepreneurs li.logo_constr_mp a {
-	background: url(../images/logos/logo_construction_renovation_mp.png) 0 0;
+	background: url(../img/logos/logo_construction_renovation_mp.png) 0 0;
 }
 .logos_entrepreneurs li.logo_constr_mp a:hover {
-	background: url(../images/logos/logo_construction_renovation_mp.png) 0 -115px;
+	background: url(../img/logos/logo_construction_renovation_mp.png) 0 -115px;
 }
 .logos_entrepreneurs li.logo_crd a {
-	background: url(../images/logos/logo_crd.png) 0 0;
+	background: url(../img/logos/logo_crd.png) 0 0;
 }
 .logos_entrepreneurs li.logo_crd a:hover {
-	background: url(../images/logos/logo_crd.png) 0 -115px;
+	background: url(../img/logos/logo_crd.png) 0 -115px;
 }
 .logos_entrepreneurs li.logo_deltec a {
-	background: url(../images/logos/logo_deltec.png) 0 0;
+	background: url(../img/logos/logo_deltec.png) 0 0;
 }
 .logos_entrepreneurs li.logo_deltec a:hover {
-	background: url(../images/logos/logo_deltec.png) 0 -115px;
+	background: url(../img/logos/logo_deltec.png) 0 -115px;
 }
 .logos_entrepreneurs li.logo_dgc a {
-	background: url(../images/logos/logo_dgc.png) 0 0;
+	background: url(../img/logos/logo_dgc.png) 0 0;
 }
 .logos_entrepreneurs li.logo_dgc a:hover {
-	background: url(../images/logos/logo_dgc.png) 0 -115px;
+	background: url(../img/logos/logo_dgc.png) 0 -115px;
 }
 .logos_entrepreneurs li.logo_gcb a {
-	background: url(../images/logos/logo_gcb.png) 0 0;
+	background: url(../img/logos/logo_gcb.png) 0 0;
 }
 .logos_entrepreneurs li.logo_gcb a:hover {
-	background: url(../images/logos/logo_gcb.png) 0 -115px;
+	background: url(../img/logos/logo_gcb.png) 0 -115px;
 }
 .logos_entrepreneurs li.logo_habitations_es a {
-	background: url(../images/logos/logo_habitations_es.png) 0 0;
+	background: url(../img/logos/logo_habitations_es.png) 0 0;
 }
 .logos_entrepreneurs li.logo_habitations_es a:hover {
-	background: url(../images/logos/logo_habitations_es.png) 0 -115px;
+	background: url(../img/logos/logo_habitations_es.png) 0 -115px;
 }
 .logos_entrepreneurs li.logo_maisons_sl a {
-	background: url(../images/logos/logo_maison_st-laurent.png) 0 0;
+	background: url(../img/logos/logo_maison_st-laurent.png) 0 0;
 }
 .logos_entrepreneurs li.logo_maisons_sl a:hover {
-	background: url(../images/logos/logo_maison_st-laurent.png) 0 -115px;
+	background: url(../img/logos/logo_maison_st-laurent.png) 0 -115px;
 }
 .logos_entrepreneurs li.logo_concept_sl a {
-	background: url(../images/logos/logo_concept_st-laurent.png) 0 0;
+	background: url(../img/logos/logo_concept_st-laurent.png) 0 0;
 }
 .logos_entrepreneurs li.logo_concept_sl a:hover {
-	background: url(../images/logos/logo_concept_st-laurent.png) 0 -115px;
+	background: url(../img/logos/logo_concept_st-laurent.png) 0 -115px;
 }
 .logos_entrepreneurs li.logo_sous-bois a {
-	background: url(../images/logos/logo_sous-bois.png) 0 0;
+	background: url(../img/logos/logo_sous-bois.png) 0 0;
 }
 .logos_entrepreneurs li.logo_sous-bois a:hover {
-	background: url(../images/logos/logo_sous-bois.png) 0 -115px;
+	background: url(../img/logos/logo_sous-bois.png) 0 -115px;
 }
  
 /* Partie principal avec contenu texte et photos */
@@ -669,7 +669,7 @@ hr{
 	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 .content_left ul {
-	list-style-image: url(../images/img/arrow_listing.png);
+	list-style-image: url(../img/images/arrow_listing.png);
 	margin: 10px 0 15px 20px;
 }
 .content_left ul li {
@@ -769,7 +769,7 @@ hr{
 .content_terrains .title_projet {
 	display: block;
 	padding: 10px 0 10px 20px;
-	background: url(../images/img/title_projet_bg.png) no-repeat left center;
+	background: url(../img/images/title_projet_bg.png) no-repeat left center;
 	font-size: 1.6em;
 	color: #5f5f5f;
 	font-family: 'ProximaNovaSemibold';
@@ -1334,7 +1334,7 @@ div.ongletsContent.currentTab { display:block; }
 	top: 20px;
 	overflow: hidden;
 	border: none;
-	background: url(../images/img/cross.png) no-repeat center center;
+	background: url(../img/images/cross.png) no-repeat center center;
 	text-indent: 200%;
 	color: transparent;
 	outline: none;
@@ -1427,7 +1427,7 @@ div.ongletsContent.currentTab { display:block; }
 	display: none;
 	text-align: left;
 
-	background-image:url(../images/design/menu.png);
+	background-image:url(../img/design/menu.png);
 	 background-repeat: no-repeat;
 	 background-position: center right;
 }
@@ -1458,7 +1458,7 @@ div.ongletsContent.currentTab { display:block; }
 
 @media (max-width: 390px) {
 	.bg_section {
-		background: #f8f8f8 url(../images//bg_sections2.jpg) no-repeat right -650px top;
+		background: #f8f8f8 url(../img/bg_sections2.jpg) no-repeat right -650px top;
 	}
 
 	#presentation_section h1 a img {
@@ -1529,27 +1529,27 @@ and (max-width : 550px){
 	    height: 50px;
 	}
 	.logos_entrepreneurs li.logo_ouellet a {
-		background: url(../images/logos/logo_constr_ouellet.png) no-repeat 0 -50px;
+		background: url(../img/logos/logo_constr_ouellet.png) no-repeat 0 -50px;
 		background-size: cover;
 	}
 	.logos_entrepreneurs li.logo_ouellet a:hover {
-		background: url(../images/logos/logo_constr_ouellet.png) no-repeat 0 0;
+		background: url(../img/logos/logo_constr_ouellet.png) no-repeat 0 0;
 		background-size: cover;
 	}
 	.logos_entrepreneurs li.logo_audet a {
-		background: url(../images/logos/logo_audet.png) no-repeat 0 -50px;
+		background: url(../img/logos/logo_audet.png) no-repeat 0 -50px;
 		background-size: cover;
 	}
 	.logos_entrepreneurs li.logo_audet a:hover {
-		background: url(../images/logos/logo_audet.png) no-repeat 0 0;
+		background: url(../img/logos/logo_audet.png) no-repeat 0 0;
 		background-size: cover;
 	}
 	.logos_entrepreneurs li.logo_cmartin a {
-		background: url(../images/logos/logo_cmartin.png) no-repeat 0 -50px;
+		background: url(../img/logos/logo_cmartin.png) no-repeat 0 -50px;
 		background-size: cover;
 	}
 	.logos_entrepreneurs li.logo_cmartin a:hover {
-		background: url(../images/logos/logo_cmartin.png) no-repeat 0 0;
+		background: url(../img/logos/logo_cmartin.png) no-repeat 0 0;
 		background-size: cover;
 	}
 	
@@ -1586,7 +1586,7 @@ and (max-width : 550px){
 		width: 70%;
 	}
 	.bg_section{
-		background: url(../images/img/bg-home.jpg) no-repeat center 75px;
+		background: url(../img/images/bg-home.jpg) no-repeat center 75px;
 	}
 	.content_left .inputArea, #Commentaire {
 		width: 90%!important;
@@ -1601,7 +1601,7 @@ and (max-width : 550px){
 		margin:0%!important;
 	}
 	body #content_presentation {
-		background: url(../images/design/presentation_audrey_matte.png) no-repeat -90px top !important;
+		background: url(../img/design/presentation_audrey_matte.png) no-repeat -90px top !important;
 		background-size: 600px!important;
 	}
 	#content_presentation #presentation h1 a img{
@@ -1721,7 +1721,7 @@ and (max-width : 550px){
 		background-size: 1300px;
 	}
 	#content_presentation {
-		background: url(../images/design/presentation_audrey_matte.png) no-repeat 20px top !important;
+		background: url(../img/design/presentation_audrey_matte.png) no-repeat 20px top !important;
 		background-size: 110% !important;
 	}
 }
@@ -1793,8 +1793,8 @@ and (max-width : 767px){
 		left: 10%!important;
 	}
 
-	#prevLink, #prevLink:visited { background: url(../images/lightbox/prev2.png)center left no-repeat!important; }
-	#nextLink, #nextLink:visited { background: url(../images/lightbox/next2.png)center right no-repeat!important; }
+	#prevLink, #prevLink:visited { background: url(../img/lightbox/prev2.png)center left no-repeat!important; }
+	#nextLink, #nextLink:visited { background: url(../img/lightbox/next2.png)center right no-repeat!important; }
 	.top_menu {
 	display: none;
 	}
@@ -1914,7 +1914,7 @@ and (max-width : 767px){
 	}*/
 
 	.bg_home {
-	background: url(../images/img/bg-home.jpg) no-repeat center top;
+	background: url(../img/images/bg-home.jpg) no-repeat center top;
 
 	}
 	#integration{
@@ -2009,7 +2009,7 @@ and (max-width : 767px){
 	}
 	
 	#content_presentation {
-		background: url(../images/design/presentation_audrey_matte.png) no-repeat 60px top;
+		background: url(../img/design/presentation_audrey_matte.png) no-repeat 60px top;
 		background-size: 90%;
 		height: auto;
 	}

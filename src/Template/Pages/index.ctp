@@ -1,3 +1,1 @@
-<?php 
-echo $currentPage;
-?>
+<?= $contents[0]->contenu ?>

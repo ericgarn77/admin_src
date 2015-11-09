@@ -69,16 +69,62 @@ class PagesController extends AppController
     public function index()
     {
 
-        $pages = TableRegistry::get('Admin.Pages');
-        $contenuHtml = TableRegistry::get('Admin.ContenuHtml');
-        $currentPage = $pages->find()->where(['nom' => 'Accueil' ]);
+        $pages = TableRegistry::get('Pages');
+        $query = $pages->find()->where(['nom' => 'Accueil' ]);
+        $currentPage = $query->first();
+        $query = $pages->contenuHtml->find()->where(['page_id' => $currentPage->id]);
+        $contents = $query->toArray();
+        $this->set('data', [
+            'title' => __("Accueil - Audrey Matte - Courtier immobilier")
+        ]);
+        $this->set('menu', [
+            'accueil' => 'Accueil',
+            'profil' => 'Profil',
+            'projets' => 'Mes Projets',
+            'terrains' => 'Terrains',
+            'plan' => 'Plan de maison',
+            'inscriptions' => 'Mes Inscriptions',
+            'contact' => 'Contacts',
+            'selected-accueil' => 'selected',
+            'selected-projet' => null,
+            'selected-terrain' => null,
+            'selected-plan' => null
+        ]);
+        $this->set(compact('data'));
+        $this->set(compact('menu'));
+        $this->set('contents', $contents);
+        $this->set('currentPage', $currentPage);
+        $this->layout = 'accueil';
 
-        // $contents = $contenuHtml->find()->where(['page_id' => $currentPage->id]);
-        // $this->set('data', [
-        //     'title' => __("Accueil")
-        // ]);
-        // $this->set(compact('data'));
-        // $this->set('contents', $contents);
+    }
+
+    public function projets()
+    {
+
+        $pages = TableRegistry::get('Pages');
+        $query = $pages->find()->where(['nom' => 'Mes projets' ]);
+        $currentPage = $query->first();
+        $query = $pages->contenuHtml->find()->where(['page_id' => $currentPage->id]);
+        $contents = $query->toArray();
+        $this->set('data', [
+            'title' => __("Accueil - Audrey Matte - Courtier immobilier")
+        ]);
+        $this->set('menu', [
+            'accueil' => 'Accueil',
+            'profil' => 'Profil',
+            'projets' => 'Mes Projets',
+            'terrains' => 'Terrains',
+            'plan' => 'Plan de maison',
+            'inscriptions' => 'Mes Inscriptions',
+            'contact' => 'Contacts',
+            'selected-accueil' => null,
+            'selected-projet' => 'selected',
+            'selected-terrain' => null,
+            'selected-plan' => null
+        ]);
+        $this->set(compact('data'));
+        $this->set(compact('menu'));
+        $this->set('contents', $contents);
         $this->set('currentPage', $currentPage);
         $this->layout = 'accueil';
 
