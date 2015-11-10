@@ -7,7 +7,7 @@
                     <?= $this->Html->link(__('Profil'), 'http://savarddesgagnes.com/equipe/?code=103425', ['title' => 'Profil - Audrey Matte Courtier Immobilier', 'target' => 'blank']) ?>
                 </li>
                 <li id="<?= $menu['selected-projet'] ?>">
-                    <?= $this->Html->link(__('Mes Projets'), ['controller' => 'Pages', 'action' => 'projets'], ['title' => 'Projets de construction neuve à Québec']) ?>
+                    <?= $this->Html->link(__('Mes Projets'), ['controller' => 'Projets', 'action' => 'index'], ['title' => 'Projets de construction neuve à Québec']) ?>
                 </li>
                 <li id="<?= $menu['selected-terrain'] ?>">
                     <?= $this->Html->link(__('Terrains'), ['controller' => 'Pages', 'action' => 'terrains'], ['title' => 'Notre liste de terrain pour construction neuve à Québec']) ?>
@@ -43,7 +43,7 @@
                             <?= $this->Html->link(__('Profil'), 'http://savarddesgagnes.com/equipe/?code=103425', ['title' => 'Profil - Audrey Matte Courtier Immobilier', 'target' => 'blank']) ?>
                         </li>
                         <li id="<?= $menu['selected-projet'] ?>">
-                            <?= $this->Html->link(__('Mes Projets'), ['controller' => 'Pages', 'action' => 'projets'], ['title' => 'Projets de construction neuve à Québec']) ?>
+                            <?= $this->Html->link(__('Mes Projets'), ['controller' => 'Projets', 'action' => 'index'], ['title' => 'Projets de construction neuve à Québec']) ?>
                         </li>
                         <li id="<?= $menu['selected-terrain'] ?>">
                             <?= $this->Html->link(__('Terrains'), ['controller' => 'Pages', 'action' => 'terrains'], ['title' => 'Notre liste de terrain pour construction neuve à Québec']) ?>
