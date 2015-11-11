@@ -52,6 +52,8 @@ class ProjetsController extends AppController
         $query = $this->Projets->find()->where(['vedette' => 'oui']);
         $vedette = $query->first();
 
+        $projets = $this->Projets->find()->where(['presentation' => 'oui'])->order(['order_projet' => 'ASC']);
+    
         $this->set('vedette', $vedette);
         $this->set('contents', $contents);
         $this->set('currentPage', $currentPage);
@@ -59,8 +61,9 @@ class ProjetsController extends AppController
         $this->paginate = [
             'contain' => ['Regions']
         ];
-        $this->set('projets', $this->paginate($this->Projets));
-        $this->set('_serialize', ['projets']);
+        $this->set('projets', $this->paginate($projets));
+
+        
     }
 
     /**

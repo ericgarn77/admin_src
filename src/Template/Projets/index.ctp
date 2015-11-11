@@ -29,16 +29,19 @@
     </div>
      <div class="clear"></div>
 </div>
-<div class="content_projets">
 
-    <div class="bloc_projet" style="margin-right:15px">
-        <a href="projet_beauport.php" title="beauport"><img src="images/projets/beauport/thumb_vue_aerienne.jpg" width="309" height="136" alt="Projet Beauport" /></a>
+
+<div class="content_projets">
+<?php foreach ($projets as $projet): ?>
+    <div class="bloc_projet">
+        <?= $this->Html->link( $this->Html->image('Admin.projets/'.$projet->dossier_image.'/'.$projet->image, ['width' => '309', 'height' => '136', "alt" => "Projet façade"]),
+    ['controller' => 'Projets', 'action' => 'view', $projet->id], ['escape' => false]) ?>
         <div class="resume">
-        <h5>Projet Panorama 130</h5>
-        <p>Beauport</p>
-        <!--<p><a href="#">Cliquer pour voir les détails</a></p>-->
+            <h5><?= $projet->nom ?></h5>
+            <p><?= $projet->region->nom ?></p>
         </div>
     </div>
+<?php endforeach; ?>
     <div class="clear"></div>
 </div>
             

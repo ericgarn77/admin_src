@@ -56,6 +56,14 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <label>Ordre d'affichage</label>
+                                    <div class="inputs">
+                                        <span class="input_wrapper">
+                                            <?= $this->Form->input('order_projet', ['label' => false, 'type' => 'number', 'id' => 'order_projet', 'class' => 'text']) ?>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row">
                                     <label>Page présentation</label>
                                     <div class="inputs">
                                         <p class="field switch">

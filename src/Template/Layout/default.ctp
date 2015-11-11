@@ -89,7 +89,7 @@
                     Réalisation <a href="http://www.difusioninteractive.com/" title="Difusion Interactive" target="_blank" class="difusion">diFusion Interactive</a></div>
                     <div class="signature"><strong>418.571-1691</strong><br />
                     <a href="mailto:info@audreymatte.com">info@audreymatte.com</a></div>
-                    <div class="beau-lieu"> <a href="http://www.remax.ca/" target="_blank" title="Affilié avec Re/Max - Agence immobilière"><img src="images/img/agence_immobiliere_remax.png" width="305" height="52" alt="Remax agence immobilière" /></a>
+                    <div class="beau-lieu"> <a href="http://www.remax.ca/" target="_blank" title="Affilié avec Re/Max - Agence immobilière"><img src="img/images/agence_immobiliere_remax.png" width="305" height="52" alt="Remax agence immobilière" /></a>
                     </div>
                     <div class="clear"></div>
                 </div>
