@@ -49,6 +49,14 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <label>Adresse</label>
+                                    <div class="inputs">
+                                        <span class="input_wrapper">
+                                            <?= $this->Form->input('adresse', ['label' => false, 'type' => 'text', 'id' => 'adresse', 'class' => 'text']) ?>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row">
                                     <label>Page présentation</label>
                                     <div class="inputs">
                                         <p class="field switch">

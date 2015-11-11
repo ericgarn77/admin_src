@@ -2,6 +2,12 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Core\Configure;
+use Cake\Network\Exception\NotFoundException;
+use Cake\View\Exception\MissingTemplateException;
+use Cake\ORM\TableRegistry;
+use Cake\Filesystem\Folder;
+use Cake\Filesystem\File;
 
 /**
  * Projets Controller
@@ -22,8 +28,10 @@ class ProjetsController extends AppController
         $pages = TableRegistry::get('Pages');
         $query = $pages->find()->where(['nom' => 'Mes projets' ]);
         $currentPage = $query->first();
+        
         $query = $pages->contenuHtml->find()->where(['page_id' => $currentPage->id]);
         $contents = $query->toArray();
+        
         $this->set('data', [
             'title' => __("Nos projets - Audrey Matte - Courtier Immobilier")
         ]);
@@ -41,7 +49,12 @@ class ProjetsController extends AppController
             'selected-plan' => null
         ]);
 
+        $query = $this->Projets->find()->where(['vedette' => 'oui']);
+        $vedette = $query->first();
 
+        $this->set('vedette', $vedette);
+        $this->set('contents', $contents);
+        $this->set('currentPage', $currentPage);
 
         $this->paginate = [
             'contain' => ['Regions']

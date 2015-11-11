@@ -275,7 +275,19 @@ $(function(){
 
     $('span.non.vendu').click(function(){
 
-        $('#check-vendu').val('à vendre');
+        $('#check-vendu').val('À vendre');
+
+    });
+
+    $('span.oui.vedette').click(function(){
+
+        $('#check-vedette').val('oui');
+
+    });
+
+    $('span.non.vedette').click(function(){
+
+        $('#check-vedette').val('non');
 
     });
 
@@ -320,6 +332,20 @@ $(function(){
     {
         $('.cb-disable.vendu').addClass('selected');
         $('.cb-enable.vendu').removeClass('selected');
+        
+    }
+
+    if($('#check-vedette').val() == 'oui')
+    {
+        $('.cb-enable.vedette').addClass('selected');
+        $('.cb-disable.vedette').removeClass('selected');
+        
+    }
+
+    if($('#check-vedette').val() == 'non')
+    {
+        $('.cb-disable.vedette').addClass('selected');
+        $('.cb-enable.vedette').removeClass('selected');
         
     }
 
