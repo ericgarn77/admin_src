@@ -34,8 +34,11 @@
 <div class="content_projets">
 <?php foreach ($projets as $projet): ?>
     <div class="bloc_projet">
+        <div class="wrap-image">
+            <div class="bande-vendu"><strong>Vendu</strong></div>
         <?= $this->Html->link( $this->Html->image('Admin.projets/'.$projet->dossier_image.'/'.$projet->image, ['width' => '309', 'height' => '136', "alt" => "Projet façade"]),
     ['controller' => 'Projets', 'action' => 'view', $projet->id], ['escape' => false]) ?>
+        </div>
         <div class="resume">
             <h5><?= $projet->nom ?></h5>
             <p><?= $projet->region->nom ?></p>

@@ -426,7 +426,32 @@ hr{
 	background: url(../img/images/btn_bleu_sprite.png) 0 -45px;
 }
 
+.wrap-image{
+	display: block;
+	position: relative;
+	overflow: hidden;
+}
 
+.wrap-image .bande-vendu{
+	display: block;
+	position: absolute;
+	top: 40px;
+	left: -76px;
+	text-align: center;
+	font-size: 22px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: #FFF;
+	background-color: rgba(163,24,21,0.9);
+	padding: 13px 0;
+	width: 100%;
+	transform:rotate(-40deg); 
+	-ms-transform:rotate(-40deg); 
+	-moz-transform:rotate(-40deg); 
+	-webkit-transform:rotate(-40deg); 
+	-o-transform:rotate(-40deg); 
+}
+}
 .btn_pdf a{
 	height: 25px;
 	margin-bottom: 15px;
