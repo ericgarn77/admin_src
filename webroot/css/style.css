@@ -451,11 +451,7 @@ hr{
 	-webkit-transform:rotate(-40deg); 
 	-o-transform:rotate(-40deg); 
 }
-}
-.btn_pdf a{
-	height: 25px;
-	margin-bottom: 15px;
-}
+
 .btn_pdf a{
 	display: block;
 	font-size: 1.1em;
@@ -464,11 +460,12 @@ hr{
 	text-transform: uppercase;
 	padding: 8px 0 0 15px;
 	text-decoration: none;
-}
-..btn_pdf a {
+	height: 25px;
+	margin-bottom: 15px;
 	font-size: 0.9em;
 	padding: 10px 0 0 15px;
 }
+
 .btn_pdf a:hover{
 	background: url(../img/images/btn_pdf.png) 0 -45px no-repeat;
 }

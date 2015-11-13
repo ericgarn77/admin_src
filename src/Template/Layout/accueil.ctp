@@ -90,7 +90,7 @@
                             F.:<strong>418.666-7848</strong><br />
                             <a href="mailto:info@audreymatte.com">info@audreymatte.com</a></p>
                         </div>
-                        <div class="beau-lieu"> <a href="http://www.remax.ca/" target="_blank" title="Affilié avec Re/Max - Agence immobilière"><img    src="img/images/agence_immobiliere_remax.png" width="305" height="52" alt="Remax agence immobilière" /></a>
+                        <div class="beau-lieu"> <a href="http://www.remax.ca/" target="_blank" title="Affilié avec Re/Max - Agence immobilière"><img    src="/img/images/agence_immobiliere_remax.png" width="305" height="52" alt="Remax agence immobilière" /></a>
                             <p><strong>             agence immobilière</strong></p>
                             <p>Promenade Beauport, entrée no.2<br />3333 du Carrefour, local 250, Québec (Qc) G1C4R9<br /></p>
            	            </div>

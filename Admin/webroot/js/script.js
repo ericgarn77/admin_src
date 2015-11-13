@@ -269,7 +269,7 @@ $(function(){
 
     $('span.oui.vendu').click(function(){
 
-        $('#check-vendu').val('vendu');
+        $('#check-vendu').val('Vendu');
 
     });
 

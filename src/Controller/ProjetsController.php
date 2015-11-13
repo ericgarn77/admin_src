@@ -33,16 +33,10 @@ class ProjetsController extends AppController
         $contents = $query->toArray();
         
         $this->set('data', [
-            'title' => __("Nos projets - Audrey Matte - Courtier Immobilier")
+            'title' => __("Nos projets - Audrey Matte - Courtier Immobilier"),
+            'projet' => null
         ]);
         $this->set('menu', [
-            'accueil' => 'Accueil',
-            'profil' => 'Profil',
-            'projets' => 'Mes Projets',
-            'terrains' => 'Terrains',
-            'plan' => 'Plan de maison',
-            'inscriptions' => 'Mes Inscriptions',
-            'contact' => 'Contacts',
             'selected-accueil' => null,
             'selected-projet' => 'selected',
             'selected-terrain' => null,
@@ -75,11 +69,39 @@ class ProjetsController extends AppController
      */
     public function view($id = null)
     {
+        
+        $pages = TableRegistry::get('Pages');
+        $query = $pages->find()->where(['nom' => 'Mes projets' ]);
+        $currentPage = $query->first();
+
         $projet = $this->Projets->get($id, [
             'contain' => ['Regions', 'Caracteristiques', 'Galeries', 'Terrains']
         ]);
+        
+        $caracteristiques = $this->Projets->Caracteristiques->find()->where(['caracteristiques.projet_id' => $id]);
+        $galeries = $this->Projets->Galeries->find()->where(['galeries.projet_id' => $id]);
+        $arrayGal = $galeries->toArray();
+        
+        $this->set('caractCount', $caracteristiques->count());
+        
         $this->set('projet', $projet);
         $this->set('_serialize', ['projet']);
+        $this->set('arrayGal', $arrayGal);
+        $this->set('galeries', $galeries);
+        $this->set('caracteristiques', $caracteristiques);
+        $this->set('currentPage', $currentPage);
+
+        $this->set('data', [
+            'title' => __($projet->nom." - Audrey Matte - Courtier Immobilier"),
+            'projet' => 'projet'
+        ]);
+        $this->set('menu', [
+            'selected-accueil' => null,
+            'selected-projet' => 'selected',
+            'selected-terrain' => null,
+            'selected-plan' => null
+        ]);
+
     }
 
     /**
@@ -148,4 +170,6 @@ class ProjetsController extends AppController
         }
         return $this->redirect(['action' => 'index']);
     }
+
+  
 }

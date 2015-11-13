@@ -29,7 +29,7 @@
             	<?php if ($currentPage->nom=="Mes projets") echo "Mes Projets"; ?>
             	<?php if ($currentPage->nom=="Terrains") echo "Terrains"; ?>
             	<?php if ($currentPage->nom=="Plan de maison") echo "Plan de maison"; ?>
-            	<?php if ($currentPage->nom=="Contact") echo "contact"; ?>
+            	<?php if ($currentPage->nom=="Contact") echo "Contact"; ?>
             </button>
 
             <div class="overlay overlay-slidedown">
