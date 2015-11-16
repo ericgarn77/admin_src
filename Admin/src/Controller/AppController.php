@@ -54,6 +54,14 @@ class AppController extends BaseController
             'title' => __("Gestion")
         ]);
         $this->set(compact('data'));
+        $this->set('menu', [
+            'panelSelected' => null,
+            'projetSelected' => null,
+            'regionSelected' => null,
+            'pageSelected' => null,
+            'userSelected' => null,
+            'gestionSelected' => 'menuActifDash'
+        ]);
     }
 
     public function addDirImg()
@@ -73,6 +81,5 @@ class AppController extends BaseController
         ]);
         $this->set(compact('data'));
         
-
     }
 }

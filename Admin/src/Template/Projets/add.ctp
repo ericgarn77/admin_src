@@ -56,10 +56,18 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <label>Ordre d'affichage</label>
+                                    <label>Ordre d'affichage page présentation</label>
                                     <div class="inputs">
                                         <span class="input_wrapper">
-                                            <?= $this->Form->input('order_projet', ['label' => false, 'type' => 'number', 'id' => 'order_projet', 'class' => 'text']) ?>
+                                            <?= $this->Form->input('order_presentation', ['label' => false, 'type' => 'number', 'id' => 'order_presentation', 'class' => 'text']) ?>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label>Ordre d'affichage page terrains</label>
+                                    <div class="inputs">
+                                        <span class="input_wrapper">
+                                            <?= $this->Form->input('order_terrains', ['label' => false, 'type' => 'number', 'id' => 'order_terrains', 'class' => 'text']) ?>
                                         </span>
                                     </div>
                                 </div>

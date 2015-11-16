@@ -29,6 +29,7 @@
 <?= $this->Html->script('lightbox'); ?>
 <?= $this->Html->script('script'); ?>
 <?= $this->Html->script('google-analytic'); ?>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=fr"></script>
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
   {lang: 'fr'}
 </script>
@@ -64,6 +65,7 @@
     </div>
     <div class="wrapper-section">    
         <div id="integration" class="<?= $data['projet'] ?>">
+            <?= $data['full_page'] ?>
             <?= $this->fetch('content') ?>
         </div>
     </div>

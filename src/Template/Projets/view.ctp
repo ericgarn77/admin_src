@@ -22,7 +22,7 @@
         <div class="description">
             <?= $projet->description ?>
             <div class="btn_pdf">
-                <?= $this->Html->link('Télcharger le plan de lotissement', $projet->plan_pdf, ['target' => 'blank']) ?>
+                <?= $this->Html->link('Télcharger le plan de lotissement', '/admin/img/pdf/'.$projet->plan_pdf, ['target' => 'blank']) ?>
                 
             </div>
             <div class="btn_pdf">
@@ -43,18 +43,22 @@
             </ul>
             <div class="ongletsContent currentTab">
                 <div class="gallerie">
-                    <?= $this->Html->link($this->Html->image('Admin.projets/'.$projet->dossier_image.'/'.$arrayGal[0]->nom, ['title' => $projet->nom, 'alt' => $projet->nom]), '/admin/img/projets/'.$projet->dossier_image.'/'.$arrayGal[0]->nom, ['rel' => 'lightbox', 'escape' => false]) ?>
-                    <div id="thumbs">
-                        <ul>
-                            <?php foreach ($galeries as $galerie): ?>
-                            <li>
-                                <?= $this->Html->image('Admin.projets/'.$projet->dossier_image.'/'.$galerie->nom, ['rel' => 'lightbox', 'title' => $projet->nom, 'alt' => $projet->nom, 'width' => '104', 'height' => '80']) ?>
-                            </li>
-                            <?php endforeach; ?>
-
+                        <?php if($galeries->count() > 0)
+                        {
+                            echo $this->Html->link($this->Html->image('Admin.projets/'.$projet->dossier_image.'/'.$arrayGal[0]->nom, ['title' => $projet->nom, 'alt' => $projet->nom]), '/admin/img/projets/'.$projet->dossier_image.'/'.$arrayGal[0]->nom, ['rel' => 'lightbox', 'escape' => false]); ?>
+                            <div id="thumbs">
+                                <ul>
+                            
+                                <?php foreach ($galeries as $galerie): ?>
+                                <li>
+                                    <?= $this->Html->link($this->Html->image('Admin.projets/'.$projet->dossier_image.'/'.$galerie->nom, ['title' => $projet->nom, 'alt' => $projet->nom, 'width' => '104', 'height' => '80']), '/admin/img/projets/'.$projet->dossier_image.'/'.$galerie->nom, ['rel' => 'lightbox#galerie', 'escape' => false]) ?>
+                                </li>
+                                <?php endforeach; ?>
+                        
                         <div class="clear"></div>
                         </ul>
                     </div><br />
+                    <?php } ?>
                 </div> <!-- Fin galerie -->
             </div>
             <div class="ongletsContent">

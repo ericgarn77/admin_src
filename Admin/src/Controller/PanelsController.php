@@ -23,7 +23,15 @@ class PanelsController extends AppController
         $this->set('data', [
             'title' => __("Tableau de bord")
         ]);
-        $this->set(compact('data'));   
+        $this->set(compact('data'));
+        $this->set('menu', [
+            'panelSelected' => 'menuActifDash',
+            'projetSelected' => null,
+            'regionSelected' => null,
+            'pageSelected' => null,
+            'userSelected' => null,
+            'gestionSelected' => null
+        ]);   
     }
     /**
      * View method

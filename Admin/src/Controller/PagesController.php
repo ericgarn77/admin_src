@@ -32,6 +32,14 @@ class PagesController extends AppController
             'title' => __("Pages du site")
         ]);
         $this->set(compact('data'));
+        $this->set('menu', [
+            'panelSelected' => null,
+            'projetSelected' => null,
+            'regionSelected' => null,
+            'pageSelected' => 'menuActifDash',
+            'userSelected' => null,
+            'gestionSelected' => null
+        ]);
     }
 
     /**
@@ -75,6 +83,14 @@ class PagesController extends AppController
         $this->set(compact('data'));
         $this->set(compact('page'));
         $this->set('_serialize', ['page']);
+        $this->set('menu', [
+            'panelSelected' => null,
+            'projetSelected' => null,
+            'regionSelected' => null,
+            'pageSelected' => 'menuActifDash',
+            'userSelected' => null,
+            'gestionSelected' => null
+        ]);
     }
 
     /**
@@ -156,6 +172,14 @@ class PagesController extends AppController
         $this->set(compact('data'));
         $this->set(compact('page'));
         $this->set('_serialize', ['page']);
+        $this->set('menu', [
+            'panelSelected' => null,
+            'projetSelected' => null,
+            'regionSelected' => null,
+            'pageSelected' => 'menuActifDash',
+            'userSelected' => null,
+            'gestionSelected' => null
+        ]);
     }
 
     /**

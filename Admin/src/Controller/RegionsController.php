@@ -32,6 +32,14 @@ class RegionsController extends AppController
             'title' => __("Régions")
         ]);
         $this->set(compact('data'));
+        $this->set('menu', [
+            'panelSelected' => null,
+            'projetSelected' => null,
+            'regionSelected' => 'menuActifDash',
+            'pageSelected' => null,
+            'userSelected' => null,
+            'gestionSelected' => null
+        ]);
 
     }
 
@@ -75,6 +83,14 @@ class RegionsController extends AppController
         $this->set(compact('data'));
         $this->set(compact('region'));
         $this->set('_serialize', ['region']);
+        $this->set('menu', [
+            'panelSelected' => null,
+            'projetSelected' => null,
+            'regionSelected' => 'menuActifDash',
+            'pageSelected' => null,
+            'userSelected' => null,
+            'gestionSelected' => null
+        ]);
     }
 
     /**
@@ -104,6 +120,14 @@ class RegionsController extends AppController
         $this->set(compact('data'));
         $this->set(compact('region'));
         $this->set('_serialize', ['region']);
+        $this->set('menu', [
+            'panelSelected' => null,
+            'projetSelected' => null,
+            'regionSelected' => 'menuActifDash',
+            'pageSelected' => null,
+            'userSelected' => null,
+            'gestionSelected' => null
+        ]);
     }
 
     /**

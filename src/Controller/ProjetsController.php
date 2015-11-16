@@ -34,7 +34,8 @@ class ProjetsController extends AppController
         
         $this->set('data', [
             'title' => __("Nos projets - Audrey Matte - Courtier Immobilier"),
-            'projet' => null
+            'projet' => null,
+            'full_page' => null
         ]);
         $this->set('menu', [
             'selected-accueil' => null,
@@ -93,7 +94,8 @@ class ProjetsController extends AppController
 
         $this->set('data', [
             'title' => __($projet->nom." - Audrey Matte - Courtier Immobilier"),
-            'projet' => 'projet'
+            'projet' => 'projet',
+            'full_page' => null
         ]);
         $this->set('menu', [
             'selected-accueil' => null,
@@ -104,72 +106,7 @@ class ProjetsController extends AppController
 
     }
 
-    /**
-     * Add method
-     *
-     * @return void Redirects on successful add, renders view otherwise.
-     */
-    public function add()
-    {
-        $projet = $this->Projets->newEntity();
-        if ($this->request->is('post')) {
-            $projet = $this->Projets->patchEntity($projet, $this->request->data);
-            if ($this->Projets->save($projet)) {
-                $this->Flash->success(__('The projet has been saved.'));
-                return $this->redirect(['action' => 'index']);
-            } else {
-                $this->Flash->error(__('The projet could not be saved. Please, try again.'));
-            }
-        }
-        $regions = $this->Projets->Regions->find('list', ['limit' => 200]);
-        $this->set(compact('projet', 'regions'));
-        $this->set('_serialize', ['projet']);
-    }
-
-    /**
-     * Edit method
-     *
-     * @param string|null $id Projet id.
-     * @return void Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Network\Exception\NotFoundException When record not found.
-     */
-    public function edit($id = null)
-    {
-        $projet = $this->Projets->get($id, [
-            'contain' => []
-        ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $projet = $this->Projets->patchEntity($projet, $this->request->data);
-            if ($this->Projets->save($projet)) {
-                $this->Flash->success(__('The projet has been saved.'));
-                return $this->redirect(['action' => 'index']);
-            } else {
-                $this->Flash->error(__('The projet could not be saved. Please, try again.'));
-            }
-        }
-        $regions = $this->Projets->Regions->find('list', ['limit' => 200]);
-        $this->set(compact('projet', 'regions'));
-        $this->set('_serialize', ['projet']);
-    }
-
-    /**
-     * Delete method
-     *
-     * @param string|null $id Projet id.
-     * @return void Redirects to index.
-     * @throws \Cake\Network\Exception\NotFoundException When record not found.
-     */
-    public function delete($id = null)
-    {
-        $this->request->allowMethod(['post', 'delete']);
-        $projet = $this->Projets->get($id);
-        if ($this->Projets->delete($projet)) {
-            $this->Flash->success(__('The projet has been deleted.'));
-        } else {
-            $this->Flash->error(__('The projet could not be deleted. Please, try again.'));
-        }
-        return $this->redirect(['action' => 'index']);
-    }
+    
 
   
 }

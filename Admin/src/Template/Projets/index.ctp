@@ -39,9 +39,9 @@
                                     <div class="actions_menu">
                                         <ul>
                                             <li><?= $this->Html->link('', ['action' => 'edit', $projet->id], ['class' => 'edit']) ?></li>
-                                            <li><?= $this->Html->link('', ['controller' => 'Galeries', 'action' => 'edit', $projet->id], ['class' => 'images colorboxiframedlarge']) ?></li>
-                                            <li><?= $this->Html->link('', ['controller' => 'Caracteristiques', 'action' => 'index', $projet->id], ['class' => 'pieces colorboxiframedlarge']) ?></li>
-                                            <li><?= $this->Html->link('', ['controller' => 'Terrains', 'action' => 'index', $projet->id], ['class' => 'terrains colorboxiframedlarge']) ?></li>
+                                            <li><?= $this->Html->link('', ['controller' => 'Galeries', 'action' => 'edit', $projet->id], ['title' => 'Galerie du projet', 'class' => 'images colorboxiframedlarge']) ?></li>
+                                            <li><?= $this->Html->link('', ['controller' => 'Caracteristiques', 'action' => 'index', $projet->id], ['title' => 'Caracteristiques du projet', 'class' => 'pieces colorboxiframedlarge']) ?></li>
+                                            <li><?= $this->Html->link('', ['controller' => 'Terrains', 'action' => 'index', $projet->id], ['title' => 'Terrains du projet', 'class' => 'terrains colorboxiframedlarge']) ?></li>
                                             <li><?= $this->Html->link('', ['action' => 'delete', $projet->id], ['confirm' => 'Voulez-vous vraiment supprimer ce projet ?','class' => 'delete']) ?></li>
                                         </ul>
                                     </div>

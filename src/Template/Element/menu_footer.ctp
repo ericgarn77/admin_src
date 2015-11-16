@@ -9,7 +9,7 @@
         <?= $this->Html->link(__('Mes Projets'), ['controller' => 'Pages', 'action' => 'projets'], ['title' => 'Projets de construction neuve à Québec']) ?>
     </li>
     <li id="<?= $menu['selected-terrain'] ?>">
-        <?= $this->Html->link(__('Terrains'), ['controller' => 'Pages', 'action' => 'terrains'], ['title' => 'Notre liste de terrain pour construction neuve à Québec']) ?>
+        <?= $this->Html->link(__('Terrains'), ['controller' => 'Terrains', 'action' => 'index'], ['title' => 'Notre liste de terrain pour construction neuve à Québec']) ?>
     </li>
     <li id="<?= $menu['selected-plan'] ?>">
         <?= $this->Html->link(__('Plan de maison'), ['controller' => 'Pages', 'action' => 'plan'], ['title' => 'Plan de maison pour construction ville de Québec']) ?>

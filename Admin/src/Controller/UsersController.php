@@ -21,6 +21,14 @@ class UsersController extends AppController
     {
         $this->set('users', $this->paginate($this->Users));
         $this->set('_serialize', ['users']);
+        $this->set('menu', [
+            'panelSelected' => null,
+            'projetSelected' => null,
+            'regionSelected' => null,
+            'pageSelected' => null,
+            'userSelected' => 'menuActifDash',
+            'gestionSelected' => null
+        ]);
         
 
     }
@@ -60,6 +68,14 @@ class UsersController extends AppController
         }
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
+        $this->set('menu', [
+            'panelSelected' => null,
+            'projetSelected' => null,
+            'regionSelected' => null,
+            'pageSelected' => null,
+            'userSelected' => 'menuActifDash',
+            'gestionSelected' => null
+        ]);
     }
 
     /**
@@ -85,6 +101,14 @@ class UsersController extends AppController
         }
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
+        $this->set('menu', [
+            'panelSelected' => null,
+            'projetSelected' => null,
+            'regionSelected' => null,
+            'pageSelected' => null,
+            'userSelected' => 'menuActifDash',
+            'gestionSelected' => null
+        ]);
     }
 
     /**

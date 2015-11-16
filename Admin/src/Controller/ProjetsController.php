@@ -33,26 +33,19 @@ class ProjetsController extends AppController
         $this->set('data', [
             'title' => __("Projets")
         ]);
-        $this->set(compact('data'));
-
-    }
-
-    /**
-     * View method
-     *
-     * @param string|null $id Projet id.
-     * @return void
-     * @throws \Cake\Network\Exception\NotFoundException When record not found.
-     */
-    public function view($id = null)
-    {
-        $projet = $this->Projets->get($id, [
-            'contain' => ['Regions', 'Caracteristiques', 'Galeries', 'Terrains']
+        $this->set('menu', [
+            'panelSelected' => null,
+            'projetSelected' => 'menuActifDash',
+            'regionSelected' => null,
+            'pageSelected' => null,
+            'userSelected' => null,
+            'gestionSelected' => null
         ]);
-        $this->set('projet', $projet);
-        $this->set('_serialize', ['projet']);
+        $this->set(compact('menu'));
+        $this->set(compact('data'));
     }
 
+   
     /**
      * Add method
      *
@@ -78,7 +71,7 @@ class ProjetsController extends AppController
         $folders = [];
         foreach($foldersImages as $folderImg)
         {
-            $parts = explode('/', $folderImg);
+            $parts = explode('\\', $folderImg);
             $folderName = end($parts);
             if($folderName != '')
             {
@@ -97,6 +90,14 @@ class ProjetsController extends AppController
             'folders' => $folders
         ]);
         $this->set(compact('data'));
+        $this->set('menu', [
+            'panelSelected' => null,
+            'projetSelected' => 'menuActifDash',
+            'regionSelected' => null,
+            'pageSelected' => null,
+            'userSelected' => null,
+            'gestionSelected' => null
+        ]);
     }
 
     /**
@@ -128,7 +129,7 @@ class ProjetsController extends AppController
         $folders = [];
         foreach($foldersImages as $folderImg)
         {
-            $parts = explode('/', $folderImg);
+            $parts = explode('\\', $folderImg);
             $folderName = end($parts);
             if($folderName != '')
             {
@@ -147,7 +148,14 @@ class ProjetsController extends AppController
             'folders' => $folders
         ]);
         $this->set(compact('data'));
-
+        $this->set('menu', [
+            'panelSelected' => null,
+            'projetSelected' => 'menuActifDash',
+            'regionSelected' => null,
+            'pageSelected' => null,
+            'userSelected' => null,
+            'gestionSelected' => null
+        ]);
         
     }
 
@@ -169,6 +177,7 @@ class ProjetsController extends AppController
             $this->Flash->error(__('Le projet ne peut être supprimé. Esseyez à nouveau !'));
         }
         return $this->redirect(['action' => 'index']);
+
     }
 
     public function deleteSelected()
