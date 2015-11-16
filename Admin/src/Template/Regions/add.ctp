@@ -45,6 +45,12 @@
                                         
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <label>Option d'identification</label>
+                                    <div class="inputs">
+                                        <?= $this->Form->textarea('option', ['label' => false, 'type' => 'hidden', 'id' => 'dossier_image', 'class' => 'text']) ?>
+                                    </div>
+                                </div>
                             </div>
                             <!--[if !IE]>end forms<![endif]-->
                         </fieldset>

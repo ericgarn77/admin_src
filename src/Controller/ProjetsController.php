@@ -47,7 +47,7 @@ class ProjetsController extends AppController
         $query = $this->Projets->find()->where(['vedette' => 'oui']);
         $vedette = $query->first();
 
-        $projets = $this->Projets->find()->where(['presentation' => 'oui'])->order(['order_projet' => 'ASC']);
+        $projets = $this->Projets->find()->where(['presentation' => 'oui'])->order(['order_presentation' => 'ASC']);
     
         $this->set('vedette', $vedette);
         $this->set('contents', $contents);

@@ -28,6 +28,7 @@
 <script type="text/javascript" src="../../js/scriptaculous.js?load=effects,builder"></script>
 <?= $this->Html->script('lightbox'); ?>
 <?= $this->Html->script('script'); ?>
+<?= $this->Html->script('gmap3-2.min'); ?>
 <?= $this->Html->script('google-analytic'); ?>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=fr"></script>
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js">

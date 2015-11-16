@@ -166,6 +166,12 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <label>Alias du projet</label>
+                                    <div class="inputs">
+                                        <?= $this->Form->textarea('alias', ['label' => false, 'type' => 'hidden', 'id' => 'dossier_image', 'class' => 'text']) ?>
+                                    </div>
+                                </div>
+                                <div class="row">
                                     <label>Description du projet</label>
                                     <div class="inputs">
                                         <?= $this->Form->textarea('description', ['label' => false, 'escape' => false, 'rows' => '10', 'cols' => '80', 'id' => 'description']) ?>

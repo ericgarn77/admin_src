@@ -46,52 +46,61 @@ class TerrainsController extends AppController
             'selected-plan' => null
         ]);
 
-        $query = $this->Terrains->Regions->find()->where(['terrain' => 'oui']);
-        $regions = $query->toArray();
+        // $query = $this->Terrains->Regions->find()->where(['terrain' => 'oui',])->order(['order_region' => 'ASC']);
+        // $regions = $query->toArray();
+        // debug($regions);
+
+        $query = $this->Terrains->Projets->find()->where(['terrain' => 'oui']);
+        $developpements = $query->toArray();
         
         $arrayVendre = [];
         $arrayVendu = [];
 
-        foreach($regions as $region)
+        
+        $query = $this->Terrains->Projets->find()->where(['terrain' => 'oui', 'statut' => 'À vendre'])->order(['order_terrains' => 'ASC']);
+        $projets = $query->toArray();
+        foreach($projets as $projet)
         {
-            $query = $this->Terrains->Projets->find()->where(['region_id' => $region->id, 'statut' => 'À vendre']);
-            $projets = $query->toArray();
-            debug($projets);
-            foreach($projets as $projet)
-            {
-                $query = $this->Terrains->find()->where(['terrains.projet_id' => $projet->id]);
-                $projetTerrains = $query->toArray();
-                $datas = [
-                    'region_nom' => $region->nom,
-                    'projets' => $projets,
-                    'projetTerrains' => $projetTerrains
-                    ];
-                array_push($arrayVendre, $datas);    
-            }
-            
+            $query = $this->Terrains->find()->where(['terrains.projet_id' => $projet->id]);
+            $projetTerrains = $query->toArray();
+            $region = $this->Terrains->Regions->get($projet->region_id);
+            $datas = [
+                'region_nom' => $region->nom,
+                'region_option' => $region->option,
+                'projet' => $projet,
+                'projetTerrains' => $projetTerrains
+                ];
+            array_push($arrayVendre, $datas);    
         }
-
-        foreach($regions as $region)
-        {
-            $query = $this->Terrains->Projets->find()->where(['region_id' => $region->id, 'statut' => 'Vendu']);
-            $projets = $query->toArray();
-            debug($projets);
-            foreach($projets as $projet)
-            {
-                $query = $this->Terrains->find()->where(['terrains.projet_id' => $projet->id]);
-                $projetTerrains = $query->toArray();
-                $datas = [
-                    'region_nom' => $region->nom,
-                    'projets' => $projets,
-                    'projetTerrains' => $projetTerrains
-                    ];
-                array_push($arrayVendu, $datas);    
-            }
             
-        }
+        
+        
 
+        // foreach($regions as $region)
+        // {
+        //     $query = $this->Terrains->Projets->find()->where(['region_id' => $region->id, 'statut' => 'Vendu']);
+        //     $projets = $query->toArray();
+        //     foreach($projets as $projet)
+        //     {
+        //         $query = $this->Terrains->find()->where(['terrains.projet_id' => $projet->id]);
+        //         $projetTerrains = $query->toArray();
+        //         $datas = [
+        //             'region_nom' => $region->nom,
+        //             'region_option' => $region->option,
+        //             'projets' => $projets,
+        //             'projetTerrains' => $projetTerrains
+        //             ];
+        //         array_push($arrayVendu, $datas);    
+        //     }
+            
+        // }
+
+        // $this->set('regions', $regions);
+        $this->set('developpements', $developpements);
         $this->set('arrayVendre', $arrayVendre);
-        $this->set('arrayVendu', $arrayVendu);
+        // $this->set('arrayVendu', $arrayVendu);
+        $this->set('contents', $contents);
+        $this->set('currentPage', $currentPage);
         $this->paginate = [
             'contain' => ['Projets', 'Regions']
         ];

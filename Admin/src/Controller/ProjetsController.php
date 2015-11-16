@@ -71,7 +71,7 @@ class ProjetsController extends AppController
         $folders = [];
         foreach($foldersImages as $folderImg)
         {
-            $parts = explode('\\', $folderImg);
+            $parts = explode('/', $folderImg);
             $folderName = end($parts);
             if($folderName != '')
             {
@@ -129,7 +129,7 @@ class ProjetsController extends AppController
         $folders = [];
         foreach($foldersImages as $folderImg)
         {
-            $parts = explode('\\', $folderImg);
+            $parts = explode('/', $folderImg);
             $folderName = end($parts);
             if($folderName != '')
             {
