@@ -179,7 +179,7 @@
                                 <div class="row">
                                     <label>Alias du projet</label>
                                     <div class="inputs">
-                                        <?= $this->Form->textarea('alias', ['label' => false, 'type' => 'hidden', 'id' => 'dossier_image', 'class' => 'text']) ?>
+                                        <?= $this->Form->input('alias', ['label' => false, 'type' => 'text', 'id' => 'dossier_image', 'class' => 'text']) ?>
                                     </div>
                                 </div> 
                                 <div class="row">

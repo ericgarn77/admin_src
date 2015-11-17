@@ -69,10 +69,9 @@ class PagesController extends AppController
     public function index()
     {
 
-        $pages = TableRegistry::get('Pages');
-        $query = $pages->find()->where(['nom' => 'Accueil' ]);
+        $query = $this->Pages->find()->where(['nom' => 'Accueil' ]);
         $currentPage = $query->first();
-        $query = $pages->contenuHtml->find()->where(['page_id' => $currentPage->id]);
+        $query = $this->Pages->contenuHtml->find()->where(['page_id' => $currentPage->id]);
         $contents = $query->toArray();
         $this->set('data', [
             'title' => __("Accueil - Audrey Matte - Courtier immobilier")
@@ -88,6 +87,32 @@ class PagesController extends AppController
         $this->set('contents', $contents);
         $this->set('currentPage', $currentPage);
         $this->layout = 'accueil';
+
+    }
+
+    public function plan()
+    {
+
+        $query = $this->Pages->find()->where(['nom' => 'Plan de maison' ]);
+        $currentPage = $query->first();
+        $query = $this->Pages->contenuHtml->find()->where(['page_id' => $currentPage->id]);
+        $contents = $query->toArray();
+        $this->set('data', [
+            'title' => __("Plan de maison - Audrey Matte - Courtier immobilier"),
+            'projet' => null,
+            'full_page' => null
+        ]);
+        $this->set('menu', [
+            'selected-accueil' => null,
+            'selected-projet' => null,
+            'selected-terrain' => null,
+            'selected-plan' => 'selected'
+        ]);
+        $this->set(compact('data'));
+        $this->set(compact('menu'));
+        $this->set('contents', $contents);
+        $this->set('currentPage', $currentPage);
+        
 
     }
 

@@ -8,21 +8,26 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property int $region_id
- * @property \Admin\Model\Entity\Region $region
+ * @property \App\Model\Entity\Region $region
  * @property string $nom
+ * @property string $adresse
  * @property string $description
+ * @property int $order_presentation
+ * @property int $order_terrains
  * @property string $statut
+ * @property string $vedette
  * @property string $url_map
  * @property string $plan_pdf
  * @property string $dossier_image
  * @property string $image
  * @property string $presentation
  * @property string $terrain
+ * @property string $alias
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
- * @property \Admin\Model\Entity\Caracteristique[] $caracteristiques
- * @property \Admin\Model\Entity\Galery[] $galeries
- * @property \Admin\Model\Entity\Terrain[] $terrains
+ * @property \App\Model\Entity\Caracteristique[] $caracteristiques
+ * @property \App\Model\Entity\Galery[] $galeries
+ * @property \App\Model\Entity\Terrain[] $terrains
  */
 class Projet extends Entity
 {

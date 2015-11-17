@@ -17,7 +17,7 @@
                 <h3 class="flash"></h3>
                 <ul id="menuTable">
                     <?= $this->Form->input('projet_id', ['label' => false, 'type' => 'hidden', 'class' => 'text', 'id' => 'projet_id', 'value' => $projet->id]) ?>
-                    <?= $this->Form->input('region_id', ['label' => false, 'type' => 'hidden', 'class' => 'text', 'id' => 'region_id', 'value' => $terrain->region_id]) ?>
+                    <?= $this->Form->input('region_id', ['label' => false, 'type' => 'hidden', 'class' => 'text', 'id' => 'region_id', 'value' => $region->id]) ?>
                     <li><?= $this->Form->button('Enregistrer', ['type' => 'submit', 'class' => 'save submit']) ?></li>
                     <li><?= $this->Html->link(__('Annuler'), ['action' => 'index', $projet->id], ['confirm' => 'Voulez-vous vraiment annuler ?', 'class' => 'annuler']) ?></li>
                 </ul>
@@ -60,6 +60,14 @@
                                     <div class="inputs">
                                         <span class="input_wrapper">
                                             <?= $this->Form->input('rue', ['label' => false, 'type' => 'text', 'id' => 'terrain_rue', 'class' => 'text']); ?>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label>Municipalité</label>
+                                    <div class="inputs">
+                                        <span class="input_wrapper">
+                                            <?= $this->Form->input('municipalite', ['label' => false, 'type' => 'text', 'id' => 'terrain_municipalite', 'class' => 'text']); ?>
                                         </span>
                                     </div>
                                 </div>

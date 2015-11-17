@@ -41,21 +41,15 @@ class ProjetsTable extends Table
         ]);
         $this->hasMany('Caracteristiques', [
             'foreignKey' => 'projet_id',
-            'className' => 'Admin.Caracteristiques',
-            'dependent' => true,
-            'cascadeCallbacks' => true
+            'className' => 'Admin.Caracteristiques'
         ]);
         $this->hasMany('Galeries', [
             'foreignKey' => 'projet_id',
-            'className' => 'Admin.Galeries',
-            'dependent' => true,
-            'cascadeCallbacks' => true
+            'className' => 'Admin.Galeries'
         ]);
         $this->hasMany('Terrains', [
             'foreignKey' => 'projet_id',
-            'className' => 'Admin.Terrains',
-            'dependent' => true,
-            'cascadeCallbacks' => true
+            'className' => 'Admin.Terrains'
         ]);
     }
 
@@ -75,10 +69,24 @@ class ProjetsTable extends Table
             ->allowEmpty('nom');
 
         $validator
+            ->allowEmpty('adresse');
+
+        $validator
             ->allowEmpty('description');
 
         $validator
+            ->add('order_presentation', 'valid', ['rule' => 'numeric'])
+            ->allowEmpty('order_presentation');
+
+        $validator
+            ->add('order_terrains', 'valid', ['rule' => 'numeric'])
+            ->allowEmpty('order_terrains');
+
+        $validator
             ->allowEmpty('statut');
+
+        $validator
+            ->allowEmpty('vedette');
 
         $validator
             ->allowEmpty('url_map');
@@ -99,6 +107,9 @@ class ProjetsTable extends Table
         $validator
             ->requirePresence('terrain', 'create')
             ->notEmpty('terrain');
+
+        $validator
+            ->allowEmpty('alias');
 
         return $validator;
     }

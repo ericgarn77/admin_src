@@ -108,8 +108,9 @@ class TerrainsController extends AppController
     {
                 
         $terrain = $this->Terrains->get($id, [
-            'contain' => []
+            'contain' => ['Projets', 'Regions']
         ]);
+        
         
         $projet = $this->Terrains->Projets->get($terrain->projet_id);
         $region = $this->Terrains->Regions->get($terrain->region_id);

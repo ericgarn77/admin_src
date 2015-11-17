@@ -41,7 +41,7 @@
                                         <ul>
                                             <li><?= $this->Html->link('', ['action' => 'edit', $page->id], ['class' => 'edit']) ?>
                                             </li>
-                                            <li><?= $this->Html->link('', ['action' => 'delete', $page->id], ['confirm' => 'Voulez-vous vraiment supprimer cet région ?', $page->id, 'class' => 'delete']) ?>
+                                            <li><?= $this->Html->link('', ['action' => 'delete', $page->id], ['confirm' => 'Voulez-vous vraiment supprimer cet page ?', $page->id, 'class' => 'delete']) ?>
                                             </li>
                                         </ul>
                                     </div>

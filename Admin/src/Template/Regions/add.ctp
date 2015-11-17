@@ -48,7 +48,7 @@
                                 <div class="row">
                                     <label>Option d'identification</label>
                                     <div class="inputs">
-                                        <?= $this->Form->textarea('option', ['label' => false, 'type' => 'hidden', 'id' => 'dossier_image', 'class' => 'text']) ?>
+                                        <?= $this->Form->input('option', ['label' => false, 'type' => 'text', 'id' => 'dossier_image', 'class' => 'text']) ?>
                                     </div>
                                 </div>
                             </div>

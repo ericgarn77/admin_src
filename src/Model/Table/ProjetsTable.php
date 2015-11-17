@@ -65,7 +65,18 @@ class ProjetsTable extends Table
             ->allowEmpty('nom');
 
         $validator
+            ->allowEmpty('adresse');
+
+        $validator
             ->allowEmpty('description');
+
+        $validator
+            ->add('order_presentation', 'valid', ['rule' => 'numeric'])
+            ->allowEmpty('order_presentation');
+
+        $validator
+            ->add('order_terrains', 'valid', ['rule' => 'numeric'])
+            ->allowEmpty('order_terrains');
 
         $validator
             ->allowEmpty('statut');
@@ -92,6 +103,9 @@ class ProjetsTable extends Table
         $validator
             ->requirePresence('terrain', 'create')
             ->notEmpty('terrain');
+
+        $validator
+            ->allowEmpty('alias');
 
         return $validator;
     }

@@ -851,7 +851,7 @@ hr{
 .content_terrains .table_infos .vendu {
 	position: absolute;
 	z-index: 1;
-	top: 45px;
+	top: 20%;
 	left: 315px;
 }
 .content_terrains .table_infos td.galerie {

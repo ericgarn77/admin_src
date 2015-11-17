@@ -65,6 +65,9 @@ class TerrainsTable extends Table
             ->allowEmpty('rue');
 
         $validator
+            ->allowEmpty('municipalite');
+
+        $validator
             ->allowEmpty('statut');
 
         return $validator;

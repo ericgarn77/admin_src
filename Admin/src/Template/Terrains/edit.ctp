@@ -63,7 +63,14 @@
                                         </span>
                                     </div>
                                 </div>
-                                
+                                <div class="row">
+                                    <label>Municipalité</label>
+                                    <div class="inputs">
+                                        <span class="input_wrapper">
+                                            <?= $this->Form->input('municipalite', ['label' => false, 'type' => 'text', 'id' => 'terrain_municipalite', 'class' => 'text']); ?>
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
                             <!--[if !IE]>end forms<![endif]-->
                         </fieldset>
