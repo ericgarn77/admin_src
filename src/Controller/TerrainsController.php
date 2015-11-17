@@ -67,38 +67,32 @@ class TerrainsController extends AppController
             $datas = [
                 'region_nom' => $region->nom,
                 'region_option' => $region->option,
-                'projet' => $projet,
+                'projetVendre' => $projet,
                 'projetTerrains' => $projetTerrains
                 ];
             array_push($arrayVendre, $datas);    
         }
             
-        
-        
+        $query = $this->Terrains->Projets->find()->where(['terrain' => 'oui', 'statut' => 'Vendu'])->order(['order_terrains' => 'ASC']);
+        $projets = $query->toArray();
+        foreach($projets as $projet)
+        {
 
-        // foreach($regions as $region)
-        // {
-        //     $query = $this->Terrains->Projets->find()->where(['region_id' => $region->id, 'statut' => 'Vendu']);
-        //     $projets = $query->toArray();
-        //     foreach($projets as $projet)
-        //     {
-        //         $query = $this->Terrains->find()->where(['terrains.projet_id' => $projet->id]);
-        //         $projetTerrains = $query->toArray();
-        //         $datas = [
-        //             'region_nom' => $region->nom,
-        //             'region_option' => $region->option,
-        //             'projets' => $projets,
-        //             'projetTerrains' => $projetTerrains
-        //             ];
-        //         array_push($arrayVendu, $datas);    
-        //     }
-            
-        // }
-
-        // $this->set('regions', $regions);
+            $query = $this->Terrains->find()->where(['terrains.projet_id' => $projet->id]);
+            $projetTerrains = $query->toArray();
+            $region = $this->Terrains->Regions->get($projet->region_id);
+            $datas = [
+                'region_nom' => $region->nom,
+                'region_option' => $region->option,
+                'projetVendu' => $projets,
+                'projetTerrains' => $projetTerrains
+                ];
+            array_push($arrayVendu, $datas);    
+        }
+           
         $this->set('developpements', $developpements);
         $this->set('arrayVendre', $arrayVendre);
-        // $this->set('arrayVendu', $arrayVendu);
+        $this->set('arrayVendu', $arrayVendu);
         $this->set('contents', $contents);
         $this->set('currentPage', $currentPage);
         $this->paginate = [
